@@ -1,175 +1,57 @@
+<!DOCTYPE html>
 <html lang="tr">
-
 <head>
-    <title>Hakkımda - Enes Çetin</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="TQxXKDguKToObDTY3gqACdXx5j2RQaTUSalGz2P1AHY" />
+    <title>Hakkımda | Enes Çetin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #0077FF; --dark: #2D2D2D; --bg: #FFFFFF; --gray: #F5F5F7; --text: #555555; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg); color: var(--dark); line-height: 1.9; }
+        
+        /* Header & Navigation */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 10%; background: var(--bg); box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+        
+        /* Logo Ayarı - Büyütüldü */
+        .logo { display: flex; align-items: center; text-decoration: none; }
+        .logo img { height: 55px; width: auto; transition: transform 0.3s ease; }
+        .logo:hover img { transform: scale(1.05); }
 
+        nav { display: flex; gap: 30px; }
+        nav a { text-decoration: none; color: var(--dark); font-weight: 600; transition: color 0.3s; }
+        nav a:hover, nav a.active { color: var(--primary); }
+
+        /* Main Content */
+        main { max-width: 800px; margin: 60px auto; padding: 0 20px; }
+        h1 { font-size: 2.5rem; margin-bottom: 35px; color: var(--dark); border-bottom: 4px solid var(--primary); display: inline-block; padding-bottom: 5px; }
+        p { margin-bottom: 25px; color: var(--text); font-size: 1.15rem; }
+        .highlight { color: var(--primary); font-weight: 600; }
+    </style>
 </head>
-<body style="margin: 0px 0px; font-family: Arial, Helvetica, sans-serif; ">
-    <div class="Headher">
-        <!--<img src="C:\Users\Enes Çetin\Desktop\Sosyal Medya\MG\LOGO\LogoNewBlackTransCutted.png" alt="mg logo" width="80" class = "img" height="60">-->
-        <h1 style="font-family: Arial, Helvetica, sans-serif;">Enes Çetin</h1>
-        <a href="about-website.html">Websitesi Hakkında</a>
-        <a href="about.html">Hakkında</a>
-        <a href="contact.html">İletişim</a>
-        <a href="deeplabs.html">Deep Labs</a>
-        <a href="index.html">Ana Sayfa</a>
-       
-        
-        
-    </div>
-    <style>
-        .Headher{
-            overflow: hidden;
-            background-color: #f1f1f1;
-            padding:5px 7px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            
-        }
-        .Headher a{
-            float: right;
-            line-height: 50px;
-            text-align: center;
-            padding: 15px;
-            text-decoration: none;
-            color: black;
-            font-size: 18x;
-            border-radius: 4px;
-        }
-        .Headher img{
-            line-height: 50px;
-            float: left;
-            padding: 10px;
-            padding-top: 15;
-            height: auto;
-            margin-top: auto;
-            margin-bottom: auto;
-        }
-        .Headher h1 {
-            float: left;
-            padding-left: 10;
-            text-align: center;
-        }
-        .Headher a:hover{
-            background-color: #ddd;
-        }
-        .gallerytitle{
-          
-          background-color: #212529;
-          width: auto;
-          height: 80px;
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-          margin-bottom: 15px;
-          
-        }
-        .gallerytitle.title{
-            font-family: Arial, Helvetica, sans-serif;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-            color: white;
-            text-shadow: 1px 1px 4px #000000;
-            margin-top: 0px;
-            margin-bottom: 0px;
-            height: auto;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            
-            
-        }
-        @media screen and (max-width : 720px) {
-            .Headher a {
-                float: none;
-                display: block;
-                
-            }
-            .Headher img {
-                float: none;
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-               
-            }
-                .Headher h1 {
-                float: none;
-                padding-left: 10;
-                text-align: center;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            
-        }
+<body>
 
-    </style>
-    
-    <div class="clearfix"></div>
-    <div style="padding:6px;"></div>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="img/logo.png" alt="Enes Çetin Logo">
+        </a>
+        <nav>
+            <a href="index.html">Ana Sayfa</a>
+            <a href="about.html" class="active">Hakkımda</a>
+            <a href="contact.html">İletişim</a>
+        </nav>
+    </header>
 
-    <div class="gallerytitle">
-      <h1 class="gallerytitle title">Hakkımda</h1>
-    </div>
-    <div class="clearfix"></div>
-    <div style="padding:6px;"></div>
-    <div class="responsive">
-      <div class="gallery">
-        <h3>Ben kimim?</h4>
-        <p>2003 senesinde Bursa'da hayata gözlerimi açtım. Yaramaz bir çocuk olmasam da kurcalama huyum yüzümden başıma genelde iş açardım. En azından annem öyle söylüyor... Bu kurcalama huyu da bilgisayara bakış açımı değiştirdi. Okuma yazma öğrendikten sonra 8 yaşında Visual Basic programlama diliyle tanıştım. Visual Studio aracılığı ile ilk programımı yazmıştım. Aslında yaptığım tek şey izlediğim videodaki adımları kopyalamaktı. Fakat ilk "merhaba dünya" ve hesap makinesi programımı yazdıktan sonra her şey çok farklı hissettirmişti. Yani anlayacağınız bilgisayara ve programlamaya ilgim epey küçükken başlıyor. Lise dönemine kadar <u><b>Photoshop, Cinema 4D, Cryengine 3</b></u> (Bir çocuk için çok ağır fakat tamamen hobi amaçlıydı, arayüzünü kurcalamak bile keyif veriyordu.), <u><b>C# ile görsel programlama</b></u> gibi şeylerle ilgilendim. Hepsi tamamen hobi amaçlıydı. Yayınladığım projelerde oldu ancak gerçek bir ilerleme kaydetmemiştim. Lise çağına geldiğimde ise <b><u>Unity</u></b> oyun motoru ile tanıştım. Oldukça anlaşılır ve geniş kitlelere hitap ettiği için kendim için en uygun olan şeyin bu olduğuna karar vermiştim. Liseden bir arkadaşımla başarısız yarışma deneyimi vesayre derken ufak ufak projeler yapmaya başlamıştık. Fakat Pandemi başladıktan sonra tekrardan koptum ve Önlisansa başlamamla birlikte tekrardan oyun programlamaya o arkadaşımla beraber geri dönüş yaptık. Birkaç mobil oyun ve program hazırladıktan sonra mobilin bizim için uygun olmadığına karar verdik ve Masaüstü platformlar için geliştirme yapmaya başladık. Birkaç başarısız proje sonrası son olarak Deep Labs adlı <b><u>2-4 kişilik Co-op</u></b> oyunumuz için toplamda <b><u>1000 saatin üzerinde geliştirme yaptık</u></b> ancak lisans eğitimimin başlamasıyla arkadaşıma ara vermeyi talep ettim o da anlayışla karşıladı. Gerçi bir ara lisans eğitimi bırakmayı düşündüm ancak ailem ve kendim için doğru olanın bu olduğuna karar verdim. Şuan projeyi kenarda bekletiyoruz ancak kış ve yaz tatillerinde ilerleme kaydedip oyunumuzu yayınlamayı düşünüyoruz. Oyunu oynayan tester gruplar gayet eğlendiklerini ve geliştirmeye açık olduğunu ifade ettiler. Sonuç olarak DGS 2024'te sayısal 261.si oldum ve şuanda lisans eğitimim için Bursa Teknik Üniversitesinde okuyorum.</p>
-        <h3>Yaptığım Projeler</h4>
-          <h4>Motivasyon & Gelişim</h4>
-          <p>2018 yılının kasım ayında sıfırdan başladığım motivasyon ve kişisel gelişim temalı Instagram sayfam. Düzensiz olarak ilgilensem de peak döneminde <b><u>392 bin takipçiye</u></b> kadar ulaştırma şansı yakaladım. Bir çok ünlü kişi tarafından takip edilen ve beğenilen bir sayfa olması kurarken benim de beklediğim bir şey değildi. Harcadığım potansiyellerden biri olduğunu düşünüyorum. Yaklaşık 2 senedir düzenli olarak ilgilenmiyorum...</p>
-          <h4>Deep Labs<a href="deeplabs.html"> (Detaylı bilgi için tıkla)</a></h4>
-          <p>Deep Labs, 2-4 oyuncuyla oynanan, denizin derinliklerinde inşa edilmiş terk edilmiş bir laboratuvardan kaçmaya odaklanan <b><u>Co-op macera</u></b> oyunudur.</p>
-          <h4>Mobil Oyunlar</h4>
-          <p>Mobil mağazaların işleyişini öğrenmek için çeşitli oyunlar ürettikten sonra mobil oyun sektöründeki rekabetin yüksekliğinden dolayı ilgimi kaybettim ve PC tarafında geliştirme yapmaya odaklandım. Mobildeki en başarılı oyunum <b><u>+20.000</u></b> indirme ile Balance Master oldu.</p>
-        </div>
-    </div>
+    <main>
+        <h1>Hikayem</h1>
+        
+        <p>2003 senesinde Bursa'da doğdum. Yaramaz bir çocuk olmasam da, bitmek bilmeyen kurcalama huyum yüzünden başıma genelde iş açardım. Annemin de sıkça söylediği gibi... Ancak bu merakım, bilgisayarlara olan bakış açımı tamamen değiştirdi. Henüz 8 yaşındayken <span class="highlight">Visual Basic</span> ile tanıştım ve izlediğim videoları takip ederek ilk hesap makinesi ile "Merhaba Dünya" programımı yazdım. O an her şey çok farklı hissettirmişti.</p>
 
-    <style>
-      div.gallery {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        border-radius: 3px;
-        height: auto;
-        padding-bottom: 5%;
-        margin-left: 10%;
-        margin-right: 10%;
-        padding: 2%;
-        }
-        div.gallery h3{
-          text-align: left;
-          padding-left: 2%;
-          padding-right: 2%;
-        }
-        div.gallery h4{
-          text-align: left;
-          padding-left: 2%;
-          padding-right: 2%;
-        }
-        div.gallery p {
-          text-align: left;
-          
-          padding-left: 2%;
-          padding-right: 2%;
-        }
-        div.gallery:hover {
-          opacity: 90%;
-          
-        }
-        
-        
-        * {
-          box-sizing: border-box;
-        }
-        
-        .responsive {
-          display: block;
-          padding: 0 6px;
-          float:left;
-          margin: auto;
-          width: 100%;
-          margin-bottom: 5%;
-          height: auto;
-        }
-    </style>
-    
+        <p>Lise yıllarıma kadar Photoshop, Cinema 4D, Cryengine 3 ve C# ile görsel programlama gibi araçlarla tamamen hobi amaçlı ilgilendim. Lisede <span class="highlight">Unity</span> oyun motoru ile tanışmam ise benim için bir dönüm noktası oldu. Pandemi dönemiyle birlikte, bir arkadaşımla oyun programlamaya daha ciddi bir şekilde geri dönüş yaptık.</p>
+
+        <p>Akademik tarafta ise DGS 2024'te sayısal alanda <span class="highlight">Türkiye 261.'si</span> oldum. Şu anda lisans eğitimime <span class="highlight">Bursa Teknik Üniversitesi'nde</span> devam ediyorum. Kendimi geliştirmeye, yeni projeler üretmeye ve yazılım dünyasını kurcalamaya devam ediyorum.</p>
+    </main>
+
 </body>
 </html>

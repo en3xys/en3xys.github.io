@@ -1,293 +1,62 @@
+<!DOCTYPE html>
 <html lang="tr">
-
 <head>
-    <title>Enes Çetin</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="TQxXKDguKToObDTY3gqACdXx5j2RQaTUSalGz2P1AHY" />
+    <title>Enes Çetin | Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0077FF;
+            --dark: #2D2D2D;
+            --bg: #FFFFFF;
+            --gray: #F5F5F7;
+            --text: #555555;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg); color: var(--dark); line-height: 1.6; }
+        
+        /* Header & Navigation */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 10%; background: var(--bg); box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+        
+        /* Logo Ayarı - Büyütüldü */
+        .logo { display: flex; align-items: center; text-decoration: none; }
+        .logo img { height: 55px; width: auto; transition: transform 0.3s ease; }
+        .logo:hover img { transform: scale(1.05); }
 
+        nav { display: flex; gap: 30px; }
+        nav a { text-decoration: none; color: var(--dark); font-weight: 600; transition: color 0.3s ease; }
+        nav a:hover, nav a.active { color: var(--primary); }
+
+        /* Main Content - Coming Soon */
+        main { height: calc(100vh - 80px); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; }
+        h1 { font-size: 3rem; margin-bottom: 10px; }
+        h1 span { color: var(--primary); }
+        p.subtitle { font-size: 1.2rem; color: var(--text); max-width: 600px; margin-bottom: 30px; }
+        
+        .badge { background: var(--gray); padding: 10px 20px; border-radius: 50px; font-weight: 600; color: var(--primary); letter-spacing: 1px; display: inline-block; margin-bottom: 20px; }
+    </style>
 </head>
-<body style="margin: 0px 0px; font-family: Arial, Helvetica, sans-serif; ">
-    <div class="Headher">
-        <!--<img src="C:\Users\Enes Çetin\Desktop\Sosyal Medya\MG\LOGO\LogoNewBlackTransCutted.png" alt="mg logo" width="80" class = "img" height="60">-->
-        <h1 style="font-family: Arial, Helvetica, sans-serif;">Enes Çetin</h1>
-        <a href="about-website.html">Websitesi Hakkında</a>
-        <a href="about.html">Hakkında</a>
-        <a href="contact.html">İletişim</a>
-        <a href="deeplabs.html">Deep Labs</a>
-        <a href="index.html">Ana Sayfa</a>
-       
-        
-        
-    </div>
-    <style>
-        .Headher{
-            overflow: hidden;
-            background-color: #f1f1f1;
-            padding:5px 7px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            
-        }
-        .Headher a{
-            float: right;
-            line-height: 50px;
-            text-align: center;
-            padding: 15px;
-            text-decoration: none;
-            color: black;
-            font-size: 18x;
-            border-radius: 4px;
-        }
-        .Headher img{
-            line-height: 50px;
-            float: left;
-            padding: 10px;
-            padding-top: 15;
-            height: auto;
-            margin-top: auto;
-            margin-bottom: auto;
-        }
-        .Headher h1 {
-            float: left;
-            padding-left: 10;
-            text-align: center;
-        }
-        .Headher a:hover{
-            background-color: #ddd;
-        }
-        @media screen and (max-width : 720px) {
-            .Headher a {
-                float: none;
-                display: block;
-                
-            }
-            .Headher img {
-                float: none;
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-               
-            }
-                .Headher h1 {
-                float: none;
-                padding-left: 10;
-                text-align: center;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
+<body>
 
-    </style>
-    <div class="container">
-        <img src="work.jpg" alt="work"  height=50%;>
-        <h2>WEB SİTEME HOŞ GELDİNİZ!
-        </h2>
-        <a class="btn" href="about.html">Hakkımda</a>
-    </div>
-    <style>
-        .container {
-        position: relative;
-        
-        }
-        .container img {
-          width: 100%; object-fit: cover; 
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        }
-        .container .btn {
-          text-decoration: none;
-        position: absolute;
-        top: 60%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        font-size: 24px;
-        padding: 24px 72px;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-        }
-        .container h2{
-            position: absolute;
-            color: white;
-            text-align: center;
-            top: 35%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            
-            text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
-        }
+    <header>
+        <a href="index.html" class="logo">
+            <img src="img/logo.png" alt="Enes Çetin Logo">
+        </a>
+        <nav>
+            <a href="index.html" class="active">Ana Sayfa</a>
+            <a href="about.html">Hakkımda</a>
+            <a href="contact.html">İletişim</a>
+        </nav>
+    </header>
 
-        .container .btn:hover {
-        background-color: black;
-        }
-        @media screen and (max-width : 800px){
-            .container img {
-                height: 40%;
-                object-position: 0px 0px;
-            }
-            .container h2 {
-                top: 20%;
-            }
-            .container .btn {
-                top: 60%;
-            }
-        }
-        @media screen and (max-width : 500px){
-            .container img {
-                height: 60%;
-                object-position: 0px 0px;
-            }
-            .container h2 {
-                top: 20%;
-            }
-            .container .btn {
-                top: 60%;
-            }
-        }
-    </style>
-    
-     <style>
+    <main>
+        <div class="badge">🚀 Yazılım & Oyun Geliştirici</div>
+        <h1>Merhaba, Ben <span>Enes Çetin</span></h1>
+        <p class="subtitle">Software Developer & Game Programmer. Yeni projeler ve portföyüm çok yakında burada olacak.</p>
+    </main>
 
-        div.gallery {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        border-radius: 3px;
-        }
-        
-        div.gallery:hover {
-          opacity: 90%;
-          
-        }
-        
-        div.gallery img {
-          width: 100%;
-          object-fit: cover;
-          height: 30%;
-        }
-        
-        div.desc {
-          padding: 15px;
-          text-align: center;
-        }
-        .gallerytitle{
-          
-          background-color: #212529;
-          width: auto;
-          height: 80px;
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-          margin-bottom: 15px;
-          
-        }
-        .gallerytitle.title{
-            font-family: Arial, Helvetica, sans-serif;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-            color: white;
-            text-shadow: 1px 1px 4px #000000;
-            margin-top: 0px;
-            margin-bottom: 0px;
-            height:  auto;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            
-            
-        }
-        * {
-          box-sizing: border-box;
-        }
-        
-        .responsive {
-          padding: 0 6px;
-          float: left;
-          width: 24.99999%;
-        }
-        
-        @media only screen and (max-width: 700px) {
-          .responsive {
-            width: 49.99999%;
-            margin: 6px 0;}
-
-          
-            
-          
-        }
-        
-        @media only screen and (max-width: 500px) {
-          .responsive {
-            width: 100%;
-            
-          }
-          .div.gallery img {
-            height: 80%;
-          }
-        }
-        
-        .clearfix:after {
-          content: "";
-          display: table;
-          clear: both;
-        }
-        </style>
-        
-        
-        <div class="gallerytitle">
-            <h1 class="gallerytitle title">Projelerim</h1>
-        </div>
-        
-        
-        <div class="responsive">
-          <div class="gallery">
-            <a target="_blank" href="https://www.instagram.com/motivasyon.gelisim/?hl=tr">
-              <img src="projectimgs/mg.png" alt="Motivasyon ve Gelişim" width="600" height="400">
-            </a>
-            <div class="desc">Motivasyon & Gelişim</div>
-          </div>
-        </div>
-        
-        
-        <div class="responsive">
-          <div class="gallery">
-            <a target="_blank" href="https://play.google.com/store/apps/details?id=com.Blifly.BalanceMaster&hl=tr">
-              <img src="projectimgs/bm.png" alt="Balance Master" width="600" height="400">
-            </a>
-            <div class="desc">Balance Master</div>
-          </div>
-        </div>
-        
-        <div class="responsive">
-          <div class="gallery">
-            <a target="_blank" href="https://play.google.com/store/apps/details?id=com.Blifly.SpaceJump&hl=tr">
-              <img src="projectimgs/SJLogo.png" alt="Space Jump" width="600" height="400">
-            </a>
-            <div class="desc">Space Jump</div>
-          </div>
-        </div>
-        
-        <div class="responsive">
-          <div class="gallery">
-            <a href="deeplabs.html">
-              <img src="projectimgs/dl.png" alt="Deep Labs" width="600" height="400">
-            </a>
-            <div class="desc">Deep Labs</div>
-          </div>
-        </div>
-
-        
-        
-        <div class="clearfix"></div>
-        
-        <div style="padding:6px;"></div>
-
-        <div class="responsive">
-          <div class="gallery">
-            <a target="_blank" href="https://play.google.com/store/apps/details?id=com.Blifly.bilgiuygulama&hl=tr">
-              <img src="projectimgs/bq1024bg.png" alt="BilQuiz" width="600" height="400">
-            </a>
-            <div class="desc">BilQuiz</div>
-          </div>
-        </div>
-    
 </body>
 </html>
