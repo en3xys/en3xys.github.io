@@ -6,95 +6,54 @@
     <meta name="google-site-verification" content="TQxXKDguKToObDTY3gqACdXx5j2RQaTUSalGz2P1AHY" />
     <title>Enes Çetin | Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #0077FF;
-            --dark: #2D2D2D;
-            --bg: #FFFFFF;
-            --gray: #F5F5F7;
-            --text: #555555;
-        }
+        :root { --primary: #0077FF; --dark: #2D2D2D; --bg: #FFFFFF; --gray: #F5F5F7; --text: #555555; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { 
-        background-color: var(--bg); 
-        color: var(--dark); 
-        line-height: 1.6; 
-        overflow: hidden; /* Bu satır sağdaki barı tamamen yok eder */
-        }
+        body { background-color: var(--bg); color: var(--dark); overflow: hidden; }
         
-        /* Header & Navigation */
         header { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 10px 5%; /* Padding'i biraz daralttık mobilde taşmasın diye */
-            background: var(--bg); 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
-            position: sticky; 
-            top: 0; 
-            z-index: 100;
-            min-height: 85px; /* Tüm sayfalarda header yüksekliğini bu değerde sabitler */
-            }
-        
-        /* Logo Ayarı - Büyütüldü */
-        .logo { display: flex; align-items: center; text-decoration: none; }
-        .logo img { 
-    height: 45px; /* Mobilde header'ı patlatmaması için yüksekliği 45-50 civarı tutmak idealdir */
-    width: auto; 
-}
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 10px 10%; background: var(--bg); box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+            position: sticky; top: 0; z-index: 100; min-height: 85px;
+        }
+        .logo img { height: 50px; width: auto; transition: transform 0.3s; }
         .logo:hover img { transform: scale(1.05); }
 
-        nav { 
-    display: flex; 
-    gap: 15px; /* Mobilde yazılar birbirine girmesin diye mesafeyi azıcık daralttık */
-    white-space: nowrap; /* Yazıların (Ana Sayfa gibi) alt alta geçmesini ASLA izin vermez */
-}
-
-nav a { 
-    text-decoration: none; 
-    color: var(--dark); 
-    font-weight: 600; 
-    font-size: 0.9rem; /* Mobilde daha şık durması için fontu azıcık küçülttük */
-    transition: color 0.3s ease; 
-}
+        nav { display: flex; gap: 20px; white-space: nowrap; }
+        nav a { text-decoration: none; color: var(--dark); font-weight: 600; transition: color 0.3s; font-size: 0.95rem; }
         nav a:hover, nav a.active { color: var(--primary); }
 
-        /* Main Content - Coming Soon */
         main { 
-                height: calc(100vh - 95px); /* Header yüksekliğine göre bar çıkmaması için biraz kısalttık */
-                display: flex; 
-                flex-direction: column; 
-                justify-content: center; 
-                align-items: center; 
-                text-align: center; 
-                padding: 0 20px; 
-            }
-        h1 { font-size: 3rem; margin-bottom: 10px; }
+            height: calc(100vh - 85px); display: flex; flex-direction: column; 
+            justify-content: center; align-items: center; text-align: center; padding: 0 20px; 
+        }
+        .badge { background: var(--gray); padding: 8px 18px; border-radius: 50px; font-weight: 600; color: var(--primary); margin-bottom: 20px; font-size: 0.9rem; }
+        h1 { font-size: 2.8rem; margin-bottom: 10px; }
         h1 span { color: var(--primary); }
-        p.subtitle { font-size: 1.2rem; color: var(--text); max-width: 600px; margin-bottom: 30px; }
-        
-        .badge { background: var(--gray); padding: 10px 20px; border-radius: 50px; font-weight: 600; color: var(--primary); letter-spacing: 1px; display: inline-block; margin-bottom: 20px; }
+        .subtitle { font-size: 1.1rem; color: var(--text); max-width: 500px; }
+
+        @media (max-width: 480px) {
+            header { padding: 10px 5%; }
+            nav { gap: 12px; }
+            nav a { font-size: 0.85rem; }
+            h1 { font-size: 2.1rem; }
+            .logo img { height: 45px; }
+        }
     </style>
 </head>
 <body>
-
     <header>
-        <a href="index.html" class="logo">
-            <img src="img/logo.png" alt="Enes Çetin Logo">
-        </a>
+        <a href="index.html" class="logo"><img src="img/logo.png" alt="Logo"></a>
         <nav>
             <a href="index.html" class="active">Ana Sayfa</a>
             <a href="about.html">Hakkımda</a>
             <a href="contact.html">İletişim</a>
         </nav>
     </header>
-
     <main>
         <div class="badge">🚀 Yazılım & Oyun Geliştirici</div>
         <h1>Merhaba, Ben <span>Enes Çetin</span></h1>
-        <p class="subtitle">Software Developer & Game Programmer. Yeni projeler ve portföyüm çok yakında burada olacak.</p>
+        <p class="subtitle">Yeni projeler ve portföyüm çok yakında burada olacak.</p>
     </main>
-
 </body>
 </html>
