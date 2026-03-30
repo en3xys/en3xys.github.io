@@ -9,49 +9,45 @@
     <style>
         :root { --primary: #0077FF; --dark: #2D2D2D; --bg: #FFFFFF; --gray: #F5F5F7; --text: #555555; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg); color: var(--dark); line-height: 1.9; }
+        body { background-color: var(--bg); color: var(--dark); line-height: 1.8; }
         
-        /* Header & Navigation */
-        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 10%; background: var(--bg); box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
-        
-        /* Logo Ayarı - Büyütüldü */
-        .logo { display: flex; align-items: center; text-decoration: none; }
-        .logo img { height: 55px; width: auto; transition: transform 0.3s ease; }
-        .logo:hover img { transform: scale(1.05); }
-
-        nav { display: flex; gap: 30px; }
-        nav a { text-decoration: none; color: var(--dark); font-weight: 600; transition: color 0.3s; }
+        header { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 10px 10%; background: var(--bg); box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+            position: sticky; top: 0; z-index: 100; min-height: 85px;
+        }
+        .logo img { height: 50px; width: auto; }
+        nav { display: flex; gap: 20px; white-space: nowrap; }
+        nav a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.95rem; }
         nav a:hover, nav a.active { color: var(--primary); }
 
-        /* Main Content */
-        main { max-width: 800px; margin: 60px auto; padding: 0 20px; }
-        h1 { font-size: 2.5rem; margin-bottom: 35px; color: var(--dark); border-bottom: 4px solid var(--primary); display: inline-block; padding-bottom: 5px; }
-        p { margin-bottom: 25px; color: var(--text); font-size: 1.15rem; }
+        main { max-width: 750px; margin: 50px auto; padding: 0 25px; }
+        h1 { font-size: 2.2rem; margin-bottom: 30px; border-bottom: 4px solid var(--primary); display: inline-block; }
+        p { margin-bottom: 20px; color: var(--text); font-size: 1.1rem; }
         .highlight { color: var(--primary); font-weight: 600; }
+
+        @media (max-width: 480px) {
+            header { padding: 10px 5%; }
+            nav { gap: 12px; }
+            nav a { font-size: 0.85rem; }
+            .logo img { height: 45px; }
+        }
     </style>
 </head>
 <body>
-
     <header>
-        <a href="index.html" class="logo">
-            <img src="img/logo.png" alt="Enes Çetin Logo">
-        </a>
+        <a href="index.html" class="logo"><img src="img/logo.png" alt="Logo"></a>
         <nav>
             <a href="index.html">Ana Sayfa</a>
             <a href="about.html" class="active">Hakkımda</a>
             <a href="contact.html">İletişim</a>
         </nav>
     </header>
-
     <main>
         <h1>Hikayem</h1>
-        
-        <p>2003 senesinde Bursa'da doğdum. Yaramaz bir çocuk olmasam da, bitmek bilmeyen kurcalama huyum yüzünden başıma genelde iş açardım. Annemin de sıkça söylediği gibi... Ancak bu merakım, bilgisayarlara olan bakış açımı tamamen değiştirdi. Henüz 8 yaşındayken <span class="highlight">Visual Basic</span> ile tanıştım ve izlediğim videoları takip ederek ilk hesap makinesi ile "Merhaba Dünya" programımı yazdım. O an her şey çok farklı hissettirmişti.</p>
-
-        <p>Lise yıllarıma kadar Photoshop, Cinema 4D, Cryengine 3 ve C# ile görsel programlama gibi araçlarla tamamen hobi amaçlı ilgilendim. Lisede <span class="highlight">Unity</span> oyun motoru ile tanışmam ise benim için bir dönüm noktası oldu. Pandemi dönemiyle birlikte, bir arkadaşımla oyun programlamaya daha ciddi bir şekilde geri dönüş yaptık.</p>
-
-        <p>Akademik tarafta ise DGS 2024'te sayısal alanda <span class="highlight">Türkiye 261.'si</span> oldum. Şu anda lisans eğitimime <span class="highlight">Bursa Teknik Üniversitesi'nde</span> devam ediyorum. Kendimi geliştirmeye, yeni projeler üretmeye ve yazılım dünyasını kurcalamaya devam ediyorum.</p>
+        <p>2003 senesinde Bursa'da doğdum. Kurcalama huyum sayesinde henüz 8 yaşındayken <span class="highlight">Visual Basic</span> ile tanıştım ve ilk hesap makinesi programımı yazdım. O an programlamaya olan ilgim profesyonel bir merak haline dönüştü.</p>
+        <p>Lise yıllarıma kadar Photoshop, Cinema 4D ve C# gibi araçlarla hobi amaçlı ilgilendikten sonra <span class="highlight">Unity</span> oyun motoru ile tanışmam kariyer hedefimi netleştirdi. Pandemi dönemiyle birlikte oyun programlamaya daha profesyonel bir odakla geri dönüş yaptım.</p>
+        <p>Akademik tarafta ise DGS 2024'te sayısal alanda <span class="highlight">Türkiye 261.'si</span> oldum. Şu anda lisans eğitimime <span class="highlight">Bursa Teknik Üniversitesi'nde</span> devam ediyor, yeni projeler üretmeye ve kendimi geliştirmeye odaklanıyorum.</p>
     </main>
-
 </body>
 </html>
