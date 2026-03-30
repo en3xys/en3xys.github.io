@@ -16,7 +16,12 @@
             --text: #555555;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg); color: var(--dark); line-height: 1.6; }
+        body { 
+        background-color: var(--bg); 
+        color: var(--dark); 
+        line-height: 1.6; 
+        overflow: hidden; /* Bu satır sağdaki barı tamamen yok eder */
+        }
         
         /* Header & Navigation */
         header { display: flex; justify-content: space-between; align-items: center; padding: 20px 10%; background: var(--bg); box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
@@ -31,7 +36,15 @@
         nav a:hover, nav a.active { color: var(--primary); }
 
         /* Main Content - Coming Soon */
-        main { height: calc(100vh - 80px); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; }
+        main { 
+                height: calc(100vh - 95px); /* Header yüksekliğine göre bar çıkmaması için biraz kısalttık */
+                display: flex; 
+                flex-direction: column; 
+                justify-content: center; 
+                align-items: center; 
+                text-align: center; 
+                padding: 0 20px; 
+            }
         h1 { font-size: 3rem; margin-bottom: 10px; }
         h1 span { color: var(--primary); }
         p.subtitle { font-size: 1.2rem; color: var(--text); max-width: 600px; margin-bottom: 30px; }
