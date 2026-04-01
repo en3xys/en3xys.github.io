@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Willpower Protocol | Enes Çetin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="../img/logo.png">
+    <style>
+        :root {
+            --primary: #0077FF;
+            --dark: #2D2D2D;
+            --bg: #FFFFFF;
+            --gray: #F5F5F7;
+            --text: #555555;
+            --border: #EAEAEA;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg); color: var(--dark); line-height: 1.7; }
+        
+        /* Header & Navigation */
+        header { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 10px 10%; background: var(--bg); border-bottom: 1px solid var(--border);
+            position: sticky; top: 0; z-index: 100; min-height: 85px;
+        }
+        .logo { display: flex; align-items: center; text-decoration: none; }
+        .logo img { height: 50px; width: auto; transition: transform 0.2s ease; }
+        .logo:hover img { transform: scale(1.02); }
+
+        nav { display: flex; gap: 20px; white-space: nowrap; }
+        nav a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.95rem; transition: color 0.2s ease; }
+        nav a:hover { color: var(--primary); }
+
+        /* Main Content Structure */
+        main { padding: 50px 20px; max-width: 900px; margin: 0 auto; }
+        
+        .back-link { display: inline-block; margin-bottom: 30px; color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+        .back-link:hover { color: var(--primary); }
+
+        /* Project Header */
+        .project-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            gap: 25px; 
+            margin-bottom: 40px; 
+        }
+        .project-header-left { 
+            display: flex; 
+            align-items: center; 
+            gap: 25px; 
+        }
+        .project-logo { 
+            width: 90px; 
+            height: 90px; 
+            border-radius: 18px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08); 
+            border: 1px solid var(--border); 
+            flex-shrink: 0; 
+        }
+        .project-title { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: flex-start; 
+        }
+        .project-title h1 { 
+            font-size: 2.2rem; 
+            color: var(--dark); 
+            margin-bottom: 5px; 
+            line-height: 1.2; 
+        }
+        .tech-stack { 
+            display: flex; 
+            gap: 10px; 
+            margin-top: 8px; 
+            flex-wrap: wrap; 
+        }
+        .tech-badge { 
+            background: var(--gray); 
+            color: var(--dark); 
+            font-size: 0.8rem; 
+            padding: 4px 12px; 
+            border-radius: 4px; 
+            font-weight: 600; 
+            border: 1px solid var(--border); 
+        }
+
+        /* Play Store Button */
+        .play-store-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: var(--dark); 
+            color: #ffffff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            flex-shrink: 0; 
+        }
+        .play-store-btn i { font-size: 1.2rem; }
+        .play-store-btn:hover { background-color: var(--primary); transform: translateY(-2px); }
+
+        /* Screenshot Gallery */
+        .gallery-container { 
+            display: flex; gap: 15px; overflow-x: auto; padding: 10px 0 20px 0; margin-bottom: 40px;
+            scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: #ccc transparent;
+        }
+        .gallery-container::-webkit-scrollbar { height: 8px; }
+        .gallery-container::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 4px; }
+        .gallery-item { 
+            flex: 0 0 auto; height: 450px; border-radius: 12px; 
+            scroll-snap-align: start; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid var(--border);
+            object-fit: cover;
+        }
+
+        /* Content Sections */
+        .content-section { margin-bottom: 40px; }
+        .content-section h2 { font-size: 1.4rem; margin-bottom: 15px; color: var(--dark); border-bottom: 2px solid var(--gray); padding-bottom: 8px; }
+        .content-section p { color: var(--text); font-size: 1.05rem; margin-bottom: 15px; }
+        .content-section ul { list-style-type: disc; padding-left: 20px; color: var(--text); font-size: 1.05rem; }
+        .content-section li { margin-bottom: 8px; }
+        .content-section strong { color: var(--dark); }
+
+        @media (max-width: 768px) {
+            header { padding: 10px 5%; }
+            
+            .project-header { 
+                flex-direction: column; 
+                align-items: center; 
+                text-align: center; 
+                gap: 20px; 
+            }
+            
+            .project-header-left { 
+                flex-direction: column; 
+                align-items: center; 
+                gap: 15px; 
+            }
+            
+            .tech-stack { justify-content: center; }
+            .back-link { display: block; text-align: center; margin-bottom: 20px; width: 100%; }
+            .project-title { align-items: center; }
+            .content-section { text-align: left; } 
+            
+            .gallery-item { height: 350px; }
+            
+            .play-store-btn {
+                width: 100%; 
+                max-width: 300px; 
+                justify-content: center; 
+                margin-top: 10px; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="../index.html" class="logo">
+            <img src="../img/logo.png" alt="Enes Çetin Logo">
+        </a>
+        <nav>
+            <a href="../index.html">Ana Sayfa</a>
+            <a href="../about.html">Hakkımda</a>
+            <a href="../contact.html">İletişim</a>
+        </nav>
+    </header>
+
+    <main>
+        <a href="../index.html" class="back-link">← Ana Sayfaya Dön</a>
+
+        <div class="project-header">
+            <div class="project-header-left">
+                <img src="willpower/logo.jpg" alt="Willpower Protocol Logo" class="project-logo">
+                <div class="project-title">
+                    <h1>Willpower Protocol</h1>
+                    <div class="tech-stack">
+                        <span class="tech-badge">React Native</span>
+                        <span class="tech-badge">Expo</span>
+                        <span class="tech-badge">SQLite</span>
+                    </div>
+                </div>
+            </div>
+            <a href="----buraya-link-gelecek----" target="_blank" class="play-store-btn">
+                <i class="fab fa-google-play"></i> Play Store'da Gör
+            </a>
+        </div>
+
+        <div class="gallery-container">
+            <img src="willpower/1.png" alt="Screenshot 1" class="gallery-item">
+            <img src="willpower/2.png" alt="Screenshot 2" class="gallery-item">
+            <img src="willpower/3.png" alt="Screenshot 3" class="gallery-item">
+            <img src="willpower/4.png" alt="Screenshot 4" class="gallery-item">
+            <img src="willpower/5.png" alt="Screenshot 5" class="gallery-item">
+        </div>
+
+        <div class="content-section">
+            <h2>Willpower Protocol Hakkında</h2>
+            <p>Willpower Protocol, James Clear'ın "Atomik Alışkanlıklar" felsefesinden ilham alınarak, her gün %1 daha iyi olma prensibi üzerine inşa edilmiş bir alışkanlık takip ve disiplin uygulamasıdır. Uygulamanın temel amacı, kişisel gelişimi ve irade terbiyesini bir RPG (rol yapma oyunu) mekaniğiyle birleştirerek kullanıcıya somut bir ilerleme hissi yaşatmaktır. Kullanıcılar, disiplinli adımlarıyla rütbe atlar ve iradelerini modern bir arayüzde dijital bir protokol olarak yönetirler.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Anahtar Özellikler</h2>
+            <ul>
+                <li><strong>WP (Willpower) Puan Sistemi:</strong> Tamamlanan her iyi alışkanlık için WP puanı kazanılır; taviz verilen veya sürdürülemeyen alışkanlıklar ise puan kaybına neden olur.</li>
+                <li><strong>10 Kademeli Rütbe Sistemi:</strong> Kullanıcılar başlangıç seviyesinden "Sistem İlahı" gibi efsanevi rütbelere kadar yükselerek disiplinlerini kanıtlarlar.</li>
+                <li><strong>Gelişim Isı Haritası:</strong> Kullanıcının son 15 haftalık performansını gösteren, başarılara göre renklenen GitHub tarzı bir aktivite grafiği sunulur.</li>
+                <li><strong>Öz-Değerlendirme Günlüğü:</strong> Günlük zaferlerin, zorlukların ve modun kaydedilebildiği, geçmişe dönük düzenleme imkanı sunan kapsamlı bir günlük bölümü mevcuttur.</li>
+                <li><strong>Çoklu Dil Desteği:</strong> Uygulama, sistem diline göre otomatik olarak adapte olan tam kapsamlı Türkçe ve İngilizce dil desteğine sahiptir.</li>
+                <li><strong>Akıllı Hatırlatıcılar:</strong> Kullanıcıyı her sabah "Zinciri Kırma" felsefesiyle motive eden günlük bildirim sistemi bulunur.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Geliştirme Süreci ve Teknik Detaylar</h2>
+            <ul>
+                <li><strong>React Native & Expo:</strong> Uygulama, platformlar arası yüksek performans ve hızlı geliştirme süreci için React Native ve Expo altyapısı kullanılarak geliştirilmiştir.</li>
+                <li><strong>SQLite Veritabanı:</strong> Kullanıcı verilerinin güvenliği ve çevrimdışı kullanım için expo-sqlite entegrasyonuyla yerel veritabanı mimarisi kurulmuştur.</li>
+                <li><strong>i18next Yerelleştirme:</strong> Global ölçekte kullanım için i18next kütüphanesi ile dinamik dil çeviri sistemi entegre edilmiştir.</li>
+                <li><strong>Dinamik Tarih Yönetimi:</strong> Isı haritası ve günlük kayıtları için yerel saat dilimini baz alan özel tarih işleme algoritmaları yazılmıştır.</li>
+                <li><strong>Görsel Tasarım:</strong> Kullanıcı deneyimini ön planda tutan, karanlık mod odaklı ve yüksek kontrastlı bir görsel dil tercih edilmiştir.</li>
+            </ul>
+        </div>
+
+    </main>
+
+</body>
+</html>

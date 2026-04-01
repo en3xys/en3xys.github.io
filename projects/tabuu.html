@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuu | Enes Çetin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="../img/logo.png">
+    <style>
+        :root {
+            --primary: #0077FF;
+            --dark: #2D2D2D;
+            --bg: #FFFFFF;
+            --gray: #F5F5F7;
+            --text: #555555;
+            --border: #EAEAEA;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg); color: var(--dark); line-height: 1.7; }
+        
+        /* Header & Navigation */
+        header { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 10px 10%; background: var(--bg); border-bottom: 1px solid var(--border);
+            position: sticky; top: 0; z-index: 100; min-height: 85px;
+        }
+        .logo { display: flex; align-items: center; text-decoration: none; }
+        .logo img { height: 50px; width: auto; transition: transform 0.2s ease; }
+        .logo:hover img { transform: scale(1.02); }
+
+        nav { display: flex; gap: 20px; white-space: nowrap; }
+        nav a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.95rem; transition: color 0.2s ease; }
+        nav a:hover { color: var(--primary); }
+
+        /* Main Content Structure */
+        main { padding: 50px 20px; max-width: 900px; margin: 0 auto; }
+        
+        .back-link { display: inline-block; margin-bottom: 30px; color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+        .back-link:hover { color: var(--primary); }
+
+        /* Project Header - Sağ Üst Buton Tasarımı İçin Güncellendi */
+        .project-header { 
+            display: flex; 
+            justify-content: space-between; /* Yeni: İçeriği sağa ve sola yayar */
+            align-items: center; /* Yeni: Öğeleri dikeyde ortalar */
+            gap: 25px; 
+            margin-bottom: 40px; 
+        }
+        /* Logo ve Başlık Bilgisini Sol Tarafta Tutan Yeni Kapsayıcı */
+        .project-header-left { 
+            display: flex; 
+            align-items: center; 
+            gap: 25px; 
+        }
+        .project-logo { 
+            width: 90px; 
+            height: 90px; 
+            border-radius: 18px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08); 
+            border: 1px solid var(--border); 
+            flex-shrink: 0; 
+        }
+        .project-title { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: flex-start; 
+        }
+        .project-title h1 { 
+            font-size: 2.2rem; 
+            color: var(--dark); 
+            margin-bottom: 5px; 
+            line-height: 1.2; 
+        }
+        .tech-stack { 
+            display: flex; 
+            gap: 10px; 
+            margin-top: 8px; 
+            flex-wrap: wrap; 
+        }
+        .tech-badge { 
+            background: var(--gray); 
+            color: var(--dark); 
+            font-size: 0.8rem; 
+            padding: 4px 12px; 
+            border-radius: 4px; 
+            font-weight: 600; 
+            border: 1px solid var(--border); 
+        }
+        
+        /* Play Store Button - Konumu Değiştirildi */
+        .play-store-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center; /* Mobilde ortalama için eklendi */
+            gap: 10px;
+            background-color: var(--dark); /* Koyu kurumsal bir renk */
+            color: #ffffff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            /* margin-top: 18px; -> Desktop için kaldırıldı */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            flex-shrink: 0; /* Butonun küçülmesini engeller */
+        }
+        .play-store-btn i { font-size: 1.2rem; }
+        .play-store-btn:hover { background-color: var(--primary); transform: translateY(-2px); }
+
+        /* Screenshot Gallery */
+        .gallery-container { 
+            display: flex; gap: 15px; overflow-x: auto; padding: 10px 0 20px 0; margin-bottom: 40px;
+            scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: #ccc transparent;
+        }
+        .gallery-container::-webkit-scrollbar { height: 8px; }
+        .gallery-container::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 4px; }
+        .gallery-item { 
+            flex: 0 0 auto; height: 450px; border-radius: 12px; 
+            scroll-snap-align: start; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid var(--border);
+            object-fit: cover;
+        }
+
+        /* Content Sections */
+        .content-section { margin-bottom: 40px; }
+        .content-section h2 { font-size: 1.4rem; margin-bottom: 15px; color: var(--dark); border-bottom: 2px solid var(--gray); padding-bottom: 8px; }
+        .content-section p { color: var(--text); font-size: 1.05rem; margin-bottom: 15px; }
+        .content-section ul { list-style-type: disc; padding-left: 20px; color: var(--text); font-size: 1.05rem; }
+        .content-section li { margin-bottom: 8px; }
+
+        @media (max-width: 768px) {
+            header { padding: 10px 5%; }
+            
+            /* Mobilde Üst Başlığı (Logo, Başlık, Buton) Alt Alta Dizer ve Ortalar */
+            .project-header { 
+                flex-direction: column; 
+                align-items: center; 
+                text-align: center; /* Yazıları ortalar */
+                gap: 20px; 
+            }
+            
+            /* Sol Taraftaki Grubu (Logo, Başlık Bilgisi) Mobilde Alt Alta Dizer */
+            .project-header-left { 
+                flex-direction: column; 
+                align-items: center; 
+                gap: 15px; 
+            }
+            
+            /* Teknolojileri Ortalar */
+            .tech-stack { justify-content: center; }
+            
+            /* Geri Dön Linkini Ortalar */
+            .back-link { display: block; text-align: center; margin-bottom: 20px; width: 100%; }
+
+            /* Başlığı ve Teknolojileri Birbirine Göre Ortalar, Metinleri Sol Hizalı Tutar */
+            .project-title { align-items: center; }
+            .content-section { text-align: left; } /* Metinleri sol hizalı tut, okunurluk için */
+            
+            .gallery-item { height: 350px; }
+            
+            /* Mobilde Butonu Ortalar ve Genişletir */
+            .play-store-btn {
+                width: 100%; /* Buton genişliğini mobilde artır */
+                max-width: 300px; /* Çok geniş olmasını engeller */
+                justify-content: center; /* İçeriği ortalar */
+                margin-top: 10px; /* Üstteki öğelerle arayı açar */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="../index.html" class="logo">
+            <img src="../img/logo.png" alt="Enes Çetin Logo">
+        </a>
+        <nav>
+            <a href="../index.html">Ana Sayfa</a>
+            <a href="../about.html">Hakkımda</a>
+            <a href="../contact.html">İletişim</a>
+        </nav>
+    </header>
+
+    <main>
+        <a href="../index.html" class="back-link">← Ana Sayfaya Dön</a>
+
+        <div class="project-header">
+            <div class="project-header-left">
+                <img src="tabuu/logo.jpg" alt="Tabuu Logo" class="project-logo">
+                <div class="project-title">
+                    <h1>Tabuu - 1200+ Kelime</h1>
+                    <div class="tech-stack">
+                        <span class="tech-badge">React Native</span>
+                        <span class="tech-badge">Expo</span>
+                        <span class="tech-badge">JSON Optimization</span>
+                    </div>
+                </div>
+            </div>
+            <a href="----buraya-link-gelecek----" target="_blank" class="play-store-btn header-action">
+                <i class="fab fa-google-play"></i> Play Store'da Gör
+            </a>
+        </div>
+
+        <div class="gallery-container">
+            <img src="tabuu/1.png" alt="Screenshot 1" class="gallery-item">
+            <img src="tabuu/2.png" alt="Screenshot 2" class="gallery-item">
+            <img src="tabuu/3.png" alt="Screenshot 3" class="gallery-item">
+            <img src="tabuu/4.png" alt="Screenshot 4" class="gallery-item">
+            <img src="tabuu/5.png" alt="Screenshot 5" class="gallery-item">
+        </div>
+
+        <div class="content-section">
+            <h2>Proje Hakkında</h2>
+            <p>Tabuu, klasik takım tabanlı kelime tahmin oyununu modern ve akıcı bir mobil arayüzle oyunculara sunan reklamsız bir parti oyunudur. Kullanıcıyı yormayan, tamamen oyun dinamiklerine odaklanmış yapısıyla internet bağlantısına ihtiyaç duymadan kesintisiz bir deneyim sağlar.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Anahtar Özellikler</h2>
+            <ul>
+                <li>Oyun esnasında tekrarı önlemek amacıyla özenle seçilmiş 1200'den fazla kelime ve yasaklı kelime kombinasyonu.</li>
+                <li>İnternet bağlantısı gerektirmeyen (offline) mimari ile her an oynanabilme esnekliği.</li>
+                <li>Takım isimleri, oyun süresi ve tur sayısı gibi parametrelerin tamamen kullanıcı tarafından özelleştirilebilmesi.</li>
+                <li>Süre bitimi veya doğru/pas bildirimlerinde kullanıcı etkileşimini artıran donanımsal haptik (titreşim) entegrasyonu.</li>
+                <li>Oyun odaklı, minimalist ve Android kurumsal kimliğine (koyu kırmızı tema) uygun arayüz tasarımı.</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Geliştirme Süreci ve Teknik Detaylar</h2>
+            <ul>
+                <li>Oyunun belkemiğini oluşturan 1200'den fazla ana kelime ve bunlara ait yasaklı kelime kombinasyonları; Python scriptleri ve Gemini API entegrasyonu kullanılarak üretilmiş, ardından performansı maksimize edecek şekilde optimize edilmiş bir JSON veritabanı olarak projeye dahil edilmiştir.</li>
+                <li>Uygulama, çapraz platform (cross-platform) geliştirme standartlarına uygun olarak <strong>React Native</strong> ve <strong>Expo</strong> ekosistemi kullanılarak inşa edildi.</li>
+                <li>Kapsamlı kelime verisi, anlık erişim hızını (read time) maksimize etmek ve cihaz belleğini (RAM) yormamak adına yerel olarak optimize edilmiş JSON yapısı üzerinden yönetildi.</li>
+                <li>Oyun içi medya varlıkları (ses efektleri ve görseller), derlenmiş uygulama boyutunu (.aab) en düşük seviyede tutacak şekilde optimize edildi.</li>
+            </ul>
+        </div>
+
+    </main>
+
+</body>
+</html>
