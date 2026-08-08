@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Sayfa Bulunamadı | Enes Çetin</title>
+    <meta name="description" content="Aradığınız sayfa bulunamadı.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/png" href="/img/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="/img/logo.png">
     <style>
         :root {
             --primary: #0077FF;
@@ -17,23 +19,49 @@
             --border: #EAEAEA;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
         body { background-color: var(--bg); color: var(--dark); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
         
         /* Header & Navigation */
         header { 
             display: flex; justify-content: space-between; align-items: center; 
-            padding: 10px 10%; background: var(--bg); box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+            padding: 10px 10%; background: var(--bg); border-bottom: 1px solid var(--border);
             position: sticky; top: 0; z-index: 100; min-height: 85px;
         }
         .logo { display: flex; align-items: center; text-decoration: none; }
-        .logo img { height: 50px; width: auto; transition: transform 0.3s ease; }
-        .logo:hover img { transform: scale(1.05); }
+        .logo img { height: 50px; width: auto; transition: transform 0.25s ease; }
+        .logo:hover img { transform: scale(1.03); }
 
         nav { display: flex; gap: 20px; white-space: nowrap; }
-        nav a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.95rem; transition: color 0.3s ease; }
+        nav a { 
+            text-decoration: none; 
+            color: var(--dark); 
+            font-weight: 600; 
+            font-size: 0.95rem; 
+            position: relative;
+            padding-bottom: 4px;
+            transition: color 0.25s ease; 
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.25s ease;
+            border-radius: 2px;
+        }
         nav a:hover { color: var(--primary); }
+        nav a:hover::after, nav a.active::after { width: 100%; }
+        nav a.active { color: var(--primary); }
 
         /* 404 Main Content */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
         main { 
             flex-grow: 1; 
             display: flex; 
@@ -42,6 +70,7 @@
             align-items: center; 
             text-align: center; 
             padding: 0 20px; 
+            animation: fadeInUp 0.4s ease-out forwards;
         }
         
         .error-code {
@@ -74,22 +103,103 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 1.05rem;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease;
+        }
+        .home-btn i {
+            transition: transform 0.25s ease;
         }
         .home-btn:hover { 
             background-color: var(--primary); 
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 119, 255, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 119, 255, 0.25);
+        }
+        .home-btn:hover i {
+            transform: scale(1.15);
+        }
+        .home-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            background-color: var(--bg);
+            padding: 35px 10%;
+            margin-top: 40px;
+        }
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            text-align: left;
+        }
+        .footer-copy {
+            font-size: 0.95rem;
+            color: var(--dark);
+        }
+        .footer-tagline {
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+        .footer-links {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .footer-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--gray);
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            border: 1px solid var(--border);
+        }
+        .footer-links a:hover {
+            background: var(--primary);
+            color: #ffffff;
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            box-shadow: 0 6px 14px rgba(0, 119, 255, 0.25);
         }
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             header { padding: 10px 5%; }
-            nav { gap: 12px; }
-            nav a { font-size: 0.85rem; }
-            .logo img { height: 45px; }
+            nav { gap: 16px; }
+            nav a { font-size: 0.95rem; }
+            .logo img { height: 50px; }
             .error-code { font-size: 6rem; }
             h1 { font-size: 1.8rem; }
+
+            footer {
+                padding: 30px 5%;
+            }
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 18px;
+            }
+            .footer-left {
+                align-items: center;
+                text-align: center;
+            }
+            .footer-links {
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -115,6 +225,22 @@
             <i class="fas fa-home"></i> Güvenli Bölgeye Dön
         </a>
     </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <p class="footer-copy">© 2026 <strong>Enes Çetin</strong>. Tüm hakları saklıdır.</p>
+                <p class="footer-tagline">Yazılım & Oyun Geliştirici • Bursa</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/en3xys" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/enes-%C3%A7etin-363b74324/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://play.google.com/store/apps/dev?id=6855907188560115347" target="_blank" rel="noopener noreferrer" aria-label="Google Play"><i class="fab fa-google-play"></i></a>
+                <a href="https://www.instagram.com/en3xys/?hl=tr" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:en3xys@gmail.com" aria-label="E-posta"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>

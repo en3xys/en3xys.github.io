@@ -4,9 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VocaPuzzle | Enes Çetin</title>
+    <meta name="description" content="VocaPuzzle - İngilizce kelime ezberleten, CEFR seviyeli ve çok oyunculu interaktif mobil kelime oyunu.">
+    <meta name="author" content="Enes Çetin">
+    <meta name="google-site-verification" content="TQxXKDguKToObDTY3gqACdXx5j2RQaTUSalGz2P1AHY">
+    <link rel="canonical" href="https://enescetin.net/projects/vocapuzzle.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://enescetin.net/projects/vocapuzzle.html">
+    <meta property="og:title" content="VocaPuzzle | Enes Çetin">
+    <meta property="og:description" content="VocaPuzzle - İngilizce kelime ezberleten, CEFR seviyeli ve çok oyunculu interaktif mobil kelime oyunu.">
+    <meta property="og:image" content="https://enescetin.net/projects/vocapuzzle/logo.jpg">
+    <meta property="og:locale" content="tr_TR">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://enescetin.net/projects/vocapuzzle.html">
+    <meta name="twitter:title" content="VocaPuzzle | Enes Çetin">
+    <meta name="twitter:description" content="VocaPuzzle - İngilizce kelime ezberleten, CEFR seviyeli ve çok oyunculu interaktif mobil kelime oyunu.">
+    <meta name="twitter:image" content="https://enescetin.net/projects/vocapuzzle/logo.jpg">
+
+    <!-- Schema.org Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "VocaPuzzle",
+      "operatingSystem": "Android",
+      "applicationCategory": "GameApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Enes Çetin",
+        "url": "https://enescetin.net"
+      },
+      "image": "https://enescetin.net/projects/vocapuzzle/logo.jpg",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=net.enescetin.vocapuzzle"
+    }
+    </script>
+
+    <link rel="icon" type="image/png" href="../img/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="../img/logo.png">
     <style>
         :root {
             --primary: #0077FF;
@@ -17,27 +60,82 @@
             --border: #EAEAEA;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg); color: var(--dark); line-height: 1.7; }
+        html { scroll-behavior: smooth; }
+        body { 
+            background-color: #FAFAFC;
+            background-image: 
+                radial-gradient(at 50% 0%, rgba(0, 119, 255, 0.08) 0px, transparent 60%),
+                radial-gradient(#e2e8f0 1.1px, transparent 1.1px);
+            background-size: 100% 100%, 24px 24px;
+            background-attachment: fixed;
+            color: var(--dark); 
+            line-height: 1.7; 
+        }
         
         /* Header & Navigation */
         header { 
             display: flex; justify-content: space-between; align-items: center; 
-            padding: 10px 10%; background: var(--bg); border-bottom: 1px solid var(--border);
+            padding: 10px 10%; background: rgba(255, 255, 255, 0.85); border-bottom: 1px solid var(--border);
             position: sticky; top: 0; z-index: 100; min-height: 85px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
         .logo { display: flex; align-items: center; text-decoration: none; }
-        .logo img { height: 50px; width: auto; transition: transform 0.2s ease; }
-        .logo:hover img { transform: scale(1.02); }
+        .logo img { height: 50px; width: auto; transition: transform 0.25s ease; }
+        .logo:hover img { transform: scale(1.03); }
 
         nav { display: flex; gap: 20px; white-space: nowrap; }
-        nav a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.95rem; transition: color 0.2s ease; }
+        nav a { 
+            text-decoration: none; 
+            color: var(--dark); 
+            font-weight: 600; 
+            font-size: 0.95rem; 
+            position: relative;
+            padding-bottom: 4px;
+            transition: color 0.25s ease; 
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.25s ease;
+            border-radius: 2px;
+        }
         nav a:hover { color: var(--primary); }
+        nav a:hover::after, nav a.active::after { width: 100%; }
+        nav a.active { color: var(--primary); }
 
         /* Main Content Structure */
-        main { padding: 50px 20px; max-width: 900px; margin: 0 auto; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(14px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        main { 
+            padding: 45px 20px; 
+            max-width: 920px; 
+            margin: 0 auto; 
+            animation: fadeInUp 0.4s ease-out forwards;
+        }
         
-        .back-link { display: inline-block; margin-bottom: 30px; color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
-        .back-link:hover { color: var(--primary); }
+        .back-link { 
+            display: inline-flex; 
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 25px; 
+            color: var(--text); 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 0.92rem; 
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        .back-link:hover { 
+            color: var(--primary); 
+            transform: translateX(-4px);
+        }
 
         /* Project Header */
         .project-header { 
@@ -45,20 +143,30 @@
             justify-content: space-between; 
             align-items: center; 
             gap: 25px; 
-            margin-bottom: 40px; 
+            margin-bottom: 30px; 
+            background: #ffffff;
+            border: 1px solid var(--border);
+            padding: 24px 28px;
+            border-radius: 18px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+            flex-wrap: wrap;
         }
         .project-header-left { 
             display: flex; 
             align-items: center; 
-            gap: 25px; 
+            gap: 22px; 
         }
         .project-logo { 
-            width: 90px; 
-            height: 90px; 
+            width: 85px; 
+            height: 85px; 
             border-radius: 18px; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08); 
+            box-shadow: 0 6px 14px rgba(0,0,0,0.08); 
             border: 1px solid var(--border); 
             flex-shrink: 0; 
+            transition: transform 0.3s ease;
+        }
+        .project-header:hover .project-logo {
+            transform: scale(1.04);
         }
         .project-title { 
             display: flex; 
@@ -66,25 +174,31 @@
             align-items: flex-start; 
         }
         .project-title h1 { 
-            font-size: 2.2rem; 
+            font-size: 2.1rem; 
             color: var(--dark); 
             margin-bottom: 5px; 
             line-height: 1.2; 
         }
         .tech-stack { 
             display: flex; 
-            gap: 10px; 
-            margin-top: 8px; 
+            gap: 8px; 
+            margin-top: 6px; 
             flex-wrap: wrap; 
         }
         .tech-badge { 
             background: var(--gray); 
             color: var(--dark); 
-            font-size: 0.8rem; 
-            padding: 4px 12px; 
-            border-radius: 4px; 
+            font-size: 0.78rem; 
+            padding: 4px 10px; 
+            border-radius: 6px; 
             font-weight: 600; 
             border: 1px solid var(--border); 
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+        .tech-badge:hover {
+            background-color: #eaf2ff;
+            color: var(--primary);
+            border-color: rgba(0, 119, 255, 0.25);
         }
 
         /* Play Store Button */
@@ -95,16 +209,55 @@
             gap: 10px;
             background-color: var(--dark); 
             color: #ffffff;
-            padding: 12px 20px;
-            border-radius: 8px;
+            padding: 12px 22px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: background-color 0.3s ease, transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease;
             flex-shrink: 0; 
         }
-        .play-store-btn i { font-size: 1.2rem; }
-        .play-store-btn:hover { background-color: var(--primary); transform: translateY(-2px); }
+        .play-store-btn i { 
+            font-size: 1.2rem; 
+            transition: transform 0.25s ease;
+        }
+        .play-store-btn:hover { 
+            background-color: var(--primary); 
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 16px rgba(0, 119, 255, 0.25);
+        }
+        .play-store-btn:hover i {
+            transform: scale(1.15) rotate(-5deg);
+        }
+        .play-store-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Project Specs Bar */
+        .specs-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 14px 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.02);
+        }
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.86rem;
+            color: var(--text);
+        }
+        .spec-item strong {
+            color: var(--dark);
+        }
+        .spec-item i {
+            color: var(--primary);
+        }
 
         /* Screenshot Gallery */
         .gallery-container { 
@@ -117,44 +270,295 @@
             flex: 0 0 auto; height: 450px; border-radius: 12px; 
             scroll-snap-align: start; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid var(--border);
             object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.14);
         }
 
         /* Content Sections */
-        .content-section { margin-bottom: 40px; }
-        .content-section h2 { font-size: 1.4rem; margin-bottom: 15px; color: var(--dark); border-bottom: 2px solid var(--gray); padding-bottom: 8px; }
-        .content-section p { color: var(--text); font-size: 1.05rem; margin-bottom: 15px; }
-        .content-section ul { list-style-type: disc; padding-left: 20px; color: var(--text); font-size: 1.05rem; }
+        .content-section { 
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 26px 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+        }
+        .content-section h2 { 
+            font-size: 1.35rem; 
+            color: var(--dark); 
+            margin-bottom: 14px; 
+            border-left: 4px solid var(--primary); 
+            padding-left: 10px; 
+        }
+        .content-section p { 
+            color: var(--text); 
+            margin-bottom: 14px; 
+            font-size: 0.98rem;
+            line-height: 1.68;
+        }
+        .content-section p:last-child { margin-bottom: 0; }
+        .content-section ul { list-style-position: inside; color: var(--text); font-size: 0.95rem; }
         .content-section li { margin-bottom: 8px; }
         .content-section strong { color: var(--dark); }
 
+        /* Features Cards Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-top: 18px;
+        }
+        .feature-card {
+            background: #fafbfc;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(0, 119, 255, 0.3);
+            box-shadow: 0 6px 16px rgba(0, 119, 255, 0.06);
+        }
+        .feature-icon {
+            width: 36px;
+            height: 36px;
+            background: #eaf2ff;
+            color: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        .feature-card h4 {
+            font-size: 0.98rem;
+            color: var(--dark);
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        .feature-card p {
+            color: var(--text);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+
+        /* Next/Prev Navigation Bar */
+        .project-nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-top: 45px;
+            padding-top: 25px;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+        .nav-proj-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            padding: 10px 18px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: all 0.2s ease;
+        }
+        .nav-proj-btn:hover {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 119, 255, 0.2);
+        }
+
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+        .lightbox-img-wrapper {
+            position: relative;
+            max-width: 90vw;
+            max-height: 88vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #lightbox-img {
+            max-width: 90vw;
+            max-height: 80vh;
+            border-radius: 14px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+            object-fit: contain;
+            transform: scale(0.95);
+            transition: transform 0.25s ease;
+        }
+        .lightbox.active #lightbox-img {
+            transform: scale(1);
+        }
+        .lightbox-counter {
+            margin-top: 12px;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            color: #ffffff;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.15);
+            transition: background-color 0.2s, transform 0.2s;
+            z-index: 1001;
+            user-select: none;
+        }
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+        .lightbox-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ffffff;
+            font-size: 22px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            transition: background 0.2s, transform 0.2s;
+            user-select: none;
+        }
+        .lightbox-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-50%) scale(1.1);
+        }
+        .lightbox-prev { left: 20px; }
+        .lightbox-next { right: 20px; }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            background-color: var(--bg);
+            padding: 35px 10%;
+            margin-top: 60px;
+        }
+        .footer-container {
+            max-width: 920px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .footer-copy {
+            font-size: 0.95rem;
+            color: var(--dark);
+        }
+        .footer-tagline {
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+        .footer-links {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .footer-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--gray);
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            border: 1px solid var(--border);
+        }
+        .footer-links a:hover {
+            background: var(--primary);
+            color: #ffffff;
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            box-shadow: 0 6px 14px rgba(0, 119, 255, 0.25);
+        }
+
         @media (max-width: 768px) {
             header { padding: 10px 5%; }
-            
-            .project-header { 
-                flex-direction: column; 
-                align-items: center; 
-                text-align: center; 
-                gap: 20px; 
+            nav { gap: 16px; }
+            nav a { font-size: 0.95rem; }
+            .logo img { height: 50px; }
+            main { padding: 30px 15px; }
+            .project-header { flex-direction: column; align-items: flex-start; gap: 18px; }
+            .play-store-btn { width: 100%; }
+            .gallery-item { height: 360px; }
+            .content-section { padding: 20px; }
+
+            footer {
+                padding: 30px 5%;
+                margin-top: 40px;
             }
-            
-            .project-header-left { 
-                flex-direction: column; 
-                align-items: center; 
-                gap: 15px; 
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 18px;
             }
-            
-            .tech-stack { justify-content: center; }
-            .back-link { display: block; text-align: center; margin-bottom: 20px; width: 100%; }
-            .project-title { align-items: center; }
-            .content-section { text-align: left; } 
-            
-            .gallery-item { height: 350px; }
-            
-            .play-store-btn {
-                width: 100%; 
-                max-width: 300px; 
-                justify-content: center; 
-                margin-top: 10px; 
+            .footer-left {
+                align-items: center;
+            }
+            .footer-links {
+                justify-content: center;
             }
         }
     </style>
@@ -173,7 +577,7 @@
     </header>
 
     <main>
-        <a href="../index.html" class="back-link">← Ana Sayfaya Dön</a>
+        <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Ana Sayfaya Dön</a>
 
         <div class="project-header">
             <div class="project-header-left">
@@ -188,9 +592,17 @@
                     </div>
                 </div>
             </div>
-            <a href="https://play.google.com/store/apps/details?id=net.enescetin.vocapuzzle" target="_blank" class="play-store-btn">
+            <a href="https://play.google.com/store/apps/details?id=net.enescetin.vocapuzzle" target="_blank" rel="noopener noreferrer" class="play-store-btn">
                 <i class="fab fa-google-play"></i> Play Store'da Gör
             </a>
+        </div>
+
+        <!-- Project Specs Bar -->
+        <div class="specs-bar">
+            <div class="spec-item"><i class="fas fa-mobile-alt"></i> Platform: <strong>Android</strong></div>
+            <div class="spec-item"><i class="fas fa-tags"></i> Kategori: <strong>Kelime & Bulmaca</strong></div>
+            <div class="spec-item"><i class="fas fa-code-branch"></i> Mimari: <strong>React Native (Expo)</strong></div>
+            <div class="spec-item"><i class="fas fa-check-circle"></i> Durum: <strong>Google Play'de Canlı</strong></div>
         </div>
 
         <div class="gallery-container">
@@ -206,51 +618,176 @@
         <div class="content-section">
             <h2>Proje Hakkında</h2>
             <p>VocaPuzzle, Avrupa Dil Standartları (CEFR A1-C1) çerçevesine uygun olarak geliştirilmiş, mobil cihazlar için tasarlanmış aşamalı bir İngilizce kelime geliştirme uygulamasıdır. Klasik ve sıkıcı kelime kartı ezberleme yöntemlerinin yerine, dairesel harf çarkı üzerinden anagram sözcükler türetme ve bu sözcükleri dinamik çapraz bulmaca matrislerine yerleştirme mekanizmasına dayanır.</p>
-            <p>Uygulama; 3.775 adedi aşkın kelimeden oluşan zengin veri havuzu, 1:1 Türkçe tanımları, detaylı anlam açıklamaları ve örnek cümle yapısıyla oyuncuların hem görsel hem de işitsel hafızasını destekler. Oyuncular, seviyeleri tamamladıkça farklı atmosferik temalara sahip diyarları keşfeder ve kelime dağarcıklarını aşamalı olarak genişletir.</p>
+            <p>Uygulama; 3.775 adedi aşkın kelimeden oluşan zengin veri havuzu, 1:1 Türkçe tanımları, detaylı anlam açıklamaları ve örnek cümle yapısıyla oyuncuların hem görsel hem de işitsel hafızasını destekler.</p>
         </div>
 
         <div class="content-section">
-            <h2>Anahtar Özellikler</h2>
-            <ul>
-                <li><strong>CEFR Standartlarında Zengin Veri Havuzu:</strong> A1, A2, B1, B2 ve C1 seviyelerinde sınıflandırılmış, 1:1 Türkçe karşılıkları ve örnek cümleleri içeren 3.775+ kelimelik veri seti.</li>
-                <li><strong>10 Tematik Diyar ve Kademeli Zorluk:</strong> Kutsal Kütüphane seviyesinden Zaman Tapınağı seviyesine kadar uzanan 10 farklı unsur teması ve 60 aşamalı seviye yapısı.</li>
-                <li><strong>Kesin Hedef Kelime Ölçeklemesi:</strong> İntra-realm döngülerinde Seviye 1-2 için 4 kelime, Seviye 3-4 için 5 kelime, Seviye 5-6 için 6 kelimelik katı kelime yerleşim kuralları.</li>
-                <li><strong>Çevrimdışı Sesli Okuma (TTS):</strong> İngilizce ve Türkçe kelimelerin doğal telaffuzlarını dinleme imkanı ve kişiselleştirilebilir okuma hızı (0.75x yavaş, 1.0x normal, 1.25x hızlı).</li>
-                <li><strong>Kişisel Kelime Defteri (Vocabulary Vault):</strong> Çözülen veya tekrar edilmek istenen kelimelerin tek tıkla kaydedilmesini ve arama yapılarak listelenmesini sağlayan profil defteri.</li>
-                <li><strong>Harf Çarkı Karıştırma (Shuffle):</strong> Harf çarkının merkezindeki buton aracılığıyla Fisher-Yates algoritması kullanılarak harflerin dinamik ve akıcı olarak yeniden dizilmesi.</li>
-                <li><strong>Gelişmiş İpucu Sistemleri:</strong> Türkçe anlam açıklaması sunan ipucu ve bulmaca üzerinde doğrudan harf açan destek butonları.</li>
-                <li><strong>Sessiz ve Akıcı Deneyim:</strong> Yanlış kelime denemelerinde rahatsız edici gürültülü hata seslerinden arındırılmış, modern karanlık mod arayüzü.</li>
-            </ul>
+            <h2>Öne Çıkan Özellikler</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
+                    <h4>CEFR Seviye Havuzu</h4>
+                    <p>A1'den C1'e kadar sınıflandırılmış, 1:1 Türkçe karşılıkları ve örnek cümleleriyle 3.775+ kelimelik zengin veri seti.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h4>10 Tematik Diyar</h4>
+                    <p>Kutsal Kütüphane'den Zaman Tapınağı'na uzanan 10 farklı atmosferik tema ve 60 aşamalı zorluk seviyesi.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-volume-up"></i></div>
+                    <h4>Sesli Telaffuz (TTS)</h4>
+                    <p>İngilizce ve Türkçe kelimelerin doğal telaffuzlarını 3 farklı hız ayarında (0.75x, 1.0x, 1.25x) dinleme desteği.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-book-bookmark"></i></div>
+                    <h4>Vocabulary Vault</h4>
+                    <p>Çözülen veya tekrar edilmek istenen kelimelerin kaydedilmesini ve aranabilmesini sağlayan kişisel kelime defteri.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-random"></i></div>
+                    <h4>Harf Çarkı Karıştırma</h4>
+                    <p>Fisher-Yates algoritmasıyla harf çarkının dinamik ve akıcı olarak yeniden dizilmesini sağlayan karıştırma sistemi.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h4>Akıllı İpucu Sistemi</h4>
+                    <p>Türkçe anlam açıklaması sunan ipuçları ve bulmaca üzerinde doğrudan harf açan dinamik destek butonları.</p>
+                </div>
+            </div>
         </div>
 
         <div class="content-section">
-            <h2>Geliştirme Süreci</h2>
-            <p>VocaPuzzle projesinin geliştirme süreci aşağıdaki ana aşamalar doğrultusunda yürütülmüştür:</p>
+            <h2>Geliştirme & Teknik Mimari</h2>
             <ul>
-                <li><strong>Pedagojik Veri Mimarisi ve Telifsiz İçerik Tasarımı:</strong> İngilizce ve Türkçe kelime listeleri standartlaştırılmış JSON veri yapısında birleştirilmiş, telif hakkı ihlali oluşturmayacak biçimde özgün tanımlar ve örnek cümleler hazırlanmıştır.</li>
-                <li><strong>Dinamik Çapraz Bulmaca ve Backtracking Algoritması:</strong> Veri havuzundaki kelimelerin matris üzerinde çakışma kurallarına göre otomatik yerleştirilmesi için özel bir Seviye Üreticisi (LevelGenerator) geliştirilmiştir. 1-hücrelik boşluk kuralları ve katı kelime sayısı eşleşmesi sağlanana kadar aday anahtar kelimelerin sınandığı döngü mekanizması kurgulanmıştır.</li>
-                <li><strong>Görsel Tasarım ve Ekran Düzenlemeleri:</strong> Ekran taşmalarını ve bileşen sıkışmalarını önlemek amacıyla 3 satırlı üst bilgi alanı (GameHeader) ve responsive ızgara hücre boyutlandırması uygulanmıştır. Tüm emojiler temizlenerek yüksek çözünürlüklü vektör ikon kütüphaneleri entegre edilmiş, 10 diyar için özel arka plan görselleri hazırlanmıştır.</li>
-                <li><strong>Güvenli Alan (Safe Area) ve Ses Altyapısı:</strong> Android status bar ve alt navigasyon çubuğuna taşmaları önlemek için güvenli alan yöneticisi entegre edilmiştir. Sentetik WAV ses işleme ve doğal sesli okuma servisleri performans odaklı olarak projeye dahil edilmiştir.</li>
-                <li><strong>CLI Test Paketleri ile Doğrulama:</strong> Tüm seviyelerin hedef kelime sayıları ve matris geçerlilikleri otomatik Node.js test scriptleri aracılığıyla 100% doğrulanmıştır.</li>
+                <li><strong>Pedagojik Veri Mimarisi:</strong> İngilizce ve Türkçe kelime listeleri standartlaştırılmış JSON yapısında birleştirilmiş, telifsiz özgün tanımlar hazırlanmıştır.</li>
+                <li><strong>Dinamik Seviye Üreticisi (LevelGenerator):</strong> Backtracking algoritması ile matris üzerindeki çakışma ve boşluk kurallarına göre bulmacalar dinamik üretilir.</li>
+                <li><strong>Durum Yönetimi:</strong> Zustand ve AsyncStorage ile yüksek performanslı, minimalist state yönetimi ve veri kalıcılığı.</li>
+                <li><strong>Platform:</strong> Android 15 (Target SDK 35, Compile SDK 35), Expo SDK 51 ve TypeScript ile tip güvenliği.</li>
             </ul>
         </div>
 
-        <div class="content-section">
-            <h2>Teknik Mimari</h2>
-            <ul>
-                <li><strong>Framework:</strong> React Native (Expo SDK 51)</li>
-                <li><strong>Programlama Dili:</strong> TypeScript</li>
-                <li><strong>Kullanıcı Arayüzü ve Animasyonlar:</strong> React Native Reanimated 3, React Native Gesture Handler, React Native SVG</li>
-                <li><strong>Vektör İkon Standardı:</strong> @expo/vector-icons (Ionicons, FontAwesome5, MaterialCommunityIcons)</li>
-                <li><strong>Ses Yönetimi:</strong> Expo Speech (TTS) ve Expo AV (Sentetik Ses Efektleri)</li>
-                <li><strong>Durum Yönetimi ve Kalıcılık:</strong> Zustand ve AsyncStorage</li>
-                <li><strong>Ekran Düzeni ve Güvenli Alan:</strong> react-native-safe-area-context</li>
-                <li><strong>Hedef Platform Yapılandırması:</strong> Android 15 (Target SDK 35, Compile SDK 35), Build Tools 35.0.0, expo-build-properties</li>
-                <li><strong>Paket ve Yayın Kimliği:</strong> net.enescetin.vocapuzzle (Version Code: 5)</li>
-            </ul>
+        <!-- Next/Prev Navigation Bar -->
+        <div class="project-nav-bar">
+            <a href="willpower.html" class="nav-proj-btn"><i class="fas fa-arrow-left"></i> Önceki: İrade Protokolü</a>
+            <a href="vocabuilder.html" class="nav-proj-btn">Sonraki: VocaBuilder 3000 <i class="fas fa-arrow-right"></i></a>
         </div>
 
     </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <p class="footer-copy">© 2026 <strong>Enes Çetin</strong>. Tüm hakları saklıdır.</p>
+                <p class="footer-tagline">Yazılım & Oyun Geliştirici • Bursa</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/en3xys" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/enes-%C3%A7etin-363b74324/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://play.google.com/store/apps/dev?id=6855907188560115347" target="_blank" rel="noopener noreferrer" aria-label="Google Play"><i class="fab fa-google-play"></i></a>
+                <a href="https://www.instagram.com/en3xys/?hl=tr" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:en3xys@gmail.com" aria-label="E-posta"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+        <span class="lightbox-close" aria-label="Kapat">&times;</span>
+        <button class="lightbox-btn lightbox-prev" aria-label="Önceki">&#10094;</button>
+        <button class="lightbox-btn lightbox-next" aria-label="Sonraki">&#10095;</button>
+        <div class="lightbox-img-wrapper">
+            <img id="lightbox-img" src="" alt="Büyütülmüş Ekran Görüntüsü">
+            <div id="lightbox-counter" class="lightbox-counter"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCounter = document.getElementById('lightbox-counter');
+            const closeBtn = document.querySelector('.lightbox-close');
+            const prevBtn = document.querySelector('.lightbox-prev');
+            const nextBtn = document.querySelector('.lightbox-next');
+
+            let currentIndex = 0;
+            const images = Array.from(galleryItems).map(item => item.src);
+
+            if (images.length === 0) return;
+
+            function updateLightbox(index) {
+                currentIndex = (index + images.length) % images.length;
+                lightboxImg.src = images[currentIndex];
+                lightboxCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+            }
+
+            function openLightbox(index) {
+                updateLightbox(index);
+                lightbox.classList.add('active');
+                lightbox.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                lightbox.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+            });
+
+            closeBtn.addEventListener('click', closeLightbox);
+            prevBtn.addEventListener('click', (e) => { e.stopPropagation(); updateLightbox(currentIndex - 1); });
+            nextBtn.addEventListener('click', (e) => { e.stopPropagation(); updateLightbox(currentIndex + 1); });
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox || e.target.classList.contains('lightbox-img-wrapper')) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') updateLightbox(currentIndex - 1);
+                if (e.key === 'ArrowRight') updateLightbox(currentIndex + 1);
+            });
+
+            let touchStartX = 0;
+            let touchEndX = 0;
+            let touchStartY = 0;
+            let touchEndY = 0;
+
+            lightbox.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
+            }, { passive: true });
+
+            lightbox.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                touchEndY = e.changedTouches[0].screenY;
+                handleSwipe();
+            }, { passive: true });
+
+            function handleSwipe() {
+                const diffX = touchEndX - touchStartX;
+                const diffY = touchEndY - touchStartY;
+                if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+                    if (diffX < 0) {
+                        updateLightbox(currentIndex + 1);
+                    } else {
+                        updateLightbox(currentIndex - 1);
+                    }
+                } else if (diffY > 80 && Math.abs(diffX) < 50) {
+                    closeLightbox();
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>

@@ -3,64 +3,519 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="TQxXKDguKToObDTY3gqACdXx5j2RQaTUSalGz2P1AHY" />
     <title>İletişim | Enes Çetin</title>
+    <meta name="description" content="Enes Çetin iletişim kanalları: E-posta, GitHub, LinkedIn, Google Play ve Instagram bağlantıları.">
+    <meta name="author" content="Enes Çetin">
+    <meta name="google-site-verification" content="TQxXKDguKToObDTY3gqACdXx5j2RQaTUSalGz2P1AHY">
+    <link rel="canonical" href="https://enescetin.net/contact.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://enescetin.net/contact.html">
+    <meta property="og:title" content="İletişim | Enes Çetin">
+    <meta property="og:description" content="Enes Çetin iletişim kanalları: E-posta, GitHub, LinkedIn, Google Play ve Instagram bağlantıları.">
+    <meta property="og:image" content="https://enescetin.net/img/LogomYatay.jpg">
+    <meta property="og:locale" content="tr_TR">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://enescetin.net/contact.html">
+    <meta name="twitter:title" content="İletişim | Enes Çetin">
+    <meta name="twitter:description" content="Enes Çetin iletişim kanalları: E-posta, GitHub, LinkedIn, Google Play ve Instagram bağlantıları.">
+    <meta name="twitter:image" content="https://enescetin.net/img/LogomYatay.jpg">
+
+    <!-- Schema.org Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "İletişim | Enes Çetin",
+      "url": "https://enescetin.net/contact.html",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Enes Çetin",
+        "email": "mailto:en3xys@gmail.com",
+        "url": "https://enescetin.net"
+      }
+    }
+    </script>
+
     <link rel="icon" type="image/png" href="img/logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --primary: #0077FF; --dark: #2D2D2D; --bg: #FFFFFF; --gray: #F5F5F7; --text: #555555; }
+        :root { 
+            --primary: #0077FF; 
+            --dark: #2D2D2D; 
+            --bg: #FFFFFF; 
+            --gray: #F5F5F7; 
+            --text: #555555; 
+            --border: #EAEAEA; 
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg); color: var(--dark); overflow-x: hidden; }
+        html { scroll-behavior: smooth; }
+        body { 
+            background-color: #FAFAFC;
+            background-image: 
+                radial-gradient(at 50% 0%, rgba(0, 119, 255, 0.08) 0px, transparent 60%),
+                radial-gradient(#e2e8f0 1.1px, transparent 1.1px);
+            background-size: 100% 100%, 24px 24px;
+            background-attachment: fixed;
+            color: var(--dark); 
+            line-height: 1.6; 
+            overflow-x: hidden; 
+        }
         
+        /* Header & Navigation */
         header { 
             display: flex; justify-content: space-between; align-items: center; 
-            padding: 10px 10%; background: var(--bg); box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+            padding: 10px 10%; background: rgba(255, 255, 255, 0.85); border-bottom: 1px solid var(--border);
             position: sticky; top: 0; z-index: 100; min-height: 85px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
-        .logo img { height: 50px; width: auto; }
+        .logo { display: flex; align-items: center; text-decoration: none; }
+        .logo img { height: 50px; width: auto; transition: transform 0.25s ease; }
+        .logo:hover img { transform: scale(1.03); }
+
         nav { display: flex; gap: 20px; white-space: nowrap; }
-        nav a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.95rem; }
-        nav a:hover, nav a.active { color: var(--primary); }
-
-        main { max-width: 800px; margin: 40px auto; padding: 0 20px; text-align: center; }
-        h1 { font-size: 2.2rem; margin-bottom: 30px; }
-        .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; }
-        .link-card { 
-            display: flex; align-items: center; gap: 12px; padding: 18px; 
-            background: var(--gray); border-radius: 12px; text-decoration: none; 
-            color: var(--dark); font-weight: 600; transition: 0.2s; 
+        nav a { 
+            text-decoration: none; 
+            color: var(--dark); 
+            font-weight: 600; 
+            font-size: 0.95rem; 
+            position: relative;
+            padding-bottom: 4px;
+            transition: color 0.25s ease; 
         }
-        .link-card:hover { transform: translateY(-3px); background: var(--primary); color: #fff; }
-        .link-card i { font-size: 20px; color: var(--primary); }
-        .link-card:hover i { color: #fff; }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.25s ease;
+            border-radius: 2px;
+        }
+        nav a:hover { color: var(--primary); }
+        nav a:hover::after, nav a.active::after { width: 100%; }
+        nav a.active { color: var(--primary); }
 
-        @media (max-width: 480px) {
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(14px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        main { 
+            max-width: 860px; 
+            margin: 45px auto; 
+            padding: 0 25px; 
+            min-height: calc(100vh - 280px); 
+            animation: fadeInUp 0.4s ease-out forwards;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .contact-badge {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0, 119, 255, 0.08);
+        }
+        .contact-header h1 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+        .contact-header p {
+            color: var(--text);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Featured Email Card */
+        .email-feature-card {
+            background: linear-gradient(135deg, #0077FF 0%, #0055cc 100%);
+            border-radius: 20px;
+            padding: 35px;
+            color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 12px 30px rgba(0, 119, 255, 0.28);
+            margin-bottom: 35px;
+            position: relative;
+            overflow: hidden;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .email-feature-card::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -10%;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+        }
+        .email-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        .email-icon-box {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            backdrop-filter: blur(5px);
+        }
+        .email-text h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .email-text p {
+            font-size: 0.92rem;
+            opacity: 0.9;
+        }
+        .email-btn {
+            background: #ffffff;
+            color: var(--primary);
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+            z-index: 2;
+        }
+        .email-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+
+        /* Social / Channel Cards Grid */
+        .channels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 35px;
+        }
+        .channel-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            text-decoration: none;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+        .channel-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+        }
+        .channel-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            transition: transform 0.25s ease;
+        }
+        .channel-card:hover .channel-icon {
+            transform: scale(1.12);
+        }
+        .icon-github { background: #f1f5f9; color: #181717; }
+        .icon-linkedin { background: #e0f2fe; color: #0a66c2; }
+        .icon-play { background: #ecfdf5; color: #01875f; }
+        .icon-instagram { background: #fdf2f8; color: #e1306c; }
+
+        .channel-info h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 3px;
+            color: var(--dark);
+        }
+        .channel-info span {
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+        .channel-arrow {
+            margin-left: auto;
+            color: #cbd5e1;
+            font-size: 1rem;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+        .channel-card:hover .channel-arrow {
+            transform: translateX(4px);
+            color: var(--primary);
+        }
+
+        /* Availability Note */
+        .info-strip {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.88rem;
+            color: var(--text);
+            flex-wrap: wrap;
+            gap: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        .info-strip-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .info-strip-item i {
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            background-color: var(--bg);
+            padding: 35px 10%;
+            margin-top: 60px;
+        }
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            text-align: left;
+        }
+        .footer-copy {
+            font-size: 0.95rem;
+            color: var(--dark);
+        }
+        .footer-tagline {
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+        .footer-links {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .footer-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--gray);
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            border: 1px solid var(--border);
+        }
+        .footer-links a:hover {
+            background: var(--primary);
+            color: #ffffff;
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            box-shadow: 0 6px 14px rgba(0, 119, 255, 0.25);
+        }
+
+        @media (max-width: 768px) {
             header { padding: 10px 5%; }
-            nav { gap: 12px; }
-            nav a { font-size: 0.85rem; }
-            .logo img { height: 45px; }
+            nav { gap: 16px; }
+            nav a { font-size: 0.95rem; }
+            .logo img { height: 50px; }
+            main { padding: 0 15px; margin: 30px auto; }
+            .contact-header h1 { font-size: 2rem; }
+            .email-feature-card {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 26px 20px;
+            }
+            .email-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .info-strip {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            footer {
+                padding: 30px 5%;
+                margin-top: 40px;
+            }
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 18px;
+            }
+            .footer-left {
+                align-items: center;
+                text-align: center;
+            }
+            .footer-links {
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <a href="index.html" class="logo"><img src="img/logo.png" alt="Logo"></a>
+        <a href="index.html" class="logo">
+            <img src="img/logo.png" alt="Enes Çetin Logo">
+        </a>
         <nav>
             <a href="index.html">Ana Sayfa</a>
             <a href="about.html">Hakkımda</a>
             <a href="contact.html" class="active">İletişim</a>
         </nav>
     </header>
+
     <main>
-        <h1>Bana Ulaşın</h1>
-        <div class="links-grid">
-            <a href="mailto:en3xys@gmail.com" class="link-card"><i class="fas fa-envelope"></i><span>en3xys@gmail.com</span></a>
-            <a href="https://github.com/en3xys" target="_blank" class="link-card"><i class="fab fa-github"></i><span>GitHub</span></a>
-            <a href="https://www.linkedin.com/in/enes-%C3%A7etin-363b74324/" target="_blank" class="link-card"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
-            <a href="https://play.google.com/store/apps/dev?id=6855907188560115347" target="_blank" class="link-card"><i class="fab fa-google-play"></i><span>Play Store</span></a>
-            <a href="https://www.instagram.com/en3xys/?hl=tr" target="_blank" class="link-card"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+        <div class="contact-header">
+            <div class="contact-badge">
+                <i class="fas fa-paper-plane"></i> İletişime Geçin
+            </div>
+            <h1>Bana Ulaşın</h1>
+            <p>Projelerim, iş birliği teklifleri, oyun fikirleri veya merak ettikleriniz için dilediğiniz kanaldan bağlantı kurabilirsiniz.</p>
+        </div>
+
+        <!-- Featured Email Box -->
+        <div class="email-feature-card">
+            <div class="email-left">
+                <div class="email-icon-box">
+                    <i class="fas fa-envelope-open-text"></i>
+                </div>
+                <div class="email-text">
+                    <h3>Doğrudan E-posta Gönderin</h3>
+                    <p>en3xys@gmail.com</p>
+                </div>
+            </div>
+            <a href="mailto:en3xys@gmail.com" class="email-btn">
+                <i class="fas fa-paper-plane"></i> Mail Gönder
+            </a>
+        </div>
+
+        <!-- Platform Channels Grid -->
+        <div class="channels-grid">
+            <a href="https://github.com/en3xys" target="_blank" rel="noopener noreferrer" class="channel-card">
+                <div class="channel-icon icon-github">
+                    <i class="fab fa-github"></i>
+                </div>
+                <div class="channel-info">
+                    <h3>GitHub</h3>
+                    <span>Açık kaynak depolar & kodlar</span>
+                </div>
+                <div class="channel-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/enes-%C3%A7etin-363b74324/" target="_blank" rel="noopener noreferrer" class="channel-card">
+                <div class="channel-icon icon-linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+                <div class="channel-info">
+                    <h3>LinkedIn</h3>
+                    <span>Profesyonel kariyer & ağ</span>
+                </div>
+                <div class="channel-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <a href="https://play.google.com/store/apps/dev?id=6855907188560115347" target="_blank" rel="noopener noreferrer" class="channel-card">
+                <div class="channel-icon icon-play">
+                    <i class="fab fa-google-play"></i>
+                </div>
+                <div class="channel-info">
+                    <h3>Google Play</h3>
+                    <span>Yayınlanan mobil uygulamalar</span>
+                </div>
+                <div class="channel-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <a href="https://www.instagram.com/en3xys/?hl=tr" target="_blank" rel="noopener noreferrer" class="channel-card">
+                <div class="channel-icon icon-instagram">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <div class="channel-info">
+                    <h3>Instagram</h3>
+                    <span>Kişisel profil & paylaşımlar</span>
+                </div>
+                <div class="channel-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+        </div>
+
+        <!-- Quick Availability Info Strip -->
+        <div class="info-strip">
+            <div class="info-strip-item">
+                <i class="fas fa-bolt"></i>
+                <span>Genellikle 24 saat içinde yanıt veriyorum</span>
+            </div>
+            <div class="info-strip-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Bursa, Türkiye (GMT+3)</span>
+            </div>
         </div>
     </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <p class="footer-copy">© 2026 <strong>Enes Çetin</strong>. Tüm hakları saklıdır.</p>
+                <p class="footer-tagline">Yazılım & Oyun Geliştirici • Bursa</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/en3xys" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/enes-%C3%A7etin-363b74324/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://play.google.com/store/apps/dev?id=6855907188560115347" target="_blank" rel="noopener noreferrer" aria-label="Google Play"><i class="fab fa-google-play"></i></a>
+                <a href="https://www.instagram.com/en3xys/?hl=tr" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:en3xys@gmail.com" aria-label="E-posta"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

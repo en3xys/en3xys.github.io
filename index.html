@@ -1,23 +1,50 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <link rel="canonical" href="https://enescetin.net/" />
-    <meta charset="UTF-8" />
-      <title>Enes Çetin | Yazılım & Oyun Geliştirici</title>
-      <meta name="description" content="Enes Çetin - Kişisel web sitesi, yazılım projeleri ve portfolyo." />
-      <meta name="author" content="Enes Çetin" />
-      <!-- Social Media Preview (Open Graph) -->
-      <meta property="og:title" content="Enes Çetin" />
-      <meta property="og:description" content="Kişisel web sitesi ve yazılım portfolyosu." />
-      <meta property="og:url" content="https://enescetin.net" />
-
-
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="TQxXKDguKToObDTY3gqACdXx5j2RQaTUSalGz2P1AHY" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>Enes Çetin | Yazılım & Oyun Geliştirici</title>
+    <meta name="description" content="Enes Çetin - Kişisel web sitesi, React Native, Unity ve modern mobil/web yazılım projeleri portfolyosu.">
+    <meta name="author" content="Enes Çetin">
+    <meta name="google-site-verification" content="TQxXKDguKToObDTY3gqACdXx5j2RQaTUSalGz2P1AHY">
+    <link rel="canonical" href="https://enescetin.net/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://enescetin.net/">
+    <meta property="og:title" content="Enes Çetin | Yazılım & Oyun Geliştirici">
+    <meta property="og:description" content="Enes Çetin - Kişisel web sitesi, React Native, Unity ve modern mobil/web yazılım projeleri portfolyosu.">
+    <meta property="og:image" content="https://enescetin.net/img/LogomYatay.jpg">
+    <meta property="og:locale" content="tr_TR">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://enescetin.net/">
+    <meta name="twitter:title" content="Enes Çetin | Yazılım & Oyun Geliştirici">
+    <meta name="twitter:description" content="Enes Çetin - Kişisel web sitesi, React Native, Unity ve modern mobil/web yazılım projeleri portfolyosu.">
+    <meta name="twitter:image" content="https://enescetin.net/img/LogomYatay.jpg">
+
+    <!-- Schema.org Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Enes Çetin",
+      "jobTitle": "Yazılım & Oyun Geliştirici",
+      "url": "https://enescetin.net",
+      "image": "https://enescetin.net/img/logo.png",
+      "sameAs": [
+        "https://github.com/en3xys",
+        "https://www.linkedin.com/in/enes-%C3%A7etin-363b74324/",
+        "https://play.google.com/store/apps/dev?id=6855907188560115347",
+        "https://www.instagram.com/en3xys/?hl=tr"
+      ]
+    }
+    </script>
+
     <link rel="icon" type="image/png" href="img/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #0077FF;
@@ -25,39 +52,363 @@
             --bg: #FFFFFF;
             --gray: #F5F5F7;
             --text: #555555;
+            --border: #EAEAEA;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg); color: var(--dark); line-height: 1.6; }
+        html { scroll-behavior: smooth; }
+        body { 
+            background-color: #FAFAFC;
+            background-image: 
+                radial-gradient(at 50% 0%, rgba(0, 119, 255, 0.08) 0px, transparent 60%),
+                radial-gradient(#e2e8f0 1.1px, transparent 1.1px);
+            background-size: 100% 100%, 24px 24px;
+            background-attachment: fixed;
+            color: var(--dark); 
+            line-height: 1.6; 
+        }
         
         /* Header & Navigation */
         header { 
             display: flex; justify-content: space-between; align-items: center; 
-            padding: 10px 10%; background: var(--bg); box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+            padding: 10px 10%; background: rgba(255, 255, 255, 0.85); border-bottom: 1px solid var(--border);
             position: sticky; top: 0; z-index: 100; min-height: 85px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
         .logo { display: flex; align-items: center; text-decoration: none; }
-        .logo img { height: 50px; width: auto; transition: transform 0.3s ease; }
-        .logo:hover img { transform: scale(1.05); }
+        .logo img { height: 50px; width: auto; transition: transform 0.25s ease; }
+        .logo:hover img { transform: scale(1.03); }
 
         nav { display: flex; gap: 20px; white-space: nowrap; }
-        nav a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.95rem; transition: color 0.3s ease; }
-        nav a:hover, nav a.active { color: var(--primary); }
+        nav a { 
+            text-decoration: none; 
+            color: var(--dark); 
+            font-weight: 600; 
+            font-size: 0.95rem; 
+            position: relative;
+            padding-bottom: 4px;
+            transition: color 0.25s ease; 
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.25s ease;
+            border-radius: 2px;
+        }
+        nav a:hover { color: var(--primary); }
+        nav a:hover::after, nav a.active::after { width: 100%; }
+        nav a.active { color: var(--primary); }
 
-        /* Main Content Structure */
-        main { padding: 60px 20px; max-width: 1100px; margin: 0 auto; }
+        /* Main Content Structure with Entry Animation */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        main { 
+            padding: 60px 20px; 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            animation: fadeInUp 0.4s ease-out forwards;
+        }
         
         /* Hero Section */
-        .hero { text-align: center; margin-bottom: 70px; }
-        .badge { background: var(--gray); padding: 8px 18px; border-radius: 50px; font-weight: 600; color: var(--primary); display: inline-block; margin-bottom: 20px; font-size: 0.9rem; }
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+        .hero { text-align: center; margin-bottom: 60px; }
+        .badge { 
+            background: #ffffff; 
+            padding: 8px 18px; 
+            border-radius: 50px; 
+            font-weight: 600; 
+            color: var(--primary); 
+            display: inline-block; 
+            margin-bottom: 18px; 
+            font-size: 0.9rem; 
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0, 119, 255, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(0, 119, 255, 0.16);
+        }
+        .hero h1 { font-size: 3.1rem; margin-bottom: 12px; letter-spacing: -0.5px; }
         .hero h1 span { color: var(--primary); }
-        .hero p.subtitle { font-size: 1.15rem; color: var(--text); max-width: 650px; margin: 0 auto; }
+        .hero p.subtitle { font-size: 1.15rem; color: var(--text); max-width: 680px; margin: 0 auto 20px auto; line-height: 1.65; }
 
-        /* Projects Grid */
+        /* Hero Quick Stats */
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin: 0 auto 26px auto;
+            flex-wrap: wrap;
+        }
+        .stat-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            color: var(--dark);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .stat-pill i {
+            color: var(--primary);
+        }
+        .stat-pill:hover {
+            transform: translateY(-2px);
+            border-color: rgba(0, 119, 255, 0.35);
+            box-shadow: 0 4px 12px rgba(0, 119, 255, 0.08);
+        }
+
+        /* Hero Action Buttons */
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            margin-top: 5px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            user-select: none;
+        }
+        .btn-primary {
+            background-color: var(--primary);
+            color: #ffffff;
+            border: 1px solid var(--primary);
+            box-shadow: 0 4px 14px rgba(0, 119, 255, 0.25);
+        }
+        .btn-primary:hover {
+            background-color: #0066dd;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(0, 119, 255, 0.38);
+        }
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+        .btn-secondary {
+            background-color: #ffffff;
+            color: var(--dark);
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .btn-secondary:hover {
+            background-color: var(--gray);
+            color: var(--primary);
+            border-color: rgba(0, 119, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.07);
+        }
+        .btn-secondary:active {
+            transform: translateY(0);
+        }
+
+        /* Projects Grid (3-column on desktop for perfect 6-slot balance) */
         .projects-grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 40px; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 35px; 
+            scroll-margin-top: 105px;
+        }
+
+        /* 2-Span Teaser Card (Fishing Store Simulator) */
+        .teaser-card-span {
+            grid-column: span 2;
+            background: linear-gradient(135deg, #091322 0%, #0d223f 50%, #081528 100%);
+            border-radius: 16px;
+            padding: 30px 32px;
+            border: 1px solid rgba(0, 195, 255, 0.25);
+            box-shadow: 0 8px 25px rgba(2, 18, 44, 0.25);
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+        }
+        .teaser-card-span:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 36px rgba(0, 119, 255, 0.28), 0 0 0 1px rgba(0, 195, 255, 0.45);
+        }
+        .teaser-card-span::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -20%;
+            width: 380px;
+            height: 380px;
+            background: radial-gradient(circle, rgba(0, 195, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .teaser-top {
+            position: relative;
+            z-index: 2;
+        }
+        .teaser-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .teaser-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 230, 153, 0.12);
+            color: #00e699;
+            border: 1px solid rgba(0, 230, 153, 0.35);
+            padding: 5px 13px;
+            border-radius: 30px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+        }
+        .pulse-dot {
+            width: 7px;
+            height: 7px;
+            background-color: #00e699;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #00e699;
+            animation: pulseAnim 1.8s infinite;
+        }
+        @keyframes pulseAnim {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 230, 153, 0.7); }
+            70% { transform: scale(1.15); box-shadow: 0 0 0 7px rgba(0, 230, 153, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 230, 153, 0); }
+        }
+        .teaser-engine {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #cbd5e1;
+            padding: 5px 12px;
+            border-radius: 8px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .teaser-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+            letter-spacing: -0.3px;
+            background: linear-gradient(120deg, #ffffff 30%, #70c4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .teaser-tagline {
+            color: #38bdf8;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .teaser-desc {
+            color: #cbd5e1;
+            font-size: 0.92rem;
+            line-height: 1.62;
+            margin-bottom: 16px;
+        }
+        .teaser-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 2;
+        }
+        .teaser-pill {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #f1f5f9;
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+        .teaser-pill:hover {
+            background: rgba(0, 119, 255, 0.25);
+            border-color: rgba(0, 195, 255, 0.5);
+        }
+        .teaser-pill i {
+            color: #38bdf8;
+        }
+        .teaser-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            padding-top: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+            position: relative;
+            z-index: 2;
+        }
+        .steam-badge-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #171a21 0%, #1b2838 100%);
+            color: #66c0f4;
+            border: 1px solid rgba(102, 192, 244, 0.4);
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            user-select: none;
+            transition: all 0.25s ease;
+        }
+        .steam-badge-btn i {
+            font-size: 1.15rem;
+        }
+        .steam-badge-btn:hover {
+            border-color: #66c0f4;
+            box-shadow: 0 6px 20px rgba(102, 192, 244, 0.35);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        .teaser-note {
+            font-size: 0.82rem;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .teaser-note i {
+            color: #fbbf24;
         }
 
         /* Project Card Styling */
@@ -65,68 +416,74 @@
             background: var(--bg); 
             border-radius: 16px; 
             box-shadow: 0 4px 20px rgba(0,0,0,0.06); 
-            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
             text-decoration: none; 
             display: flex; 
             flex-direction: column;
-            position: relative; /* Bu sayede logo kartın içinde serbestçe yerleşecek */
+            position: relative;
+            border: 1px solid var(--border);
         }
         .project-card:hover { 
             transform: translateY(-8px); 
-            box-shadow: 0 15px 30px rgba(0,0,0,0.12); 
+            box-shadow: 0 16px 32px rgba(0,0,0,0.12); 
+        }
+        .project-card:active {
+            transform: translateY(-4px) scale(0.99);
         }
 
         /* Card Image Area */
         .project-image-wrapper { 
             height: 200px; 
             border-radius: 16px 16px 0 0; 
-            overflow: hidden; /* Resmi köşelerden keser, taşırmaz */
+            overflow: hidden; 
             background-color: var(--gray);
         }
         .project-screenshot { 
             width: 100%; 
             height: 100%; 
             object-fit: cover; 
-            transition: transform 0.5s ease; 
+            transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1); 
         }
         .project-card:hover .project-screenshot { 
-            transform: scale(1.05); 
+            transform: scale(1.04); 
         }
         
-        /* Floating Logo Overlay (Çerçevenin Dışına Alındı) */
+        /* Floating Logo Overlay */
         .project-logo { 
             position: absolute; 
-            top: 167px; /* 200px resim boyu eksi logonun yarısı (yaklaşık 33px) */
+            top: 167px; 
             left: 20px; 
             width: 65px; 
             height: 65px; 
             border-radius: 14px; 
-            border: 4px solid var(--bg); 
-            background-color: #fff; 
-            object-fit: cover; 
             box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
-            z-index: 10; 
+            border: 3px solid var(--bg); 
+            background-color: var(--bg); 
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover .project-logo {
+            transform: translateY(-3px);
         }
 
-        /* Card Text Info */
+        /* Content Area */
         .project-info { 
-            padding: 40px 20px 25px; 
+            padding: 45px 25px 25px 25px; 
             display: flex; 
             flex-direction: column; 
             flex-grow: 1; 
         }
         .project-title { 
-            font-size: 1.35rem; 
+            font-size: 1.25rem; 
+            margin-bottom: 8px; 
             color: var(--dark); 
-            margin-bottom: 10px; 
-            font-weight: 800; 
+            font-weight: 700;
         }
         .project-desc { 
             color: var(--text); 
-            font-size: 0.95rem; 
+            font-size: 0.9rem; 
             margin-bottom: 20px; 
-            line-height: 1.5; 
             flex-grow: 1; 
+            line-height: 1.5; 
         }
         .project-tags { 
             display: flex; 
@@ -140,16 +497,116 @@
             padding: 5px 12px; 
             border-radius: 6px; 
             font-weight: 600; 
+            border: 1px solid var(--border);
+            transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+        }
+        .project-card:hover .tag {
+            background-color: #eaf2ff;
+            color: var(--primary);
+            border-color: rgba(0, 119, 255, 0.25);
         }
 
-        /* Mobile Responsiveness */
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            background-color: var(--bg);
+            padding: 35px 10%;
+            margin-top: 70px;
+        }
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .footer-copy {
+            font-size: 0.95rem;
+            color: var(--dark);
+        }
+        .footer-tagline {
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+        .footer-links {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .footer-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--gray);
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            border: 1px solid var(--border);
+        }
+        .footer-links a:hover {
+            background: var(--primary);
+            color: #ffffff;
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            box-shadow: 0 6px 14px rgba(0, 119, 255, 0.25);
+        }
+
+        /* Mobile & Tablet Responsiveness */
+        @media (max-width: 1024px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+            .teaser-card-span {
+                grid-column: span 2;
+            }
+        }
         @media (max-width: 768px) {
             header { padding: 10px 5%; }
-            nav { gap: 12px; }
-            nav a { font-size: 0.85rem; }
+            nav { gap: 16px; }
+            nav a { font-size: 0.95rem; }
+            .hero { margin-bottom: 45px; }
             .hero h1 { font-size: 2.2rem; }
-            .logo img { height: 45px; }
-            .projects-grid { gap: 30px; }
+            .logo img { height: 50px; }
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            .teaser-card-span {
+                grid-column: span 1;
+                padding: 24px 20px;
+            }
+            .teaser-title { font-size: 1.55rem; }
+            .teaser-footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            footer {
+                padding: 30px 5%;
+                margin-top: 40px;
+            }
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 18px;
+            }
+            .footer-left {
+                align-items: center;
+            }
+            .footer-links {
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -171,9 +628,62 @@
             <div class="badge">🚀 Yazılım & Oyun Geliştirici</div>
             <h1>Merhaba, Ben <span>Enes Çetin</span></h1>
             <p class="subtitle">Bursa Teknik Üniversitesi'nde Bilgisayar Mühendisliği öğrencisiyim. Mobilden masaüstüne, fikirleri koda döküyorum. İşte geliştirdiğim bazı uygulamalar ve oyunlar.</p>
+
+            <div class="hero-stats">
+                <div class="stat-pill"><i class="fas fa-graduation-cap"></i> Bursa Teknik Üniversitesi</div>
+                <div class="stat-pill"><i class="fas fa-gamepad"></i> 4+ Yayınlanan Proje</div>
+                <div class="stat-pill"><i class="fas fa-map-marker-alt"></i> Bursa, Türkiye</div>
+            </div>
+
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary"><i class="fas fa-arrow-down"></i> Projeleri Keşfet</a>
+                <a href="contact.html" class="btn btn-secondary"><i class="fas fa-envelope"></i> İletişime Geç</a>
+            </div>
         </section>
 
-        <section class="projects-grid">
+        <section class="projects-grid" id="projects">
+
+            <!-- 2-COLUMN SPOTLIGHT TEASER: Fishing Store Simulator -->
+            <div class="teaser-card-span">
+                <div class="teaser-top">
+                    <div class="teaser-header">
+                        <div class="teaser-status">
+                            <span class="pulse-dot"></span> Aktif Geliştirme Aşamasında
+                        </div>
+                        <div class="teaser-engine">
+                            <i class="fas fa-cube"></i> Unity Engine • C#
+                        </div>
+                    </div>
+
+                    <h2 class="teaser-title">Fishing Store Simulator</h2>
+                    <div class="teaser-tagline">
+                        <i class="fas fa-store"></i> Co-op Balık Av Malzemeleri & Dükkan Yönetimi Simülasyonu
+                    </div>
+
+                    <p class="teaser-desc">
+                        Arkadaşlarınızla birlikte sıfırdan kendi balık av malzemeleri dükkanınızı kurun ve genişletin. Oltalardan makinelere, sahte yemlerden profesyonel kıyı ekipmanlarına kadar yüzlerce ürünü tedarik edin, rafları dizin, dükkanınızı dekore edin ve müşterilerin taleplerini karşılayarak kasabanın en popüler balıkçılık merkezine dönüşün!
+                    </p>
+                </div>
+
+                <div class="teaser-bottom">
+                    <div class="teaser-tags">
+                        <span class="teaser-pill"><i class="fab fa-steam"></i> Steam</span>
+                        <span class="teaser-pill"><i class="fas fa-users"></i> Co-op (Çok Oyunculu)</span>
+                        <span class="teaser-pill"><i class="fas fa-fish"></i> Av & Olta Ekipmanları</span>
+                        <span class="teaser-pill"><i class="fas fa-cash-register"></i> Dükkan Yönetimi</span>
+                        <span class="teaser-pill"><i class="fas fa-chart-line"></i> Tycoon / Simülasyon</span>
+                    </div>
+
+                    <div class="teaser-footer">
+                        <div class="steam-badge-btn">
+                            <i class="fab fa-steam"></i> Steam İstek Listesi Pek Yakında
+                        </div>
+                        <div class="teaser-note">
+                            <i class="fas fa-tools"></i> Görseller & fragman yakında paylaşılacaktır.
+                        </div>
+                    </div>
+                </div>
+            </div>
             
             <a href="projects/vocapuzzle.html" class="project-card">
                 <div class="project-image-wrapper">
@@ -241,6 +751,22 @@
 
         </section>
     </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <p class="footer-copy">© 2026 <strong>Enes Çetin</strong>. Tüm hakları saklıdır.</p>
+                <p class="footer-tagline">Yazılım & Oyun Geliştirici • Bursa</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/en3xys" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/enes-%C3%A7etin-363b74324/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://play.google.com/store/apps/dev?id=6855907188560115347" target="_blank" rel="noopener noreferrer" aria-label="Google Play"><i class="fab fa-google-play"></i></a>
+                <a href="https://www.instagram.com/en3xys/?hl=tr" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:en3xys@gmail.com" aria-label="E-posta"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
