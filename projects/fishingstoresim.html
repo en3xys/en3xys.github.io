@@ -4,36 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fishing Store Simulator | Enes Çetin</title>
-    <meta name="description" content="Fishing Store Simulator - Unity (URP) ve Steam üzerinden 4 kişiye kadar tam eş zamanlı (Co-op) çok oyunculu birinci şahıs dükkan yönetimi ve balıkçılık simülasyonu.">
+    <meta name="description" content="Fishing Store Simulator - Kendi balık av malzemeleri dükkanını sıfırdan kurup işlettiğin, 1-4 kişi eşli (co-op) birinci şahıs yönetim simülasyonu.">
     <meta name="author" content="Enes Çetin">
     <meta name="google-site-verification" content="TQxXKDguKToObDTY3gqACdXx5j2RQaTUSalGz2P1AHY">
     <link rel="canonical" href="https://enescetin.net/projects/fishingstoresim.html">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://enescetin.net/projects/fishingstoresim.html">
     <meta property="og:title" content="Fishing Store Simulator | Enes Çetin">
-    <meta property="og:description" content="Steam üzerinden 4 kişiye kadar Co-op çok oyunculu birinci şahıs dükkan yönetimi ve balıkçılık simülasyonu.">
-    <meta property="og:image" content="https://enescetin.net/projects/fishingstoresim/1.png">
+    <meta property="og:description" content="Kendi balıkçılık mağazanı sıfırdan kur ve işlet! 1-4 kişi Co-op balık av malzemeleri dükkan simülasyonu.">
+    <meta property="og:image" content="https://enescetin.net/blog/images/fishingstoresim/store_header.png">
     <meta property="og:locale" content="tr_TR">
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://enescetin.net/projects/fishingstoresim.html">
     <meta name="twitter:title" content="Fishing Store Simulator | Enes Çetin">
-    <meta name="twitter:description" content="Steam üzerinden 4 kişiye kadar Co-op çok oyunculu birinci şahıs dükkan yönetimi ve balıkçılık simülasyonu.">
-    <meta name="twitter:image" content="https://enescetin.net/projects/fishingstoresim/1.png">
+    <meta name="twitter:description" content="Kendi balıkçılık mağazanı sıfırdan kur ve işlet! 1-4 kişi Co-op balık av malzemeleri dükkan simülasyonu.">
+    <meta name="twitter:image" content="https://enescetin.net/blog/images/fishingstoresim/store_header.png">
+
     <!-- Schema.org Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "VideoGame",
       "name": "Fishing Store Simulator",
-      "genre": [
-        "Simulation",
-        "Co-op",
-        "Management",
-        "Tycoon",
-        "First-Person"
-      ],
+      "genre": ["Simulation", "Co-op", "Management", "Tycoon", "First-Person"],
       "gamePlatform": "PC",
       "operatingSystem": "Windows",
       "playMode": "MultiPlayer",
@@ -42,10 +39,11 @@
         "name": "Enes Çetin",
         "url": "https://enescetin.net"
       },
-      "image": "https://enescetin.net/projects/fishingstoresim/1.png",
-      "description": "Oyuncuların kendi balıkçılık mağazalarını sıfırdan kurup işlettikleri, gerçek zamanlı müşteri yapay zekası, detaylı mağaza lojistiği ve Steam üzerinden 4 kişiye kadar tam eş zamanlı çok oyunculu desteği sunan FPS dükkan yönetimi simülasyonu."
+      "image": "https://enescetin.net/blog/images/fishingstoresim/store_header.png",
+      "description": "Kendi balık av malzemeleri dükkanınızı sıfırdan kurup işlettiğiniz, 1-4 kişi eşli (co-op) birinci şahıs dükkan yönetimi simülasyonu."
     }
     </script>
+
     <link rel="icon" type="image/png" href="../img/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -60,27 +58,25 @@
             --dark: #2D2D2D;
             --bg: #FFFFFF;
             --gray: #F5F5F7;
-            --gray-subtle: #f8fafc;
             --text: #555555;
             --text-dark: #1e293b;
-            --text-muted: #64748b;
             --border: #EAEAEA;
-            --border-light: #e2e8f0;
         }
+
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         html { scroll-behavior: smooth; }
         body { 
             background-color: #FAFAFC;
             background-image: 
-                radial-gradient(at 50% 0%, rgba(0, 119, 255, 0.09) 0px, transparent 65%),
+                radial-gradient(at 50% 0%, rgba(0, 119, 255, 0.08) 0px, transparent 65%),
                 radial-gradient(#e2e8f0 1.1px, transparent 1.1px);
             background-size: 100% 100%, 24px 24px;
             background-attachment: fixed;
             color: var(--dark); 
             line-height: 1.7; 
         }
-        
-        /* Header & Navigation */
+
+        /* Header Navigation */
         header { 
             display: flex; justify-content: space-between; align-items: center; 
             padding: 10px 10%; background: rgba(255, 255, 255, 0.88); border-bottom: 1px solid var(--border);
@@ -91,6 +87,7 @@
         .logo { display: flex; align-items: center; text-decoration: none; }
         .logo img { height: 50px; width: auto; transition: transform 0.25s ease; }
         .logo:hover img { transform: scale(1.03); }
+
         nav { display: flex; gap: 20px; white-space: nowrap; }
         nav a { 
             text-decoration: none; 
@@ -110,688 +107,550 @@
             height: 2px;
             background-color: var(--primary);
             transition: width 0.25s ease;
-            border-radius: 2px;
         }
         nav a:hover { color: var(--primary); }
-        nav a:hover::after, nav a.active::after { width: 100%; }
-        nav a.active { color: var(--primary); }
+        nav a:hover::after { width: 100%; }
+
         /* Main Container */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(14px); }
-            to { opacity: 1; transform: translateY(0); }
+        main {
+            max-width: 1080px;
+            margin: 35px auto 70px auto;
+            padding: 0 20px;
         }
-        main { 
-            padding: 40px 20px 60px 20px; 
-            max-width: 1060px; 
-            margin: 0 auto; 
-            animation: fadeInUp 0.45s ease-out forwards;
-        }
-        
-        .back-link { 
-            display: inline-flex; 
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 24px; 
-            color: var(--text-muted); 
-            text-decoration: none; 
-            font-weight: 600; 
-            font-size: 0.92rem; 
-            transition: color 0.2s ease, transform 0.2s ease;
-        }
-        .back-link:hover { 
-            color: var(--primary); 
-            transform: translateX(-4px);
-        }
-        /* Hero Banner Card */
-        .game-hero-card {
-            background: linear-gradient(135deg, #091322 0%, #0d223f 55%, #0a182d 100%);
-            border-radius: 22px;
-            padding: 40px;
-            color: #ffffff;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(0, 195, 255, 0.3);
-            box-shadow: 0 14px 40px rgba(9, 19, 34, 0.28);
-            margin-bottom: 30px;
-        }
-        .game-hero-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 460px;
-            height: 460px;
-            background: radial-gradient(circle, rgba(0, 195, 255, 0.18) 0%, rgba(0, 0, 0, 0) 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-        .hero-top-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-bottom: 18px;
-            position: relative;
-            z-index: 2;
-        }
-        .status-badge {
+
+        .back-link {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(16, 185, 129, 0.15);
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.92rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            transition: color 0.2s, transform 0.2s;
+        }
+        .back-link:hover {
+            color: var(--primary);
+            transform: translateX(-3px);
+        }
+
+        /* Game Hero Banner */
+        .game-hero {
+            position: relative;
+            background: linear-gradient(145deg, #0a1118 0%, #102131 60%, #152b40 100%);
+            border-radius: 24px;
+            overflow: hidden;
+            padding: 38px 40px;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 16px 40px rgba(10, 17, 24, 0.25);
+            margin-bottom: 40px;
+        }
+        .hero-bg-glow {
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 550px;
+            height: 550px;
+            background: radial-gradient(circle, rgba(0, 195, 255, 0.16) 0%, rgba(0, 119, 255, 0.06) 45%, transparent 70%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        .hero-layout {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 32px;
+            align-items: center;
+        }
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+        }
+        .hero-badges-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+        .badge-status {
+            background: rgba(16, 185, 129, 0.18);
             color: #34d399;
             border: 1px solid rgba(52, 211, 153, 0.4);
-            padding: 6px 14px;
+            padding: 4px 12px;
             border-radius: 30px;
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             font-weight: 700;
-            letter-spacing: 0.3px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
-        .pulse-indicator {
-            width: 8px;
-            height: 8px;
+        .pulse-dot {
+            width: 7px;
+            height: 7px;
             background-color: #34d399;
             border-radius: 50%;
             box-shadow: 0 0 8px #34d399;
-            animation: pulseAnim 1.8s infinite;
+            animation: pulse 1.8s infinite;
         }
-        @keyframes pulseAnim {
+        @keyframes pulse {
             0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); }
             70% { transform: scale(1.15); box-shadow: 0 0 0 7px rgba(52, 211, 153, 0); }
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
         }
-        .engine-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+        .badge-tech {
             background: rgba(255, 255, 255, 0.08);
             color: #cbd5e1;
-            padding: 6px 14px;
-            border-radius: 10px;
-            font-size: 0.82rem;
+            padding: 4px 10px;
+            border-radius: 7px;
+            font-size: 0.78rem;
             font-weight: 600;
-            border: 1px solid rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.12);
         }
-        .game-hero-title {
-            font-size: 2.7rem;
+
+        .game-title {
+            font-size: 2.1rem;
             font-weight: 900;
             line-height: 1.15;
+            color: #ffffff;
+            letter-spacing: -0.6px;
             margin-bottom: 8px;
-            letter-spacing: -0.5px;
-            background: linear-gradient(120deg, #ffffff 40%, #7cd0ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            position: relative;
-            z-index: 2;
         }
-        .game-hero-tagline {
-            color: #38bdf8;
-            font-size: 1.12rem;
-            font-weight: 600;
-            margin-bottom: 18px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            position: relative;
-            z-index: 2;
-        }
-        .game-hero-summary {
-            color: #e2e8f0;
-            font-size: 1.02rem;
-            line-height: 1.7;
-            max-width: 900px;
-            margin-bottom: 25px;
-            position: relative;
-            z-index: 2;
-        }
-        .hero-tags-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 28px;
-            position: relative;
-            z-index: 2;
-        }
-        .hero-tag-pill {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.16);
-            color: #f8fafc;
-            font-size: 0.84rem;
-            font-weight: 600;
-            padding: 6px 14px;
-            border-radius: 20px;
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            transition: all 0.25s ease;
-        }
-        .hero-tag-pill:hover {
-            background: rgba(0, 119, 255, 0.3);
-            border-color: rgba(0, 195, 255, 0.5);
-            transform: translateY(-2px);
-        }
-        .hero-tag-pill i {
-            color: #38bdf8;
-        }
-        .hero-actions-bar {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            flex-wrap: wrap;
-            padding-top: 22px;
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
-            position: relative;
-            z-index: 2;
-        }
-        .steam-badge-main {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(135deg, #171a21 0%, #1b2838 100%);
-            color: #66c0f4;
-            border: 1px solid rgba(102, 192, 244, 0.45);
-            padding: 12px 24px;
-            border-radius: 12px;
-            font-size: 0.95rem;
-            font-weight: 700;
-            text-decoration: none;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
-            transition: all 0.25s ease;
-        }
-        .steam-badge-main i { font-size: 1.3rem; }
-        .steam-badge-main:hover {
-            border-color: #66c0f4;
-            color: #ffffff;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(102, 192, 244, 0.35);
-        }
-        .btn-gallery-jump {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.12);
-            color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 12px 22px;
-            border-radius: 12px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.25s ease;
-        }
-        .btn-gallery-jump:hover {
-            background: rgba(255, 255, 255, 0.22);
-            transform: translateY(-2px);
-        }
-        /* Specs Bar */
-        .specs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-            margin-bottom: 40px;
-        }
-        .spec-box {
-            background: #ffffff;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 18px 20px;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.02);
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-        }
-        .spec-box:hover {
-            transform: translateY(-3px);
-            border-color: rgba(0, 119, 255, 0.3);
-            box-shadow: 0 8px 20px rgba(0, 119, 255, 0.07);
-        }
-        .spec-icon-wrap {
-            width: 42px;
-            height: 42px;
-            border-radius: 12px;
-            background: var(--primary-light);
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.15rem;
-            flex-shrink: 0;
-        }
-        .spec-content {
-            display: flex;
-            flex-direction: column;
-        }
-        .spec-label {
-            font-size: 0.76rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--text-muted);
-            font-weight: 700;
-            margin-bottom: 2px;
-        }
-        .spec-val {
-            font-size: 0.94rem;
-            font-weight: 700;
-            color: var(--dark);
-        }
-        /* Section Container */
-        .page-section {
-            background: #ffffff;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 34px 36px;
-            margin-bottom: 35px;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.025);
-        }
-        .section-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 24px;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-        .section-title {
-            font-size: 1.45rem;
+
+        .game-slogan {
+            font-size: 1.35rem;
             font-weight: 800;
-            color: var(--dark);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            position: relative;
-            padding-left: 14px;
+            line-height: 1.35;
+            color: #ffffff;
+            margin-bottom: 10px;
+            letter-spacing: -0.3px;
         }
-        .section-title::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 4px;
-            bottom: 4px;
-            width: 4px;
-            background: var(--primary);
-            border-radius: 4px;
+        .game-slogan span {
+            color: #38bdf8;
         }
-        .section-desc {
-            color: var(--text);
-            font-size: 1rem;
-            line-height: 1.7;
+        .game-summary-text {
+            font-size: 0.96rem;
+            line-height: 1.65;
+            color: #cbd5e1;
             margin-bottom: 22px;
         }
-        /* Interactive Showcase Viewer */
-        .showcase-wrapper {
-            margin-bottom: 30px;
-        }
-        .featured-viewer {
-            position: relative;
-            width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
-            border-radius: 16px;
-            overflow: hidden;
-            background: #091322;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-            border: 1px solid var(--border);
-            cursor: pointer;
-        }
-        .featured-viewer img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
-        }
-        .featured-viewer:hover img {
-            transform: scale(1.02);
-        }
-        .viewer-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.1) 40%, transparent 100%);
+
+        .hero-actions {
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 20px 24px;
-            color: #ffffff;
-            pointer-events: none;
-        }
-        .viewer-top-meta {
-            display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
         }
-        .viewer-badge {
-            background: rgba(0, 119, 255, 0.85);
-            backdrop-filter: blur(8px);
-            color: #ffffff;
-            font-size: 0.78rem;
-            font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 20px;
+        .steam-badge-btn {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            background: linear-gradient(135deg, #171a21 0%, #1b2838 100%);
+            color: #66c0f4;
+            border: 1px solid rgba(102, 192, 244, 0.5);
+            padding: 9px 18px;
+            border-radius: 9px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            user-select: none;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
         }
-        .viewer-hint {
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(8px);
-            font-size: 0.8rem;
-            font-weight: 600;
-            padding: 4px 12px;
-            border-radius: 20px;
+        .steam-badge-btn i { font-size: 1.1rem; }
+
+        .devlog-jump-btn {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-        }
-        .viewer-caption {
-            font-size: 1.05rem;
-            font-weight: 700;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-        }
-        .viewer-nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: rgba(0, 0, 0, 0.6);
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #f1f5f9;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 9px 18px;
+            border-radius: 9px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+        .devlog-jump-btn:hover {
+            background: rgba(0, 119, 255, 0.2);
+            border-color: #38bdf8;
             color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            z-index: 10;
-        }
-        .viewer-nav-btn:hover {
-            background: var(--primary);
-            border-color: var(--primary);
-            transform: translateY(-50%) scale(1.1);
-        }
-        .viewer-nav-prev { left: 16px; }
-        .viewer-nav-next { right: 16px; }
-        /* Thumbnails Strip */
-        .thumbnails-strip {
-            display: flex;
-            gap: 10px;
-            overflow-x: auto;
-            padding: 12px 0 6px 0;
-            scroll-snap-type: x mandatory;
-            scrollbar-width: thin;
-            scrollbar-color: #cbd5e1 transparent;
-        }
-        .thumbnails-strip::-webkit-scrollbar { height: 6px; }
-        .thumbnails-strip::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 4px; }
-        .thumb-item {
-            flex: 0 0 110px;
-            height: 62px;
-            border-radius: 8px;
-            overflow: hidden;
-            cursor: pointer;
-            border: 2px solid transparent;
-            opacity: 0.65;
-            transition: all 0.2s ease;
-            scroll-snap-align: start;
-            background: #091322;
-        }
-        .thumb-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .thumb-item:hover {
-            opacity: 0.95;
             transform: translateY(-2px);
         }
-        .thumb-item.active {
-            opacity: 1;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.35);
-        }
-        /* Gameplay Feature Pillars */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 22px;
-            margin-top: 10px;
-        }
-        .feature-card {
-            background: var(--gray-subtle);
-            border: 1px solid var(--border-light);
-            border-radius: 16px;
-            padding: 24px;
+
+        /* Hero Right Media Card (Steam Capsule / Store Header) */
+        .hero-right {
             display: flex;
             flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-media-card {
+            width: 100%;
+            background: rgba(15, 23, 42, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+        .hero-media-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(56, 189, 248, 0.4);
+        }
+        .hero-header-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 460 / 215;
+            object-fit: cover;
+        }
+        .hero-media-footer {
+            padding: 9px 14px;
+            background: rgba(10, 17, 24, 0.75);
+            font-size: 0.82rem;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .hero-media-footer span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .hero-media-footer i {
+            color: #38bdf8;
+        }
+        .hero-media-footer a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+        .hero-media-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Developer Story Section */
+        .story-section {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 35px 40px;
+            margin-bottom: 45px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+        .section-title {
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 18px;
+            letter-spacing: -0.5px;
+        }
+        .story-quote-card {
+            background: var(--gray);
+            border-left: 4px solid var(--primary);
+            border-radius: 0 14px 14px 0;
+            padding: 22px 26px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #334155;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        .story-meta-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
             gap: 12px;
-            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            font-size: 0.88rem;
+            color: var(--text);
+            border-top: 1px solid var(--border);
+            padding-top: 16px;
+        }
+        .story-devlog-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary);
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+        .story-devlog-link:hover {
+            transform: translateX(3px);
+            color: var(--primary-dark);
+        }
+
+        /* Gameplay GIF Showcase Cards */
+        .gameplay-section {
+            margin-bottom: 50px;
+        }
+        .gameplay-intro {
+            margin-bottom: 30px;
+        }
+        .gameplay-intro p {
+            color: var(--text);
+            font-size: 1.02rem;
+            max-width: 750px;
+        }
+
+        .features-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.04);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
         }
         .feature-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(0, 119, 255, 0.35);
-            box-shadow: 0 8px 22px rgba(0, 119, 255, 0.08);
-            background: #ffffff;
+            box-shadow: 0 12px 32px rgba(0, 119, 255, 0.1);
+            border-color: rgba(0, 119, 255, 0.3);
         }
-        .feature-icon-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        .feature-card.reverse {
+            grid-template-columns: 1fr 1fr;
         }
-        .feature-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            background: var(--primary-light);
-            color: var(--primary);
+        .feature-card.reverse .feature-media {
+            order: 2;
+        }
+        .feature-card.reverse .feature-content {
+            order: 1;
+        }
+
+        .feature-media {
+            position: relative;
+            background: #0f172a;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.25rem;
-            flex-shrink: 0;
+            min-height: 280px;
         }
-        .feature-card h3 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--dark);
-        }
-        .feature-card p {
-            color: var(--text);
-            font-size: 0.92rem;
-            line-height: 1.62;
-            margin-bottom: 0;
-        }
-        .feature-card ul {
-            list-style: none;
-            padding: 0;
-            margin-top: 4px;
-        }
-        .feature-card ul li {
-            position: relative;
-            padding-left: 20px;
-            font-size: 0.88rem;
-            color: var(--text);
-            margin-bottom: 6px;
-            line-height: 1.5;
-        }
-        .feature-card ul li::before {
-            content: '•';
-            position: absolute;
-            left: 6px;
-            color: var(--primary);
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        /* Tech Stack Table & Cards */
-        .tech-table-wrapper {
-            overflow-x: auto;
-            border-radius: 14px;
-            border: 1px solid var(--border);
-            margin-top: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-        }
-        .tech-table {
+        .feature-gif {
             width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            font-size: 0.92rem;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
-        .tech-table th {
-            background: var(--gray);
-            color: var(--dark);
-            font-weight: 700;
-            padding: 14px 18px;
-            border-bottom: 1px solid var(--border);
+        .feature-content {
+            padding: 38px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
-        .tech-table td {
-            padding: 14px 18px;
-            border-bottom: 1px solid var(--border);
-            color: var(--text);
-            vertical-align: middle;
-        }
-        .tech-table tr:last-child td {
-            border-bottom: none;
-        }
-        .tech-table tr:hover td {
-            background: #fcfdfe;
-        }
-        .tech-badge-primary {
+        .feature-step-num {
             display: inline-flex;
             align-items: center;
             gap: 6px;
             background: var(--primary-light);
             color: var(--primary);
+            font-size: 0.78rem;
+            font-weight: 800;
             padding: 4px 12px;
             border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.82rem;
-            white-space: nowrap;
+            margin-bottom: 12px;
+            width: fit-content;
         }
-        /* Roadmap Grid */
-        .roadmap-timeline {
+        .feature-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
+        }
+        .feature-desc {
+            color: var(--text);
+            font-size: 0.96rem;
+            line-height: 1.75;
+        }
+
+        /* Tech Summary Grid */
+        .specs-section {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 35px 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+        .specs-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
             gap: 16px;
             margin-top: 20px;
         }
-        .roadmap-stage {
-            background: var(--gray-subtle);
-            border: 1px solid var(--border-light);
+        .spec-item {
+            background: var(--gray);
+            border: 1px solid var(--border);
             border-radius: 14px;
-            padding: 20px;
-            position: relative;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
         }
-        .roadmap-stage.active {
-            border-color: rgba(0, 119, 255, 0.4);
-            background: #ffffff;
-            box-shadow: 0 6px 18px rgba(0, 119, 255, 0.08);
+        .spec-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: var(--primary-light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
         }
-        .stage-pill {
-            display: inline-block;
-            font-size: 0.74rem;
-            font-weight: 800;
+        .spec-info .spec-title {
+            font-size: 0.78rem;
+            color: var(--text);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding: 4px 10px;
-            border-radius: 6px;
-            margin-bottom: 10px;
+            font-weight: 600;
+            letter-spacing: 0.4px;
         }
-        .stage-pill.completed { background: #dcfce7; color: #15803d; }
-        .stage-pill.current { background: #dbeafe; color: #1d4ed8; }
-        .stage-pill.upcoming { background: #f1f5f9; color: #64748b; }
-        .roadmap-stage h4 {
-            font-size: 1.05rem;
+        .spec-info .spec-val {
+            font-size: 0.95rem;
             font-weight: 700;
             color: var(--dark);
-            margin-bottom: 8px;
         }
-        .roadmap-stage p {
-            font-size: 0.86rem;
-            color: var(--text);
-            line-height: 1.55;
-            margin-bottom: 0;
-        }
-        /* Navigation Bar */
-        .project-nav-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 15px;
-            margin-top: 45px;
-            padding-top: 25px;
-            border-top: 1px solid var(--border);
-            flex-wrap: wrap;
-        }
-        .nav-proj-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+
+        /* Archive Screenshots Gallery (Bottom) */
+        .archive-gallery-section {
             background: #ffffff;
             border: 1px solid var(--border);
-            padding: 10px 18px;
+            border-radius: 20px;
+            padding: 35px 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+        .gallery-header {
+            margin-bottom: 24px;
+        }
+        .gallery-header p {
+            color: var(--text);
+            font-size: 0.92rem;
+            margin-top: 4px;
+        }
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 12px;
+        }
+        .screen-thumb-card {
             border-radius: 10px;
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 600;
-            font-size: 0.9rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-            transition: all 0.2s ease;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: #0f172a;
+            aspect-ratio: 16 / 9;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-        .nav-proj-btn:hover {
-            background: var(--primary);
-            color: #ffffff;
-            border-color: var(--primary);
-            transform: translateY(-2px);
+        .screen-thumb-card:hover {
+            transform: scale(1.04);
             box-shadow: 0 6px 16px rgba(0, 119, 255, 0.2);
+            border-color: var(--primary);
         }
+        .screen-thumb-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Lightbox */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding: 30px 20px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.94);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .lightbox-img {
+            max-width: 92%;
+            max-height: 82vh;
+            border-radius: 12px;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+            object-fit: contain;
+            animation: zoomIn 0.2s ease-out;
+        }
+        .lightbox-caption {
+            margin-top: 14px;
+            color: #f1f5f9;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 18px;
+            right: 28px;
+            color: #cbd5e1;
+            font-size: 34px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.2s;
+        }
+        .lightbox-close:hover { color: #ffffff; }
+        @keyframes zoomIn {
+            from { transform: scale(0.92); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
         /* Footer */
         footer {
             border-top: 1px solid var(--border);
             background-color: var(--bg);
             padding: 35px 10%;
-            margin-top: 50px;
+            margin-top: 60px;
         }
         .footer-container {
-            max-width: 1060px;
+            max-width: 1100px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 20px;
         }
-        .footer-left {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-        .footer-copy {
-            font-size: 0.95rem;
-            color: var(--dark);
-        }
-        .footer-tagline {
-            font-size: 0.85rem;
-            color: var(--text);
-        }
-        .footer-links {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
+        .footer-left { display: flex; flex-direction: column; gap: 4px; }
+        .footer-copy { font-size: 0.95rem; color: var(--dark); }
+        .footer-tagline { font-size: 0.85rem; color: var(--text); }
+        .footer-links { display: flex; gap: 15px; align-items: center; }
         .footer-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: var(--gray);
-            color: var(--dark);
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px;
+            border-radius: 50%; background: var(--gray); color: var(--dark); text-decoration: none;
+            font-size: 1.1rem; transition: transform 0.25s, background-color 0.25s, color 0.25s;
             border: 1px solid var(--border);
         }
         .footer-links a:hover {
@@ -799,136 +658,37 @@
             color: #ffffff;
             transform: translateY(-3px);
             border-color: var(--primary);
-            box-shadow: 0 6px 14px rgba(0, 119, 255, 0.25);
         }
-        /* Modern Lightbox Modal */
-        .lightbox-modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(6, 12, 22, 0.94);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.25s ease;
-        }
-        .lightbox-modal.active {
-            display: flex;
-            opacity: 1;
-        }
-        .lightbox-dialog {
-            position: relative;
-            max-width: 92vw;
-            max-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        #lightbox-main-img {
-            max-width: 90vw;
-            max-height: 80vh;
-            border-radius: 14px;
-            box-shadow: 0 16px 50px rgba(0,0,0,0.8), 0 0 0 1px rgba(255, 255, 255, 0.15);
-            object-fit: contain;
-            transform: scale(0.96);
-            transition: transform 0.25s ease;
-        }
-        .lightbox-modal.active #lightbox-main-img {
-            transform: scale(1);
-        }
-        .lightbox-bottom-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            margin-top: 14px;
-            color: #f1f5f9;
-            font-size: 0.92rem;
-            padding: 0 10px;
-        }
-        .lightbox-counter-badge {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-        .lightbox-close-btn {
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            color: #ffffff;
-            font-size: 28px;
-            cursor: pointer;
-            border-radius: 50%;
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.2s ease;
-            z-index: 1001;
-        }
-        .lightbox-close-btn:hover {
-            background: rgba(239, 68, 68, 0.85);
-            border-color: transparent;
-            transform: scale(1.1);
-        }
-        .lightbox-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            z-index: 1001;
-        }
-        .lightbox-arrow:hover {
-            background: var(--primary);
-            border-color: var(--primary);
-            transform: translateY(-50%) scale(1.1);
-        }
-        .lightbox-arrow-left { left: 25px; }
-        .lightbox-arrow-right { right: 25px; }
-        /* Responsive Breakpoints */
-        @media (max-width: 1024px) {
-            .features-grid { grid-template-columns: 1fr; }
-            .roadmap-timeline { grid-template-columns: 1fr; }
+
+        @media (max-width: 900px) {
+            .hero-layout {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            .feature-card, .feature-card.reverse {
+                grid-template-columns: 1fr;
+            }
+            .feature-card.reverse .feature-media { order: 1; }
+            .feature-card.reverse .feature-content { order: 2; }
+            .feature-media { height: 240px; min-height: auto; }
+            .feature-content { padding: 26px 24px; }
+            .game-hero { padding: 30px 22px; }
+            .story-section, .specs-section, .archive-gallery-section { padding: 26px 20px; }
         }
         @media (max-width: 768px) {
             header { padding: 10px 5%; }
             nav { gap: 16px; }
             nav a { font-size: 0.95rem; }
-            .game-hero-card { padding: 26px 20px; }
-            .game-hero-title { font-size: 2.1rem; }
-            .page-section { padding: 24px 20px; }
-            .lightbox-arrow-left { left: 10px; }
-            .lightbox-arrow-right { right: 10px; }
-            .lightbox-arrow { width: 42px; height: 42px; font-size: 1.1rem; }
-            footer { padding: 30px 5%; margin-top: 40px; }
-            .footer-container { flex-direction: column; text-align: center; gap: 18px; }
-            .footer-left { align-items: center; }
+            .game-title { font-size: 1.7rem; }
+            .game-slogan { font-size: 1.25rem; }
+            footer { padding: 30px 5%; }
+            .footer-container { flex-direction: column; text-align: center; }
             .footer-links { justify-content: center; }
         }
     </style>
 </head>
 <body>
+
     <!-- Header Navigation -->
     <header>
         <a href="../index.html" class="logo">
@@ -937,331 +697,230 @@
         <nav>
             <a href="../index.html">Ana Sayfa</a>
             <a href="../about.html">Hakkımda</a>
+            <a href="../blog/index.html">Blog</a>
             <a href="../contact.html">İletişim</a>
         </nav>
     </header>
+
     <main>
         <a href="../index.html" class="back-link">
             <i class="fas fa-arrow-left"></i> Tüm Projelere Dön
         </a>
-        <!-- Premium Hero Showcase Banner -->
-        <section class="game-hero-card">
-            <div class="hero-top-row">
-                <div class="status-badge">
-                    <span class="pulse-indicator"></span> Aktif Geliştirme Aşamasında (Pre-Alpha)
-                </div>
-                <div class="engine-badge">
-                    <i class="fas fa-cube"></i> Unity (URP) • Netcode (NGO)
-                </div>
-            </div>
-            <h1 class="game-hero-title">Fishing Store Simulator</h1>
-            <div class="game-hero-tagline">
-                <i class="fas fa-store"></i> Co-op Dükkan Yönetimi & Balıkçılık Simülasyonu
-            </div>
-            <p class="game-hero-summary">
-                Oyuncuların kendi balıkçılık mağazalarını sıfırdan kurup işlettikleri, gerçek zamanlı müşteri yapay zekası, detaylı mağaza lojistiği ve <strong>Steam üzerinden 4 kişiye kadar tam eş zamanlı (Co-op) çok oyunculu</strong> desteği sunan birinci şahıs (FPS) dükkan yönetimi ve simülasyon oyunu.
-            </p>
-            <div class="hero-tags-row">
-                <span class="hero-tag-pill"><i class="fab fa-steam"></i> Steam PC</span>
-                <span class="hero-tag-pill"><i class="fas fa-users"></i> 1 - 4 Kişi Co-op</span>
-                <span class="hero-tag-pill"><i class="fas fa-chart-line"></i> Tycoon / Simülasyon</span>
-            </div>
-            <div class="hero-actions-bar">
-                <div class="steam-badge-main">
-                    <i class="fab fa-steam"></i> Steam İstek Listesi Pek Yakında
-                </div>
-                <a href="#gallery" class="btn-gallery-jump">
-                    <i class="fas fa-images"></i> 20 Ekran Görüntüsü
-                </a>
-                <a href="#gameplay" class="btn-gallery-jump">
-                    <i class="fas fa-gamepad"></i> Mekanikler
-                </a>
-                <a href="#tech-stack" class="btn-gallery-jump">
-                    <i class="fas fa-code"></i> Teknik Mimari
-                </a>
-            </div>
-        </section>
-        <!-- Technical & Game Specs Grid -->
-        <section class="specs-grid">
-            <div class="spec-box">
-                <div class="spec-icon-wrap"><i class="fab fa-windows"></i></div>
-                <div class="spec-content">
-                    <span class="spec-label">Platform</span>
-                    <span class="spec-val">PC / Steam (Windows)</span>
-                </div>
-            </div>
-            <div class="spec-box">
-                <div class="spec-icon-wrap"><i class="fas fa-cube"></i></div>
-                <div class="spec-content">
-                    <span class="spec-label">Oyun Motoru</span>
-                    <span class="spec-val">Unity (URP Pipeline)</span>
-                </div>
-            </div>
-            <div class="spec-box">
-                <div class="spec-icon-wrap"><i class="fas fa-network-wired"></i></div>
-                <div class="spec-content">
-                    <span class="spec-label">Çok Oyunculu Altyapı</span>
-                    <span class="spec-val">Netcode NGO & Steam SDR</span>
-                </div>
-            </div>
-            <div class="spec-box">
-                <div class="spec-icon-wrap"><i class="fas fa-user-friends"></i></div>
-                <div class="spec-content">
-                    <span class="spec-label">Oyuncu Kapasitesi</span>
-                    <span class="spec-val">1 - 4 Kişi Eşzamanlı Co-op</span>
-                </div>
-            </div>
-            <div class="spec-box">
-                <div class="spec-icon-wrap"><i class="fas fa-gamepad"></i></div>
-                <div class="spec-content">
-                    <span class="spec-label">Oyun Türü</span>
-                    <span class="spec-val">FPS Dükkan Yönetimi / Tycoon</span>
-                </div>
-            </div>
-            <div class="spec-box">
-                <div class="spec-icon-wrap"><i class="fas fa-server"></i></div>
-                <div class="spec-content">
-                    <span class="spec-label">Ağ Mimarisi</span>
-                    <span class="spec-val">Host-Authoritative State</span>
-                </div>
-            </div>
-        </section>
-        <!-- Interactive Screenshot Showcase & Cinematic Gallery -->
-        <section class="page-section" id="gallery">
-            <div class="section-header">
-                <h2 class="section-title">Oyun İçi Ekran Görüntüleri</h2>
-                <span class="tech-badge-primary"><i class="fas fa-camera"></i> 20 Görsel (Full HD)</span>
-            </div>
-            <p class="section-desc">
-                Oyunun dükkan yerleşimi, reyonları, toptancı sistemi, kasa mekanikleri ve atmosferinden canlı oyun içi kareler. Görsellere tıklayarak tam ekran yüksek çözünürlükte inceleyebilirsiniz.
-            </p>
-            <!-- Featured Large 16:9 Interactive Viewer -->
-            <div class="showcase-wrapper">
-                <div class="featured-viewer" id="featured-viewer" onclick="openLightbox(currentViewerIndex)">
-                    <img id="featured-img" src="fishingstoresim/1.png" alt="Fishing Store Simulator Ekran Görüntüsü">
-                    <div class="viewer-overlay">
-                        <div class="viewer-top-meta">
-                            <span class="viewer-badge" id="viewer-index-badge"><i class="fas fa-image"></i> Görsel 1 / 20</span>
-                            <span class="viewer-hint"><i class="fas fa-expand"></i> Tam Ekran İncele</span>
+
+        <!-- Hero Showcase Banner -->
+        <section class="game-hero">
+            <div class="hero-bg-glow"></div>
+            
+            <div class="hero-layout">
+                <!-- Left: Title, Badges & Actions -->
+                <div class="hero-left">
+                    <div class="hero-badges-row">
+                        <div class="badge-status">
+                            <span class="pulse-dot"></span> %90 Tamamlandı
                         </div>
-                        <div class="viewer-caption" id="viewer-caption-text">Ana Menü ve Balıkçılık Atölyesi Görünümü</div>
+                        <span class="badge-tech"><i class="fas fa-paper-plane"></i> Fragman & Yayıncı Aşaması</span>
+                        <span class="badge-tech"><i class="fab fa-steam"></i> Steam PC</span>
+                        <span class="badge-tech"><i class="fas fa-users"></i> 1 - 4 Kişi Co-op</span>
                     </div>
-                    <button class="viewer-nav-btn viewer-nav-prev" onclick="navigateViewer(-1, event)" aria-label="Önceki Görsel"><i class="fas fa-chevron-left"></i></button>
-                    <button class="viewer-nav-btn viewer-nav-next" onclick="navigateViewer(1, event)" aria-label="Sonraki Görsel"><i class="fas fa-chevron-right"></i></button>
+
+                    <h1 class="game-title">Fishing Store Simulator</h1>
+
+                    <div class="game-slogan">
+                        Kendi balıkçılık malzemeleri mağazanı <span>sıfırdan kur ve işlet!</span>
+                    </div>
+
+                    <p class="game-summary-text">
+                        Küçük bir olta dükkanıyla işe başla, bölgenin en kapsamlı balıkçılık ve avcılık merkezine dönüş. İster tek başına dükkanı çekip çevir, ister arkadaşlarınla takım olup yoğun saatleri birlikte yönet!
+                    </p>
+
+                    <div class="hero-actions">
+                        <div class="steam-badge-btn">
+                            <i class="fab fa-steam"></i> Steam İstek Listesi Pek Yakında
+                        </div>
+                        <a href="../blog/steam-kapsul-tasarim-sureci.html" class="devlog-jump-btn">
+                            <i class="fas fa-pen-nib"></i> Kapsül Hikayesi
+                        </a>
+                    </div>
                 </div>
-                <!-- Thumbnail Strip -->
-                <div class="thumbnails-strip" id="thumbnails-strip">
-                    <!-- Javascript generates thumb items -->
+
+                <!-- Right: Steam Header Artwork Showcase -->
+                <div class="hero-right">
+                    <div class="hero-media-card">
+                        <img src="../blog/images/fishingstoresim/store_header.png" alt="Fishing Store Simulator Steam Header" class="hero-header-img">
+                        <div class="hero-media-footer">
+                            <span><i class="fab fa-steam"></i> Resmi Steam Kapsül Tasarımı</span>
+                            <a href="../blog/steam-kapsul-tasarim-sureci.html">Süreci İncele <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <!-- Core Gameplay Pillars -->
-        <section class="page-section" id="gameplay">
-            <div class="section-header">
-                <h2 class="section-title">Öne Çıkan Oynanış Mekanikleri</h2>
-                <span class="tech-badge-primary"><i class="fas fa-sliders-h"></i> Temel Dinamikler</span>
+
+        <!-- Developer Story Section -->
+        <section class="story-section">
+            <div class="section-label"><i class="fas fa-lightbulb"></i> Perde Arkası</div>
+            <h2 class="section-title">Bu Oyunu Neden Geliştiriyoruz?</h2>
+            
+            <div class="story-quote-card">
+                "Aslında çok ani gelişti. Yaz tatili gelmişti ve yeterince vaktim vardı. En yakın arkadaşımın balık av malzemeleri dükkanında çalışıyor olması ve nasıl gerçekleştiğini bilmediğim bir beyin fırtınasıyla, benzer simülasyon oyunlarından sıyrılmak için <strong>müşterilere ürün tavsiye etme fikrine vuruldum</strong>. Direkt prototip çalışmalarına başladım ve konu buraya kadar geldi..."
             </div>
-            <p class="section-desc">
-                Fishing Store Simulator, sıradan bir dükkan simülasyonunun ötesinde derin lojistik zincirleri, modüler mobilya yerleşimi ve zengin kasa deneyimi sunar.
-            </p>
+
+            <div class="story-meta-row">
+                <span><i class="fas fa-user-edit"></i> <strong>Enes Çetin</strong> — Bağımsız Oyun Geliştirici</span>
+                <a href="../blog/steam-kapsul-tasarim-sureci.html" class="story-devlog-link">
+                    Steam kapsülleri ve görsel tasarım hikayesini oku <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Gameplay GIF Showcase (4 Temel Döngü) -->
+        <section class="gameplay-section">
+            <div class="gameplay-intro">
+                <div class="section-label"><i class="fas fa-gamepad"></i> Oynanış Döngüsü</div>
+                <h2 class="section-title">Dükkanda Seni Neler Bekliyor?</h2>
+                <p>Oyunun temel mekaniklerini ve dükkan işletme dinamiklerini gösteren güncel oynanış kesitleri:</p>
+            </div>
+
             <div class="features-grid">
-                <!-- Feature 1 -->
+
+                <!-- 1. Sipariş Ver ve Rafları Doldur -->
                 <div class="feature-card">
-                    <div class="feature-icon-header">
-                        <div class="feature-icon"><i class="fas fa-boxes"></i></div>
-                        <h3>Toptancı ve Kargo Lojistiği</h3>
+                    <div class="feature-media">
+                        <img src="fishingstoresim/gifs/rafdizme.gif" alt="Sipariş Ver ve Rafları Doldur Oynanış GIF" class="feature-gif" loading="lazy">
                     </div>
-                    <p>
-                        Dükkan içindeki toptancı bilgisayarı üzerinden olta kamışları, makineler, misinalar, yapay yemler ve iğneler sipariş edin.
-                    </p>
-                    <ul>
-                        <li>Kapıya gelen kargo kolilerini teslim alma ve taşıma.</li>
-                        <li>Kutuları açıp ürünleri tek tek veya toplu olarak raflara dizme.</li>
-                        <li>Koli atıklarını düzenli tutarak dükkanda yer açma.</li>
-                    </ul>
+                    <div class="feature-content">
+                        <span class="feature-step-num"><i class="fas fa-boxes"></i> 1. Adım</span>
+                        <h3 class="feature-title">Sipariş Ver ve Rafları Doldur</h3>
+                        <p class="feature-desc">
+                            Bilgisayarından en popüler kamışları, makineleri, sahte yemleri ve aksesuarları sipariş et. Kapıya gelen kolileri aç, ürünleri raflara ve stantlara yerleştir, etiket fiyatlarını karlı şekilde ayarla.
+                        </p>
+                    </div>
                 </div>
-                <!-- Feature 2 -->
-                <div class="feature-card">
-                    <div class="feature-icon-header">
-                        <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
-                        <h3>Modüler Reyon ve Raf Yönetimi</h3>
+
+                <!-- 2. Müşterilere Tavsiye Ver ve Rehberlik Et -->
+                <div class="feature-card reverse">
+                    <div class="feature-media">
+                        <img src="fishingstoresim/gifs/tavsiye.gif" alt="Müşterilere Tavsiye Ver Oynanış GIF" class="feature-gif" loading="lazy">
                     </div>
-                    <p>
-                        Farklı ürün kategorileri için özelleştirilmiş 3D raf tipleri ile mağazanızı istediğiniz gibi dekore edin ve dizayn edin.
-                    </p>
-                    <ul>
-                        <li>Standart Raflar, Olta Kamışı Standları, Askılı Yem/İğne Panoları.</li>
-                        <li>Akıllı slot snapleme ve önizleme (Ghost Preview) sistemi.</li>
-                        <li>Müşteri akışını optimize eden koridor ve reyon yerleşimleri.</li>
-                    </ul>
+                    <div class="feature-content">
+                        <span class="feature-step-num"><i class="fas fa-comments"></i> 2. Adım (Özel Mekanik)</span>
+                        <h3 class="feature-title">Müşterilere Tavsiye Ver ve Rehberlik Et</h3>
+                        <p class="feature-desc">
+                            Dükkanına gelen her müşteri usta bir balıkçı değil! Kimi ilk defa oltayı eline alacak, kimi ise göldeki o dev turnanın peşinde. Bilgini konuşturarak müşterilerin güvenini kazan, dükkan itibarını ve satışlarını katla.
+                        </p>
+                    </div>
                 </div>
-                <!-- Feature 3 -->
+
+                <!-- 3. Kasaya Geç ve Satış Yap -->
                 <div class="feature-card">
-                    <div class="feature-icon-header">
-                        <div class="feature-icon"><i class="fas fa-brain"></i></div>
-                        <h3>Gelişmiş Müşteri Yapay Zekası</h3>
+                    <div class="feature-media">
+                        <img src="fishingstoresim/gifs/kasa.gif" alt="Kasaya Geç ve Satış Yap Oynanış GIF" class="feature-gif" loading="lazy">
                     </div>
-                    <p>
-                        Her müşteri dükkana kendi bütçesi, özel ilgi alanları ve dinamik istek listesiyle giriş yapar.
-                    </p>
-                    <ul>
-                        <li>Dükkandaki reyonları gezip ürünleri titizlikle inceleme.</li>
-                        <li>Stokta buldukları ürünleri sepetlerine ekleme.</li>
-                        <li>Alışverişi tamamlayıp kasaya doğru düzenli sıraya girme.</li>
-                    </ul>
+                    <div class="feature-content">
+                        <span class="feature-step-num"><i class="fas fa-cash-register"></i> 3. Adım</span>
+                        <h3 class="feature-title">Kasaya Geç ve Satış Yap</h3>
+                        <p class="feature-desc">
+                            Müşterilerin seçtiği ürünleri kasada tara, nakit ve kredi kartı ödemelerini al, para üstünü hatasız ver. Müşterileri bekletmeden memnuniyet puanını artır.
+                        </p>
+                    </div>
                 </div>
-                <!-- Feature 4 -->
-                <div class="feature-card">
-                    <div class="feature-icon-header">
-                        <div class="feature-icon"><i class="fas fa-cash-register"></i></div>
-                        <h3>İnteraktif Kasa & Ödeme Deneyimi</h3>
+
+                <!-- 4. Arkadaşlarınla Eşli (Co-op) Oyna -->
+                <div class="feature-card reverse">
+                    <div class="feature-media">
+                        <img src="fishingstoresim/gifs/coop.gif" alt="Arkadaşlarınla Eşli Oyna Oynanış GIF" class="feature-gif" loading="lazy">
                     </div>
-                    <p>
-                        Her müşterinin ödeme tercihi farklıdır. Barkod okutmaktan para üstü hesaplamaya kadar her aşama interaktiftir:
-                    </p>
-                    <ul>
-                        <li><strong>Barkod Okutma & Paketleme:</strong> Ürünleri barkod okuyucudan geçirin, ürünlerin çizgi film yaylanma (DOTween) efektleriyle paketleme kolisine girişini izleyin.</li>
-                        <li><strong>Nakit Para & Para Üstü:</strong> 3D nakit destelerinden ödemeyi alın, çekmeceden doğru bozukluk ve banknotları hesaplayıp müşteriye teslim edin.</li>
-                        <li><strong>POS Cihazı & Kredi Kartı:</strong> Kartlı ödemelerde POS cihazına tutarı girin, temassız/çipli kart çekimini tamamlayın.</li>
-                    </ul>
+                    <div class="feature-content">
+                        <span class="feature-step-num"><i class="fas fa-users"></i> 4. Adım</span>
+                        <h3 class="feature-title">Arkadaşlarınla Eşli (Co-op) Oyna</h3>
+                        <p class="feature-desc">
+                            Tüm siparişlere tek başına yetişmek zorunda değilsin! Arkadaşlarını davet et; biri kasada ödeme alırken diğeri kapıdaki kolileri taşısın ve boşalan rafları anında doldursun.
+                        </p>
+                    </div>
                 </div>
-                <!-- Feature 5 -->
-                <div class="feature-card">
-                    <div class="feature-icon-header">
-                        <div class="feature-icon"><i class="fas fa-broom"></i></div>
-                        <h3>Dükkan Düzeni ve Temizlik</h3>
+
+            </div>
+        </section>
+
+        <!-- Technical Specs Summary -->
+        <section class="specs-section">
+            <div class="section-label"><i class="fas fa-code"></i> Teknik Altyapı</div>
+            <h2 class="section-title">Oyun Mimarisi & Özellikler</h2>
+
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <div class="spec-icon"><i class="fab fa-windows"></i></div>
+                    <div class="spec-info">
+                        <div class="spec-title">Platform</div>
+                        <div class="spec-val">PC / Steam (Windows)</div>
                     </div>
-                    <p>
-                        Müşteri memnuniyetini ve dükkan puanını yüksek tutmak için temizlik ve düzen hayati önem taşır.
-                    </p>
-                    <ul>
-                        <li>Günün yoğunluğunda dükkan içine atılan çöpleri anlık olarak toplama.</li>
-                        <li>Çöp poşetlerine doldurup dışarıdaki büyük konteynerlere boşaltma.</li>
-                        <li>Temiz ve ferah bir mağaza ortamıyla müşteri sadakatini artırma.</li>
-                    </ul>
                 </div>
-                <!-- Feature 6 -->
-                <div class="feature-card">
-                    <div class="feature-icon-header">
-                        <div class="feature-icon"><i class="fas fa-volume-up"></i></div>
-                        <h3>Sinematik & Dinamik Ses Sistemi</h3>
+                <div class="spec-item">
+                    <div class="spec-icon"><i class="fas fa-cube"></i></div>
+                    <div class="spec-info">
+                        <div class="spec-title">Oyun Motoru</div>
+                        <div class="spec-val">Unity (URP) & C#</div>
                     </div>
-                    <p>
-                        Dükkan içi ve dışı arasındaki akustik geçişi sağlayan gelişmiş yerel ses bölgesi (Audio Zone) mimarisi:
-                    </p>
-                    <ul>
-                        <li>Dükkan kapısından içeri adım atıldığında dış ortamdaki rüzgar ve kuş seslerinin yumuşakça (Smooth Lerp) yarıya inmesi.</li>
-                        <li>Dışarı çıkıldığında tekrar doğa ve deniz seslerinin yükselmesi.</li>
-                        <li>Kasa barkod sesleri, koli açma ve raf yerleşim ses efektleriyle zengin geri bildirim.</li>
-                    </ul>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-icon"><i class="fas fa-users"></i></div>
+                    <div class="spec-info">
+                        <div class="spec-title">Oyuncu Sayısı</div>
+                        <div class="spec-val">1 - 4 Kişi Eşzamanlı Co-op</div>
+                    </div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-icon"><i class="fas fa-store"></i></div>
+                    <div class="spec-info">
+                        <div class="spec-title">Oyun Türü</div>
+                        <div class="spec-val">FPS Dükkan Yönetimi / Tycoon</div>
+                    </div>
                 </div>
             </div>
         </section>
-        <!-- Tech Stack & Architecture Deep Dive -->
-        <section class="page-section" id="tech-stack">
-            <div class="section-header">
-                <h2 class="section-title">Kullanılan Teknolojiler ve Mimari Altyapı</h2>
-                <span class="tech-badge-primary"><i class="fas fa-code-branch"></i> Tech Stack</span>
+
+        <!-- Archive Screenshots Gallery (At bottom as requested) -->
+        <section class="archive-gallery-section" id="screenshots">
+            <div class="gallery-header">
+                <div class="section-label"><i class="fas fa-images"></i> Geliştirme Arşivi</div>
+                <h2 class="section-title">Erken Aşama Ekran Görüntüleri</h2>
+                <p>Oyunun geliştirme sürecine ait ekran görüntüleri (Büyütmek için görsellere tıklayabilirsiniz):</p>
             </div>
-            <p class="section-desc">
-                Oyun, modern çok oyunculu simülasyon standartlarına uygun olarak ölçeklenebilir, hilesiz ve yüksek performanslı bir mimari üzerinde inşa edilmektedir.
-            </p>
-            <div class="tech-table-wrapper">
-                <table class="tech-table">
-                    <thead>
-                        <tr>
-                            <th style="width: 28%;">Alan</th>
-                            <th style="width: 32%;">Kullanılan Teknoloji / Kütüphane</th>
-                            <th style="width: 40%;">Mimari Açıklama & Amaç</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Oyun Motoru & Render</strong></td>
-                            <td><span class="tech-badge-primary"><i class="fas fa-cube"></i> Unity (URP)</span></td>
-                            <td>Universal Render Pipeline ile optimize edilmiş modern ışıklandırma, gölgeler ve yüksek performans.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Çok Oyunculu (Multiplayer)</strong></td>
-                            <td><span class="tech-badge-primary"><i class="fas fa-network-wired"></i> Unity Netcode for GameObjects</span></td>
-                            <td>Senkronize NetworkVariables, ServerRpc ve ClientRpc tabanlı pürüzsüz ağ etkileşimleri.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Ağ Taşıyıcısı & Eşleştirme</strong></td>
-                            <td><span class="tech-badge-primary"><i class="fab fa-steam"></i> Facepunch.Steamworks & Steam SDR</span></td>
-                            <td>Steam Datagram Relay (SDR) üzerinden port yönlendirmesi gerektirmeyen güvenli P2P lobi ve davet sistemi.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Ağ & Mantık Mimarisi</strong></td>
-                            <td><span class="tech-badge-primary"><i class="fas fa-shield-alt"></i> Host-Authoritative State</span></td>
-                            <td>Para, sipariş, bakiye ve müşteri kararlarının yalnızca host/sunucu tarafından onaylandığı hilesiz ve desenkronizasyonsuz yapı.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Animasyon & Karakter IK</strong></td>
-                            <td><span class="tech-badge-primary"><i class="fas fa-running"></i> Humanoid Carry IK & State Machines</span></td>
-                            <td>Oyuncuların ellerindeki koli, tekil ürün veya çöplere göre kolların ve ellerin dinamik kemik pozlaması.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Yapay Zeka & Navigasyon</strong></td>
-                            <td><span class="tech-badge-primary"><i class="fas fa-route"></i> Unity NavMesh + Dynamic Carving</span></td>
-                            <td>Dinamik yerleştirilen mobilyaların ve kapıların yapay zeka yol haritasını anlık olarak oyması (NavMeshObstacle Carving).</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Görsel Geri Bildirim</strong></td>
-                            <td><span class="tech-badge-primary"><i class="fas fa-magic"></i> DOTween & Custom Shaders</span></td>
-                            <td>Ürünlerin kasadan kutuya yaylanarak uçması, etkileşim outline efektleri ve pürüzsüz arayüz geçişleri.</td>
-                        </tr>
-                    </tbody>
-                </table>
+
+            <div class="screenshots-grid">
+                <!-- 1 to 20 screenshots -->
+                <div class="screen-thumb-card"><img src="fishingstoresim/1.png" alt="Ekran Görüntüsü 1" loading="lazy"></div>
+                <div class="screen-thumb-card"><img src="fishingstoresim/2.png" alt="Ekran Görüntüsü 2" loading="lazy"></div>
+                <div class="screen-thumb-card"><img src="fishingstoresim/3.png" alt="Ekran Görüntüsü 3" loading="lazy"></div>
+                <div class="screen-thumb-card"><img src="fishingstoresim/4.png" alt="Ekran Görüntüsü 4" loading="lazy"></div>
+                <div class="screen-thumb-card"><img src="fishingstoresim/5.png" alt="Ekran Görüntüsü 5" loading="lazy"></div>
+                <div class="screen-thumb-card"><img src="fishingstoresim/6.png" alt="Ekran Görüntüsü 6" loading="lazy"></div>
+                <div class="screen-thumb-card"><img src="fishingstoresim/7.png" alt="Ekran Görüntüsü 7" loading="lazy"></div>
+                <div class="screen-thumb-card"><img src="fishingstoresim/8.png" alt="Ekran Görüntüsü 8" loading="lazy"></div>
+                <div class="screen-thumb-card"><img src="fishingstoresim/9.png" alt="Ekran Görüntüsü 9" loading="lazy"></div>
+                <div class="screen-thumb-card"><img src="fishingstoresim/10.png" alt="Ekran Görüntüsü 10" loading="lazy"></div>
+                <div class="screen-thumb-card"><img src="fishingstoresim/11.png" alt="Ekran Görüntüsü 11" loading="lazy"></div>
+                <div class="screen-thumb-card"><img src="fishingstoresim/12.png" alt="Ekran Görüntüsü 12" loading="lazy"></div>
+                <div class="screen-thumb-card"><img src="fishingstoresim/13.png" alt="Ekran Görüntüsü 13" loading="lazy"></div>
+                <div class="screen-thumb-card"><img src="fishingstoresim/14.png" alt="Ekran Görüntüsü 14" loading="lazy"></div>
+                <div class="screen-thumb-card"><img src="fishingstoresim/15.png" alt="Ekran Görüntüsü 15" loading="lazy"></div>
+                <div class="screen-thumb-card"><img src="fishingstoresim/16.png" alt="Ekran Görüntüsü 16" loading="lazy"></div>
+                <div class="screen-thumb-card"><img src="fishingstoresim/17.png" alt="Ekran Görüntüsü 17" loading="lazy"></div>
+                <div class="screen-thumb-card"><img src="fishingstoresim/18.png" alt="Ekran Görüntüsü 18" loading="lazy"></div>
+                <div class="screen-thumb-card"><img src="fishingstoresim/19.png" alt="Ekran Görüntüsü 19" loading="lazy"></div>
+                <div class="screen-thumb-card"><img src="fishingstoresim/20.png" alt="Ekran Görüntüsü 20" loading="lazy"></div>
             </div>
         </section>
-        <!-- Development Roadmap -->
-        <section class="page-section">
-            <div class="section-header">
-                <h2 class="section-title">Geliştirme Yol Haritası</h2>
-                <span class="tech-badge-primary"><i class="fas fa-map-signs"></i> Roadmap</span>
-            </div>
-            <p class="section-desc">
-                Fishing Store Simulator'ın yayınlanma sürecine kadar olan geliştirme kilometre taşları:
-            </p>
-            <div class="roadmap-timeline">
-                <div class="roadmap-stage active">
-                    <span class="stage-pill current">Şu Anki Aşama • Pre-Alpha</span>
-                    <h4>Çekirdek Sistemler & Lojistik</h4>
-                    <p>
-                        Toptancı siparişleri, koli taşıma, 3D raf yerleşim sistemi, temel müşteri AI ve çok oyunculu Netcode (NGO) eşzamanlama altyapısı.
-                    </p>
-                </div>
-                <div class="roadmap-stage">
-                    <span class="stage-pill upcoming">Sıradaki Aşama • Alpha</span>
-                    <h4>Genişletme & Steamworks</h4>
-                    <p>
-                        Steam lobi davetleri, yeni olta ve ekipman çeşitleri, dükkan tabela/zemin özelleştirmeleri ve dinamik gün/gece döngüsü.
-                    </p>
-                </div>
-                <div class="roadmap-stage">
-                    <span class="stage-pill upcoming">Gelecek Aşama • Beta & Steam Demo</span>
-                    <h4>Steam Yayını & Playtest</h4>
-                    <p>
-                        Steam mağaza sayfasının halka açılması, topluluk playtest testleri ve ücretsiz oynanabilir Steam Demo sürümü.
-                    </p>
-                </div>
-            </div>
-        </section>
-        <!-- Next / Previous Project Navigation -->
-        <div class="project-nav-bar">
-            <a href="willpower.html" class="nav-proj-btn">
-                <i class="fas fa-chevron-left"></i> Willpower Protocol
-            </a>
-            <a href="../index.html" class="nav-proj-btn">
-                <i class="fas fa-th-large"></i> Tüm Projeler
-            </a>
-            <a href="vocapuzzle.html" class="nav-proj-btn">
-                VocaPuzzle <i class="fas fa-chevron-right"></i>
-            </a>
-        </div>
+
     </main>
-    <!-- Global Footer -->
+
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <span class="lightbox-close" title="Kapat">&times;</span>
+        <img class="lightbox-img" id="lightboxImg" alt="Büyütülmüş Görsel">
+        <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+
     <footer>
         <div class="footer-container">
             <div class="footer-left">
@@ -1277,137 +936,32 @@
             </div>
         </div>
     </footer>
-    <!-- Modern Fullscreen Lightbox Modal -->
-    <div class="lightbox-modal" id="lightbox-modal" onclick="onLightboxBgClick(event)">
-        <div class="lightbox-close-btn" onclick="closeLightbox()" title="Kapat (Esc)"><i class="fas fa-times"></i></div>
-        <button class="lightbox-arrow lightbox-arrow-left" onclick="navigateLightbox(-1, event)" title="Önceki (Sol Ok)"><i class="fas fa-chevron-left"></i></button>
-        
-        <div class="lightbox-dialog">
-            <img id="lightbox-main-img" src="" alt="Fishing Store Simulator Ekran Görüntüsü">
-            <div class="lightbox-bottom-info">
-                <span id="lightbox-caption">Fishing Store Simulator Oyun İçi Görsel</span>
-                <span class="lightbox-counter-badge" id="lightbox-counter">1 / 20</span>
-            </div>
-        </div>
-        
-        <button class="lightbox-arrow lightbox-arrow-right" onclick="navigateLightbox(1, event)" title="Sonraki (Sağ Ok)"><i class="fas fa-chevron-right"></i></button>
-    </div>
-    <!-- Gallery & Interactive Viewer Script -->
+
     <script>
-        const TOTAL_IMAGES = 20;
-        const imageTitles = [
-            "Ana Menü ve Balıkçılık Atölyesi Görünümü",
-            "Steam Çok Oyunculu (Co-op) Lobi ve Davet Sistemi",
-            "Mağaza Dış Mekanı ve Kargo Teslimat Alanı",
-            "Dükkan Ön Cephesi ve Çevre Görünümü",
-            "Kargo Kolisinden Olta Kamışı Çıkarma ve Standa Yerleştirme",
-            "Olta Makinelerinin Modüler Reyon Rafına Dizilimi",
-            "FishOS Dinamik Fiyatlandırma ve Kâr Marjı Yönetimi",
-            "FishNet Toptan Tedarik ve Ürün Sipariş Portalı",
-            "FishDecor Mağaza Ekipmanları ve Mobilya Kataloğu",
-            "Dükkan İçi Reyon, Stand ve Mobilya Yerleşimi",
-            "3D Ürün İnceleme ve Detaylı Paket Görünümü",
-            "Dükkan Çevresi Temizliği ve Çöp Toplama Mekaniği",
-            "Müşterinin Dükkandan İçeri Girişi (Müşteri AI)",
-            "Müşteri İhtiyaç Analizi ve Tavsiye Danışma Paneli",
-            "Müşteriye Uygun Ekipman Tavsiye Etme ve Onaylama",
-            "Kasa Terminali ve Ürün Paketleme İstasyonu",
-            "Kasada Müşteriden Nakit Para Ödemesi Alma",
-            "Kasa Çekmecesi ve Nakit Para Üstü Hesaplama",
-            "POS Cihazı ile Temassız ve Çipli Kredi Kartı Ödemesi",
-            "Gün Sonu Finansal Kapanış Raporu ve Kâr Özeti"
-        ];
-        let currentViewerIndex = 1;
-        let currentLightboxIndex = 1;
-        // Initialize Thumbnails Strip
-        function initGallery() {
-            const thumbStrip = document.getElementById('thumbnails-strip');
-            for (let i = 1; i <= TOTAL_IMAGES; i++) {
-                const imgPath = `fishingstoresim/${i}.png`;
-                const title = imageTitles[i - 1] || `Fishing Store Simulator Görsel ${i}`;
-                // Create Thumbnail Item
-                const thumb = document.createElement('div');
-                thumb.className = `thumb-item ${i === 1 ? 'active' : ''}`;
-                thumb.id = `thumb-${i}`;
-                thumb.onclick = () => setViewerIndex(i);
-                thumb.innerHTML = `<img src="${imgPath}" alt="${title}" loading="lazy">`;
-                thumbStrip.appendChild(thumb);
-            }
-        }
-        function setViewerIndex(index) {
-            if (index < 1) index = TOTAL_IMAGES;
-            if (index > TOTAL_IMAGES) index = 1;
-            currentViewerIndex = index;
-            const featuredImg = document.getElementById('featured-img');
-            const badge = document.getElementById('viewer-index-badge');
-            const caption = document.getElementById('viewer-caption-text');
-            featuredImg.style.opacity = '0.5';
-            setTimeout(() => {
-                featuredImg.src = `fishingstoresim/${index}.png`;
-                badge.innerHTML = `<i class="fas fa-image"></i> Görsel ${index} / ${TOTAL_IMAGES}`;
-                caption.textContent = imageTitles[index - 1] || `Fishing Store Simulator Görsel ${index}`;
-                featuredImg.style.opacity = '1';
-            }, 120);
-            // Update active thumbnail
-            document.querySelectorAll('.thumb-item').forEach(el => el.classList.remove('active'));
-            const activeThumb = document.getElementById(`thumb-${index}`);
-            if (activeThumb) {
-                activeThumb.classList.add('active');
-                activeThumb.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
-            }
-        }
-        function navigateViewer(direction, event) {
-            if (event) event.stopPropagation();
-            setViewerIndex(currentViewerIndex + direction);
-        }
-        // Lightbox Functions
-        function openLightbox(index) {
-            currentLightboxIndex = index;
-            updateLightboxContent();
-            const modal = document.getElementById('lightbox-modal');
-            modal.style.display = 'flex';
-            setTimeout(() => modal.classList.add('active'), 10);
-            document.body.style.overflow = 'hidden';
-        }
-        function closeLightbox() {
-            const modal = document.getElementById('lightbox-modal');
-            modal.classList.remove('active');
-            setTimeout(() => {
-                modal.style.display = 'none';
-                document.body.style.overflow = '';
-            }, 250);
-        }
-        function navigateLightbox(direction, event) {
-            if (event) event.stopPropagation();
-            currentLightboxIndex += direction;
-            if (currentLightboxIndex < 1) currentLightboxIndex = TOTAL_IMAGES;
-            if (currentLightboxIndex > TOTAL_IMAGES) currentLightboxIndex = 1;
-            updateLightboxContent();
-        }
-        function updateLightboxContent() {
-            const img = document.getElementById('lightbox-main-img');
-            const caption = document.getElementById('lightbox-caption');
-            const counter = document.getElementById('lightbox-counter');
-            img.src = `fishingstoresim/${currentLightboxIndex}.png`;
-            caption.textContent = imageTitles[currentLightboxIndex - 1] || `Fishing Store Simulator Görsel ${currentLightboxIndex}`;
-            counter.textContent = `${currentLightboxIndex} / ${TOTAL_IMAGES}`;
-        }
-        function onLightboxBgClick(e) {
-            if (e.target.id === 'lightbox-modal' || e.target.classList.contains('lightbox-dialog')) {
-                closeLightbox();
-            }
-        }
-        // Keyboard Shortcuts
-        document.addEventListener('keydown', (e) => {
-            const modal = document.getElementById('lightbox-modal');
-            if (modal.classList.contains('active')) {
-                if (e.key === 'Escape') closeLightbox();
-                if (e.key === 'ArrowLeft') navigateLightbox(-1);
-                if (e.key === 'ArrowRight') navigateLightbox(1);
-            }
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('lightboxModal');
+            const modalImg = document.getElementById('lightboxImg');
+            const captionText = document.getElementById('lightboxCaption');
+            const closeBtn = document.querySelector('.lightbox-close');
+
+            document.querySelectorAll('.screen-thumb-card').forEach((card, index) => {
+                card.addEventListener('click', () => {
+                    const img = card.querySelector('img');
+                    modal.style.display = 'flex';
+                    modalImg.src = img.src;
+                    captionText.textContent = `Ekran Görüntüsü ${index + 1}`;
+                });
+            });
+
+            closeBtn.addEventListener('click', () => { modal.style.display = 'none'; });
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) modal.style.display = 'none';
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') modal.style.display = 'none';
+            });
         });
-        // Initialize on DOM load
-        document.addEventListener('DOMContentLoaded', initGallery);
     </script>
+
 </body>
 </html>

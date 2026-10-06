@@ -231,207 +231,207 @@
             scroll-margin-top: 105px;
         }
 
-        /* 2-Span Teaser Card (Fishing Store Simulator) */
-        .teaser-card-span {
-            grid-column: span 2;
+        /* Flagship Project Showcase (Fishing Store Simulator) */
+        /* Flagship Project Showcase (Fishing Store Simulator) - Compact & Sleek */
+        .flagship-showcase {
+            margin-bottom: 45px;
+            scroll-margin-top: 105px;
+        }
+        .flagship-card {
             background: linear-gradient(135deg, #091322 0%, #0d223f 50%, #081528 100%);
-            border-radius: 16px;
-            padding: 30px 32px;
-            border: 1px solid rgba(0, 195, 255, 0.25);
-            box-shadow: 0 8px 25px rgba(2, 18, 44, 0.25);
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
+            border-radius: 20px;
             overflow: hidden;
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+            position: relative;
+            border: 1px solid rgba(0, 195, 255, 0.25);
+            box-shadow: 0 8px 30px rgba(2, 18, 44, 0.25);
+            padding: 26px 30px;
+            color: #ffffff;
         }
-        .teaser-card-span:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 16px 36px rgba(0, 119, 255, 0.28), 0 0 0 1px rgba(0, 195, 255, 0.45);
-        }
-        .teaser-card-span::before {
-            content: '';
+        .flagship-bg-glow {
             position: absolute;
-            top: -40%;
-            right: -20%;
-            width: 380px;
-            height: 380px;
-            background: radial-gradient(circle, rgba(0, 195, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
-            border-radius: 50%;
+            top: -30%;
+            right: -10%;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(0, 195, 255, 0.12) 0%, transparent 70%);
             pointer-events: none;
+            z-index: 1;
         }
-        .teaser-top {
+        .flagship-layout {
             position: relative;
             z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 25px;
+            align-items: center;
         }
-        .teaser-header {
+        .flagship-badges {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 14px;
             flex-wrap: wrap;
-            gap: 10px;
-        }
-        .teaser-status {
-            display: inline-flex;
-            align-items: center;
             gap: 8px;
-            background: rgba(0, 230, 153, 0.12);
-            color: #00e699;
-            border: 1px solid rgba(0, 230, 153, 0.35);
-            padding: 5px 13px;
-            border-radius: 30px;
-            font-size: 0.78rem;
+            margin-bottom: 10px;
+        }
+        .flagship-status {
+            background: rgba(16, 185, 129, 0.18);
+            color: #34d399;
+            border: 1px solid rgba(52, 211, 153, 0.4);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
             font-weight: 700;
-            letter-spacing: 0.4px;
-        }
-        .pulse-dot {
-            width: 7px;
-            height: 7px;
-            background-color: #00e699;
-            border-radius: 50%;
-            box-shadow: 0 0 8px #00e699;
-            animation: pulseAnim 1.8s infinite;
-        }
-        @keyframes pulseAnim {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 230, 153, 0.7); }
-            70% { transform: scale(1.15); box-shadow: 0 0 0 7px rgba(0, 230, 153, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 230, 153, 0); }
-        }
-        .teaser-engine {
             display: inline-flex;
             align-items: center;
             gap: 6px;
+        }
+        .pulse-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #34d399;
+            border-radius: 50%;
+            box-shadow: 0 0 6px #34d399;
+            animation: pulse 1.8s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); }
+            70% { transform: scale(1.15); box-shadow: 0 0 0 5px rgba(52, 211, 153, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+        }
+        .flagship-tag {
             background: rgba(255, 255, 255, 0.08);
             color: #cbd5e1;
-            padding: 5px 12px;
-            border-radius: 8px;
-            font-size: 0.78rem;
+            padding: 3px 9px;
+            border-radius: 6px;
+            font-size: 0.75rem;
             font-weight: 600;
             border: 1px solid rgba(255, 255, 255, 0.12);
         }
-        .teaser-title {
-            font-size: 1.85rem;
-            font-weight: 800;
+        .flagship-title {
+            font-size: 1.55rem;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: -0.4px;
             margin-bottom: 4px;
-            letter-spacing: -0.3px;
-            background: linear-gradient(120deg, #ffffff 30%, #70c4ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
-        .teaser-tagline {
+        .flagship-slogan {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: -0.2px;
+        }
+        .flagship-slogan span {
             color: #38bdf8;
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
         }
-        .teaser-desc {
+        .flagship-desc {
             color: #cbd5e1;
-            font-size: 0.92rem;
-            line-height: 1.62;
+            font-size: 0.88rem;
+            line-height: 1.55;
             margin-bottom: 16px;
+            max-width: 620px;
         }
-        .teaser-tags {
+        .flagship-actions {
             display: flex;
+            align-items: center;
             flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 18px;
-            position: relative;
-            z-index: 2;
+            gap: 10px;
         }
-        .teaser-pill {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: #f1f5f9;
-            font-size: 0.78rem;
-            font-weight: 600;
-            padding: 5px 12px;
-            border-radius: 20px;
+        .flagship-btn-primary {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            transition: background-color 0.2s, border-color 0.2s;
-        }
-        .teaser-pill:hover {
-            background: rgba(0, 119, 255, 0.25);
-            border-color: rgba(0, 195, 255, 0.5);
-        }
-        .teaser-pill i {
-            color: #38bdf8;
-        }
-        .teaser-footer {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
-            padding-top: 16px;
-            flex-wrap: wrap;
-            gap: 12px;
-            position: relative;
-            z-index: 2;
-        }
-        .teaser-detail-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
             background: var(--primary);
             color: #ffffff;
-            border: 1px solid var(--primary);
             padding: 8px 18px;
             border-radius: 8px;
-            font-size: 0.88rem;
             font-weight: 700;
+            font-size: 0.85rem;
             text-decoration: none;
-            box-shadow: 0 4px 14px rgba(0, 119, 255, 0.35);
-            user-select: none;
+            box-shadow: 0 4px 12px rgba(0, 119, 255, 0.35);
             transition: all 0.25s ease;
         }
-        .teaser-detail-btn:hover {
-            background-color: #0066dd;
-            border-color: #0066dd;
-            box-shadow: 0 6px 18px rgba(0, 119, 255, 0.5);
+        .flagship-btn-primary:hover {
+            background: var(--primary-dark);
             transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 119, 255, 0.5);
             color: #ffffff;
         }
-        .steam-badge-btn {
+        .flagship-steam-badge {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             background: linear-gradient(135deg, #171a21 0%, #1b2838 100%);
             color: #66c0f4;
             border: 1px solid rgba(102, 192, 244, 0.4);
-            padding: 8px 18px;
+            padding: 8px 14px;
             border-radius: 8px;
-            font-size: 0.88rem;
+            font-size: 0.82rem;
             font-weight: 700;
-            text-decoration: none;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             user-select: none;
+        }
+        .flagship-btn-devlog {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #cbd5e1;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-decoration: none;
             transition: all 0.25s ease;
         }
-        .steam-badge-btn i {
-            font-size: 1.15rem;
-        }
-        .steam-badge-btn:hover {
-            border-color: #66c0f4;
-            box-shadow: 0 6px 20px rgba(102, 192, 244, 0.35);
+        .flagship-btn-devlog:hover {
+            background: rgba(0, 119, 255, 0.2);
+            border-color: #38bdf8;
             color: #ffffff;
             transform: translateY(-2px);
         }
-        .teaser-note {
-            font-size: 0.82rem;
-            color: #94a3b8;
+
+        .flagship-media {
             display: flex;
             align-items: center;
-            gap: 6px;
+            justify-content: center;
         }
-        .teaser-note i {
-            color: #fbbf24;
+        .flagship-media-wrapper {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            width: 100%;
+            max-width: 340px;
+            background: #000;
+            display: block;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .flagship-media-wrapper:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0, 119, 255, 0.25);
+        }
+        .flagship-preview-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .section-divider-title {
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .flagship-layout {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .flagship-card {
+                padding: 20px 18px;
+            }
+            .flagship-media-wrapper {
+                max-width: 100%;
+            }
         }
 
         /* Project Card Styling */
@@ -584,14 +584,141 @@
             box-shadow: 0 6px 14px rgba(0, 119, 255, 0.25);
         }
 
+        /* Latest Blog / Devlog Section */
+        .latest-blog-section {
+            margin-top: 70px;
+        }
+        .section-header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .section-badge-small {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        .section-main-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--dark);
+            letter-spacing: -0.5px;
+        }
+        .see-all-blog-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: transform 0.2s, color 0.2s;
+        }
+        .see-all-blog-btn:hover {
+            color: #005ecb;
+            transform: translateX(4px);
+        }
+
+        .blog-showcase-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 360px 1fr;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .blog-showcase-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 119, 255, 0.12);
+            border-color: rgba(0, 119, 255, 0.35);
+        }
+        .bsc-thumb-box {
+            position: relative;
+            background: #0f172a;
+            overflow: hidden;
+            min-height: 220px;
+        }
+        .bsc-thumb-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .blog-showcase-card:hover .bsc-thumb-img {
+            transform: scale(1.05);
+        }
+        .bsc-content {
+            padding: 30px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .bsc-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+        .bsc-tag {
+            background: #eaf2ff;
+            color: var(--primary);
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 12px;
+        }
+        .bsc-title {
+            font-size: 1.32rem;
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.35;
+            margin-bottom: 10px;
+            transition: color 0.2s;
+        }
+        .blog-showcase-card:hover .bsc-title {
+            color: var(--primary);
+        }
+        .bsc-desc {
+            color: var(--text);
+            font-size: 0.92rem;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+        .bsc-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text);
+            border-top: 1px solid var(--border);
+            padding-top: 14px;
+        }
+        .bsc-read {
+            color: var(--primary);
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
         /* Mobile & Tablet Responsiveness */
         @media (max-width: 1024px) {
             .projects-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 25px;
-            }
-            .teaser-card-span {
-                grid-column: span 2;
             }
         }
         @media (max-width: 768px) {
@@ -605,14 +732,19 @@
                 grid-template-columns: 1fr;
                 gap: 25px;
             }
-            .teaser-card-span {
-                grid-column: span 1;
-                padding: 24px 20px;
+            .flagship-slogan {
+                font-size: 1.3rem;
             }
-            .teaser-title { font-size: 1.55rem; }
-            .teaser-footer {
-                flex-direction: column;
-                align-items: flex-start;
+
+            .blog-showcase-card {
+                grid-template-columns: 1fr;
+            }
+            .bsc-thumb-box {
+                height: 200px;
+                min-height: auto;
+            }
+            .bsc-content {
+                padding: 24px 20px;
             }
 
             footer {
@@ -642,6 +774,7 @@
         <nav>
             <a href="index.html" class="active">Ana Sayfa</a>
             <a href="about.html">Hakkımda</a>
+            <a href="blog/index.html">Blog</a>
             <a href="contact.html">İletişim</a>
         </nav>
     </header>
@@ -664,49 +797,61 @@
             </div>
         </section>
 
-        <section class="projects-grid" id="projects">
-
-            <!-- 2-COLUMN SPOTLIGHT TEASER: Fishing Store Simulator -->
-            <div class="teaser-card-span">
-                <div class="teaser-top">
-                    <div class="teaser-header">
-                        <div class="teaser-status">
-                            <span class="pulse-dot"></span> Aktif Geliştirme Aşamasında
+        <!-- FLAGSHIP SHOWCASE: Fishing Store Simulator -->
+        <section class="flagship-showcase" id="projects">
+            <div class="flagship-card">
+                <div class="flagship-bg-glow"></div>
+                
+                <div class="flagship-layout">
+                    <!-- Left: Info & Branding -->
+                    <div class="flagship-info">
+                        <div class="flagship-badges">
+                            <span class="flagship-status"><span class="pulse-dot"></span> %90 Tamamlandı</span>
+                            <span class="flagship-tag"><i class="fas fa-paper-plane"></i> Fragman & Yayıncı Aşaması</span>
+                            <span class="flagship-tag"><i class="fab fa-steam"></i> Steam PC</span>
+                            <span class="flagship-tag"><i class="fas fa-users"></i> 1 - 4 Co-op</span>
                         </div>
-                        <div class="teaser-engine">
-                            <i class="fas fa-cube"></i> Unity Engine • C#
+
+                        <h2 class="flagship-title">Fishing Store Simulator</h2>
+
+                        <div class="flagship-slogan">
+                            Kendi balıkçılık mağazanı <span>sıfırdan kur ve işlet!</span>
+                        </div>
+
+                        <p class="flagship-desc">
+                            Küçük bir olta dükkanıyla başla, bölgenin en kapsamlı avcılık merkezine dönüş. İster tek başına dükkanı çekip çevir, ister arkadaşlarınla takım olup yoğun saatleri birlikte yönet!
+                        </p>
+
+                        <div class="flagship-actions">
+                            <a href="projects/fishingstoresim.html" class="flagship-btn-primary">
+                                <i class="fas fa-play-circle"></i> Oynanış & Detaylar
+                            </a>
+                            <div class="flagship-steam-badge">
+                                <i class="fab fa-steam"></i> Steam Yakında
+                            </div>
+                            <a href="blog/steam-kapsul-tasarim-sureci.html" class="flagship-btn-devlog">
+                                <i class="fas fa-pen-nib"></i> Devlog
+                            </a>
                         </div>
                     </div>
 
-                    <h2 class="teaser-title">Fishing Store Simulator</h2>
-                    <div class="teaser-tagline">
-                        <i class="fas fa-store"></i> Co-op Balık Av Malzemeleri & Dükkan Yönetimi Simülasyonu
-                    </div>
-
-                    <p class="teaser-desc">
-                        Arkadaşlarınızla birlikte sıfırdan kendi balık av malzemeleri dükkanınızı kurun ve genişletin. Oltalardan makinelere, sahte yemlerden profesyonel kıyı ekipmanlarına kadar yüzlerce ürünü tedarik edin, rafları dizin, dükkanınızı dekore edin ve müşterilerin taleplerini karşılayarak kasabanın en popüler balıkçılık merkezine dönüşün!
-                    </p>
-                </div>
-
-                <div class="teaser-bottom">
-                    <div class="teaser-tags">
-                        <span class="teaser-pill"><i class="fab fa-steam"></i> Steam</span>
-                        <span class="teaser-pill"><i class="fas fa-users"></i> Co-op (Çok Oyunculu)</span>
-                        <span class="teaser-pill"><i class="fas fa-fish"></i> Av & Olta Ekipmanları</span>
-                        <span class="teaser-pill"><i class="fas fa-cash-register"></i> Dükkan Yönetimi</span>
-                        <span class="teaser-pill"><i class="fas fa-chart-line"></i> Tycoon / Simülasyon</span>
-                    </div>
-
-                    <div class="teaser-footer">
-                        <a href="projects/fishingstoresim.html" class="teaser-detail-btn">
-                            <i class="fas fa-images"></i> Projeyi & Görselleri İncele
+                    <!-- Right: Steam Header Artwork (Compact & Light) -->
+                    <div class="flagship-media">
+                        <a href="projects/fishingstoresim.html" class="flagship-media-wrapper" title="Projeyi ve Oynanışı İncele">
+                            <img src="blog/images/fishingstoresim/store_header.png" alt="Fishing Store Simulator Steam Header" class="flagship-preview-img">
                         </a>
-                        <div class="steam-badge-btn">
-                            <i class="fab fa-steam"></i> Steam İstek Listesi Pek Yakında
-                        </div>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Other Projects Section -->
+        <div class="section-divider-title">
+            <div class="section-badge-small"><i class="fas fa-mobile-alt"></i> Mobil Ekosistem</div>
+            <h2 class="section-main-title">Mobil Uygulamalar ve Oyunlar</h2>
+        </div>
+
+        <section class="projects-grid">
             
             <a href="projects/vocapuzzle.html" class="project-card">
                 <div class="project-image-wrapper">
@@ -772,6 +917,41 @@
                 </div>
             </a>
 
+        </section>
+
+        <!-- Latest Blog / Devlog Section -->
+        <section class="latest-blog-section" id="blog">
+            <div class="section-header-bar">
+                <div>
+                    <div class="section-badge-small"><i class="fas fa-pen-nib"></i> Geliştirici Günlüğü</div>
+                    <h2 class="section-main-title">Son Blog Yazıları</h2>
+                </div>
+                <a href="blog/index.html" class="see-all-blog-btn">
+                    Tüm Yazıları Gör <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <a href="blog/steam-kapsul-tasarim-sureci.html" class="blog-showcase-card">
+                <div class="bsc-thumb-box">
+                    <img src="blog/images/fishingstoresim/store_header.png" alt="Fishing Store Simulator Steam Header" class="bsc-thumb-img">
+                </div>
+                <div class="bsc-content">
+                    <div class="bsc-tags">
+                        <span class="bsc-tag">Fishing Store Simulator</span>
+                        <span class="bsc-tag">Devlog</span>
+                        <span class="bsc-tag">Steam</span>
+                        <span class="bsc-tag">Tasarım</span>
+                    </div>
+                    <h3 class="bsc-title">Steam Kapsül Tasarım Süreci ve 'AI Slop' Mücadelesi</h3>
+                    <p class="bsc-desc">
+                        Oyunumuzun %95 gibi çok büyük bir kısmının bitmiş olmasıyla beraber sürekli ertelediğim Steam kapsülleri beni strese sokuyordu. "AI Slop" görüntüsünden kaçınarak içimize sinen bir seviyeye nasıl ulaştık?
+                    </p>
+                    <div class="bsc-footer">
+                        <span><i class="far fa-calendar-alt"></i> 7 Ekim 2026 • 2 dk okuma</span>
+                        <span class="bsc-read">Yazıyı Oku <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </a>
         </section>
     </main>
 

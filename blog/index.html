@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Geliştirici Günlüğü | Enes Çetin</title>
+    <meta name="description" content="Enes Çetin - Geliştirici Günlüğü ve Blog. Oyun geliştirme, mobil projeler, tasarım süreçleri ve bağımsız yapımcılık üzerine düşünceler.">
+    <meta name="author" content="Enes Çetin">
+    <meta name="google-site-verification" content="TQxXKDguKToObDTY3gqACdXx5j2RQaTUSalGz2P1AHY">
+    <link rel="canonical" href="https://enescetin.net/blog/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://enescetin.net/blog/">
+    <meta property="og:title" content="Blog & Geliştirici Günlüğü | Enes Çetin">
+    <meta property="og:description" content="Oyun geliştirme, mobil projeler ve tasarım süreçlerinden samimi notlar.">
+    <meta property="og:image" content="https://enescetin.net/img/LogomYatay.jpg">
+    <meta property="og:locale" content="tr_TR">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://enescetin.net/blog/">
+    <meta name="twitter:title" content="Blog & Geliştirici Günlüğü | Enes Çetin">
+    <meta name="twitter:description" content="Oyun geliştirme, mobil projeler ve tasarım süreçlerinden samimi notlar.">
+    <meta name="twitter:image" content="https://enescetin.net/img/LogomYatay.jpg">
+
+    <!-- Schema.org Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Enes Çetin Geliştirici Günlüğü & Blog",
+      "url": "https://enescetin.net/blog/",
+      "description": "Enes Çetin'in oyun geliştirme ve mobil yazılım serüveninden notlar.",
+      "publisher": {
+        "@type": "Person",
+        "name": "Enes Çetin"
+      }
+    }
+    </script>
+
+    <link rel="icon" type="image/png" href="../img/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #0077FF;
+            --primary-dark: #005ecb;
+            --primary-light: #eaf2ff;
+            --dark: #2D2D2D;
+            --bg: #FFFFFF;
+            --gray: #F5F5F7;
+            --text: #555555;
+            --text-dark: #1e293b;
+            --border: #EAEAEA;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { 
+            background-color: #FAFAFC;
+            background-image: 
+                radial-gradient(at 50% 0%, rgba(0, 119, 255, 0.08) 0px, transparent 60%),
+                radial-gradient(#e2e8f0 1.1px, transparent 1.1px);
+            background-size: 100% 100%, 24px 24px;
+            background-attachment: fixed;
+            color: var(--dark); 
+            line-height: 1.6; 
+        }
+
+        /* Header & Navigation */
+        header { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 10px 10%; background: rgba(255, 255, 255, 0.85); border-bottom: 1px solid var(--border);
+            position: sticky; top: 0; z-index: 100; min-height: 85px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .logo { display: flex; align-items: center; text-decoration: none; }
+        .logo img { height: 50px; width: auto; transition: transform 0.25s ease; }
+        .logo:hover img { transform: scale(1.03); }
+
+        nav { display: flex; gap: 20px; white-space: nowrap; }
+        nav a { 
+            text-decoration: none; 
+            color: var(--dark); 
+            font-weight: 600; 
+            font-size: 0.95rem; 
+            position: relative;
+            padding-bottom: 4px;
+            transition: color 0.25s ease; 
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.25s ease;
+        }
+        nav a:hover { color: var(--primary); }
+        nav a:hover::after { width: 100%; }
+        nav a.active { color: var(--primary); }
+        nav a.active::after { width: 100%; }
+
+        /* Main Container */
+        main {
+            max-width: 1050px;
+            margin: 40px auto 80px auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .blog-hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .blog-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 14px;
+            border: 1px solid rgba(0, 119, 255, 0.2);
+        }
+        .blog-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--dark);
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        .blog-hero p {
+            color: var(--text);
+            font-size: 1.05rem;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* Filter Controls */
+        .filter-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 45px;
+        }
+        .filter-btn {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            user-select: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .filter-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+        .filter-btn.active {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(0, 119, 255, 0.3);
+        }
+
+        /* Blog Card Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: #ffffff;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+        .blog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(0, 119, 255, 0.1);
+            border-color: rgba(0, 119, 255, 0.3);
+        }
+
+        .blog-thumb-wrapper {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            background: #0f172a;
+            overflow: hidden;
+        }
+        .blog-thumb {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .blog-card:hover .blog-thumb {
+            transform: scale(1.05);
+        }
+
+        .blog-card-body {
+            padding: 24px 24px 20px 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+        .card-tag {
+            background: var(--gray);
+            color: var(--dark);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: color 0.2s, background 0.2s;
+        }
+        .blog-card:hover .card-tag {
+            background: var(--primary-light);
+            color: var(--primary);
+            border-color: rgba(0, 119, 255, 0.2);
+        }
+
+        .blog-card-title {
+            font-size: 1.22rem;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.35;
+            margin-bottom: 10px;
+            transition: color 0.2s;
+        }
+        .blog-card:hover .blog-card-title {
+            color: var(--primary);
+        }
+
+        .blog-card-excerpt {
+            color: var(--text);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .blog-card-footer {
+            border-top: 1px solid var(--border);
+            padding-top: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.82rem;
+            color: var(--text);
+        }
+        .card-date {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .card-read-more {
+            color: var(--primary);
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: transform 0.2s;
+        }
+        .blog-card:hover .card-read-more {
+            transform: translateX(3px);
+        }
+
+        /* Empty State */
+        .empty-state {
+            display: none;
+            text-align: center;
+            padding: 60px 20px;
+            background: #ffffff;
+            border: 1px dashed var(--border);
+            border-radius: 18px;
+            margin-top: 20px;
+        }
+        .empty-state i {
+            font-size: 3rem;
+            color: #cbd5e1;
+            margin-bottom: 14px;
+        }
+        .empty-state h3 {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+        .empty-state p {
+            color: var(--text);
+            font-size: 0.92rem;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            background-color: var(--bg);
+            padding: 35px 10%;
+            margin-top: 60px;
+        }
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .footer-copy {
+            font-size: 0.95rem;
+            color: var(--dark);
+        }
+        .footer-tagline {
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+        .footer-links {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .footer-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--gray);
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: transform 0.25s, background-color 0.25s, color 0.25s;
+            border: 1px solid var(--border);
+        }
+        .footer-links a:hover {
+            background: var(--primary);
+            color: #ffffff;
+            transform: translateY(-3px);
+            border-color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 10px 5%; }
+            nav { gap: 16px; }
+            nav a { font-size: 0.95rem; }
+            .blog-hero h1 { font-size: 2rem; }
+            .blog-grid { grid-template-columns: 1fr; }
+            footer { padding: 30px 5%; }
+            .footer-container { flex-direction: column; text-align: center; }
+            .footer-links { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="../index.html" class="logo">
+            <img src="../img/logo.png" alt="Enes Çetin Logo">
+        </a>
+        <nav>
+            <a href="../index.html">Ana Sayfa</a>
+            <a href="../about.html">Hakkımda</a>
+            <a href="index.html" class="active">Blog</a>
+            <a href="../contact.html">İletişim</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="blog-hero">
+            <div class="blog-badge"><i class="fas fa-pen-nib"></i> Geliştirici Günlüğü & Düşünceler</div>
+            <h1>Yazılar & Notlar</h1>
+            <p>Projelerimin mutfağından samimi perde arkası hikayeleri, tasarım süreçleri, oyun geliştirme denemeleri ve kısa notlar.</p>
+        </section>
+
+        <!-- Tag Filters -->
+        <section class="filter-section">
+            <button class="filter-btn active" data-filter="all">
+                <i class="fas fa-th-large"></i> Tümü
+            </button>
+            <button class="filter-btn" data-filter="fishingstoresim">
+                <i class="fas fa-fish"></i> Fishing Store Simulator
+            </button>
+            <button class="filter-btn" data-filter="devlog">
+                <i class="fas fa-code"></i> Devlog
+            </button>
+            <button class="filter-btn" data-filter="steam">
+                <i class="fab fa-steam"></i> Steam
+            </button>
+            <button class="filter-btn" data-filter="tasarim">
+                <i class="fas fa-palette"></i> Tasarım
+            </button>
+            <button class="filter-btn" data-filter="mobil">
+                <i class="fas fa-mobile-alt"></i> Mobil Projeler
+            </button>
+        </section>
+
+        <!-- Blog Posts Grid -->
+        <div class="blog-grid" id="blogGrid">
+
+            <!-- Post 1: Fishing Store Simulator Steam Kapsülleri -->
+            <a href="steam-kapsul-tasarim-sureci.html" class="blog-card" data-tags="fishingstoresim devlog steam tasarim">
+                <div class="blog-thumb-wrapper">
+                    <img src="images/fishingstoresim/store_header.png" alt="Fishing Store Simulator Steam Header" class="blog-thumb">
+                </div>
+                <div class="blog-card-body">
+                    <div class="card-tags">
+                        <span class="card-tag">Fishing Store Simulator</span>
+                        <span class="card-tag">Devlog</span>
+                        <span class="card-tag">Steam</span>
+                        <span class="card-tag">Tasarım</span>
+                    </div>
+                    <h2 class="blog-card-title">Steam Kapsül Tasarım Süreci ve 'AI Slop' Mücadelesi</h2>
+                    <p class="blog-card-excerpt">
+                        Oyunumuzun %95 gibi çok büyük bir kısmının bitmiş olmasıyla beraber sürekli ertelediğim Steam kapsülleri beni strese sokuyordu. "AI Slop" görüntüsünden kaçınarak içimize sinen bir seviyeye nasıl ulaştık?
+                    </p>
+                    <div class="blog-card-footer">
+                        <span class="card-date"><i class="far fa-calendar-alt"></i> 7 Ekim 2026</span>
+                        <span class="card-read-more">Yazıyı Oku <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- Empty state when no cards match filter -->
+        <div class="empty-state" id="emptyState">
+            <i class="far fa-folder-open"></i>
+            <h3>Bu etikette henüz yazı bulunmuyor</h3>
+            <p>Çok yakında yeni projeler ve devlog yazılarıyla burası dolacak!</p>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <p class="footer-copy">© 2026 <strong>Enes Çetin</strong>. Tüm hakları saklıdır.</p>
+                <p class="footer-tagline">Yazılım & Oyun Geliştirici • Bursa</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/en3xys" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/enes-%C3%A7etin-363b74324/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://play.google.com/store/apps/dev?id=6855907188560115347" target="_blank" rel="noopener noreferrer" aria-label="Google Play"><i class="fab fa-google-play"></i></a>
+                <a href="https://www.instagram.com/en3xys/?hl=tr" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:mail.enescetin@gmail.com" aria-label="E-posta"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Filter JS Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const blogCards = document.querySelectorAll('.blog-card');
+            const emptyState = document.getElementById('emptyState');
+
+            function applyFilter(filter) {
+                let visibleCount = 0;
+
+                filterBtns.forEach(btn => {
+                    if (btn.getAttribute('data-filter') === filter) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+
+                blogCards.forEach(card => {
+                    const tags = card.getAttribute('data-tags') || '';
+                    if (filter === 'all' || tags.includes(filter)) {
+                        card.style.display = 'flex';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                if (visibleCount === 0) {
+                    emptyState.style.display = 'block';
+                } else {
+                    emptyState.style.display = 'none';
+                }
+            }
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const selectedFilter = btn.getAttribute('data-filter');
+                    window.location.hash = selectedFilter === 'all' ? '' : selectedFilter;
+                    applyFilter(selectedFilter);
+                });
+            });
+
+            // Handle URL Hash if present (e.g. #fishingstoresim)
+            function checkHash() {
+                const hash = window.location.hash.replace('#', '').trim().toLowerCase();
+                if (hash) {
+                    const matchingBtn = document.querySelector(`.filter-btn[data-filter="${hash}"]`);
+                    if (matchingBtn) {
+                        applyFilter(hash);
+                        return;
+                    }
+                }
+                applyFilter('all');
+            }
+
+            window.addEventListener('hashchange', checkHash);
+            checkHash();
+        });
+    </script>
+
+</body>
+</html>
