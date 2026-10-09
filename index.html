@@ -666,6 +666,12 @@
             transform: translateX(4px);
         }
 
+        .latest-blog-container {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
         .blog-showcase-card {
             background: #ffffff;
             border: 1px solid var(--border);
@@ -974,27 +980,53 @@
                 </a>
             </div>
 
-            <a href="blog/steam-kapsul-tasarim-sureci.html" class="blog-showcase-card">
-                <div class="bsc-thumb-box">
-                    <img src="blog/images/fishingstoresim/store_header.png" alt="Fishing Store Simulator Steam Header" class="bsc-thumb-img">
-                </div>
-                <div class="bsc-content">
-                    <div class="bsc-tags">
-                        <span class="bsc-tag">Fishing Store Simulator</span>
-                        <span class="bsc-tag">Devlog</span>
-                        <span class="bsc-tag">Steam</span>
-                        <span class="bsc-tag">Tasarım</span>
+            <div class="latest-blog-container">
+                <!-- Post 2: Işıklandırma Devlog -->
+                <a href="blog/isiklandirma-ao-god-rays-local-volume.html" class="blog-showcase-card">
+                    <div class="bsc-thumb-box">
+                        <img src="blog/images/fishingstoresim/Lightning/5.webp" alt="Local Volume ve AO ile Işıklandırma" class="bsc-thumb-img" loading="lazy" width="1920" height="1080">
                     </div>
-                    <h3 class="bsc-title">Steam Kapsül Tasarım Süreci ve 'AI Slop' Mücadelesi</h3>
-                    <p class="bsc-desc">
-                        Oyunumuzun %95 gibi çok büyük bir kısmının bitmiş olmasıyla beraber sürekli ertelediğim Steam kapsülleri beni strese sokuyordu. "AI Slop" görüntüsünden kaçınarak içimize sinen bir seviyeye nasıl ulaştık?
-                    </p>
-                    <div class="bsc-footer">
-                        <span><i class="far fa-calendar-alt"></i> 7 Ekim 2026 • 2 dk okuma</span>
-                        <span class="bsc-read">Yazıyı Oku <i class="fas fa-arrow-right"></i></span>
+                    <div class="bsc-content">
+                        <div class="bsc-tags">
+                            <span class="bsc-tag">Fishing Store Simulator</span>
+                            <span class="bsc-tag">Devlog</span>
+                            <span class="bsc-tag">Işıklandırma</span>
+                            <span class="bsc-tag">Unity</span>
+                        </div>
+                        <h3 class="bsc-title">AO, God Rays ve Local Volume ile Çok Daha Kaliteli ve Sıcak Bir Işıklandırma Hazırlamak</h3>
+                        <p class="bsc-desc">
+                            İç mekan ışıklandırmasındaki soğuk ve cansız duruşu kırmak için Mixed Lighting denemelerinden sonra Local Volume, AO ve God Rays ile aradığımız sıcak atmosfere nasıl ulaştık?
+                        </p>
+                        <div class="bsc-footer">
+                            <span><i class="far fa-calendar-alt"></i> 10 Ekim 2026 • 2 dk okuma</span>
+                            <span class="bsc-read">Yazıyı Oku <i class="fas fa-arrow-right"></i></span>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+
+                <!-- Post 1: Steam Kapsülleri -->
+                <a href="blog/steam-kapsul-tasarim-sureci.html" class="blog-showcase-card">
+                    <div class="bsc-thumb-box">
+                        <img src="blog/images/fishingstoresim/store_header.png" alt="Fishing Store Simulator Steam Header" class="bsc-thumb-img" loading="lazy">
+                    </div>
+                    <div class="bsc-content">
+                        <div class="bsc-tags">
+                            <span class="bsc-tag">Fishing Store Simulator</span>
+                            <span class="bsc-tag">Devlog</span>
+                            <span class="bsc-tag">Steam</span>
+                            <span class="bsc-tag">Tasarım</span>
+                        </div>
+                        <h3 class="bsc-title">Steam Kapsül Tasarım Süreci ve 'AI Slop' Mücadelesi</h3>
+                        <p class="bsc-desc">
+                            Oyunumuzun %95 gibi çok büyük bir kısmının bitmiş olmasıyla beraber sürekli ertelediğim Steam kapsülleri beni strese sokuyordu. "AI Slop" görüntüsünden kaçınarak içimize sinen bir seviyeye nasıl ulaştık?
+                        </p>
+                        <div class="bsc-footer">
+                            <span><i class="far fa-calendar-alt"></i> 7 Ekim 2026 • 2 dk okuma</span>
+                            <span class="bsc-read">Yazıyı Oku <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </section>
     </main>
 

@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AO, God Rays ve Local Volume ile Çok Daha Kaliteli ve Sıcak Bir Işıklandırma Hazırlamak | Enes Çetin Blog</title>
+    <meta name="description" content="Fishing Store Simulator iç mekan ışıklandırma sürecinde Ambient Occlusion (AO), God Rays, Reflection Probe ve Local Volume kullanarak soğuk atmosferi sıcak ve estetik bir görünüme kavuşturma deneyimi.">
+    <meta name="author" content="Enes Çetin">
+    <meta name="google-site-verification" content="TQxXKDguKToObDTY3gqACdXx5j2RQaTUSalGz2P1AHY">
+    <link rel="canonical" href="https://enescetin.net/blog/isiklandirma-ao-god-rays-local-volume.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://enescetin.net/blog/isiklandirma-ao-god-rays-local-volume.html">
+    <meta property="og:title" content="AO, God Rays ve Local Volume ile Çok Daha Kaliteli ve Sıcak Bir Işıklandırma Hazırlamak | Enes Çetin">
+    <meta property="og:description" content="İç mekan ışıklandırmasındaki soğukluğu Local Volume, AO, God Rays ve Reflection Probe ile kırarak sıcak ve tatmin edici bir atmosfere ulaşma hikayesi.">
+    <meta property="og:image" content="https://enescetin.net/blog/images/fishingstoresim/Lightning/5.webp">
+    <meta property="og:locale" content="tr_TR">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://enescetin.net/blog/isiklandirma-ao-god-rays-local-volume.html">
+    <meta name="twitter:title" content="AO, God Rays ve Local Volume ile Çok Daha Kaliteli ve Sıcak Bir Işıklandırma Hazırlamak | Enes Çetin">
+    <meta name="twitter:description" content="Fishing Store Simulator için hazırlanan yeni ışıklandırma sistemi ve devlog notları.">
+    <meta name="twitter:image" content="https://enescetin.net/blog/images/fishingstoresim/Lightning/5.webp">
+
+    <!-- Schema.org Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "AO, God Rays ve Local Volume ile Çok Daha Kaliteli ve Sıcak Bir Işıklandırma Hazırlamak",
+      "image": "https://enescetin.net/blog/images/fishingstoresim/Lightning/5.webp",
+      "author": {
+        "@type": "Person",
+        "name": "Enes Çetin",
+        "url": "https://enescetin.net",
+        "image": "https://enescetin.net/img/enes-cetin.webp"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Enes Çetin",
+        "image": "https://enescetin.net/img/enes-cetin.webp"
+      },
+      "datePublished": "2026-10-10",
+      "description": "Fishing Store Simulator iç mekan ışıklandırma sürecinde Ambient Occlusion (AO), God Rays, Reflection Probe ve Local Volume kullanarak soğuk atmosferi sıcak ve estetik bir görünüme kavuşturma deneyimi."
+    }
+    </script>
+
+    <link rel="icon" type="image/png" href="../img/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #0077FF;
+            --primary-dark: #005ecb;
+            --primary-light: #eaf2ff;
+            --dark: #2D2D2D;
+            --bg: #FFFFFF;
+            --gray: #F5F5F7;
+            --text: #555555;
+            --text-dark: #1e293b;
+            --border: #EAEAEA;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { 
+            background-color: #FAFAFC;
+            background-image: 
+                radial-gradient(at 50% 0%, rgba(0, 119, 255, 0.08) 0px, transparent 60%),
+                radial-gradient(#e2e8f0 1.1px, transparent 1.1px);
+            background-size: 100% 100%, 24px 24px;
+            background-attachment: fixed;
+            color: var(--dark); 
+            line-height: 1.7; 
+        }
+
+        /* Header & Navigation */
+        header { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 10px 10%; background: rgba(255, 255, 255, 0.85); border-bottom: 1px solid var(--border);
+            position: sticky; top: 0; z-index: 100; min-height: 85px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .logo { display: flex; align-items: center; text-decoration: none; }
+        .logo img { height: 50px; width: auto; transition: transform 0.25s ease; }
+        .logo:hover img { transform: scale(1.03); }
+
+        nav { display: flex; gap: 20px; white-space: nowrap; }
+        nav a { 
+            text-decoration: none; 
+            color: var(--dark); 
+            font-weight: 600; 
+            font-size: 0.95rem; 
+            position: relative;
+            padding-bottom: 4px;
+            transition: color 0.25s ease; 
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.25s ease;
+        }
+        nav a:hover { color: var(--primary); }
+        nav a:hover::after { width: 100%; }
+        nav a.active { color: var(--primary); }
+        nav a.active::after { width: 100%; }
+
+        /* Main Container */
+        main {
+            max-width: 860px;
+            margin: 40px auto 70px auto;
+            padding: 0 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.92rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            transition: color 0.2s, transform 0.2s;
+        }
+        .back-link:hover {
+            color: var(--primary);
+            transform: translateX(-3px);
+        }
+
+        /* Article Wrapper */
+        .article-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px 45px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Post Header */
+        .post-header {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 25px;
+        }
+
+        .post-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .tag-pill {
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            border: 1px solid rgba(0, 119, 255, 0.2);
+        }
+
+        .post-title {
+            font-size: 2.15rem;
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.28;
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+        }
+
+        .post-meta {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.88rem;
+            color: var(--text);
+        }
+        .meta-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .meta-item i {
+            color: var(--primary);
+        }
+
+        /* Featured Image */
+        .featured-image-wrapper {
+            margin: 25px 0 35px 0;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            background: #0f172a;
+        }
+        .featured-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .image-caption {
+            font-size: 0.82rem;
+            color: var(--text);
+            text-align: center;
+            padding: 10px 15px;
+            background: var(--gray);
+            border-top: 1px solid var(--border);
+        }
+
+        /* Post Body */
+        .post-content {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: #334155;
+        }
+        .post-content p {
+            margin-bottom: 22px;
+        }
+        .post-content strong {
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .quote-box {
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: 18px 22px;
+            border-radius: 0 12px 12px 0;
+            margin: 28px 0;
+            font-style: italic;
+            color: #1e3a8a;
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+
+        /* Comparison Spotlight Box */
+        .spotlight-comparison {
+            margin: 32px 0;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+        }
+        .sc-header {
+            padding: 14px 20px;
+            background: var(--gray);
+            border-bottom: 1px solid var(--border);
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .sc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            padding: 20px;
+        }
+        @media (max-width: 650px) {
+            .sc-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .sc-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: #0f172a;
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .sc-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 119, 255, 0.15);
+        }
+        .sc-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+        .sc-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+        }
+        .sc-badge.before {
+            background: rgba(239, 68, 68, 0.9);
+            color: #ffffff;
+        }
+        .sc-badge.after {
+            background: rgba(16, 185, 129, 0.9);
+            color: #ffffff;
+        }
+        .sc-label {
+            padding: 10px 14px;
+            font-size: 0.82rem;
+            color: var(--text);
+            background: #ffffff;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        /* Pinterest / Masonry Gallery */
+        .showcase-section {
+            margin: 40px 0 30px 0;
+            background: var(--gray);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 26px;
+        }
+        .showcase-section h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .showcase-section p.sub {
+            font-size: 0.88rem;
+            color: var(--text);
+            margin-bottom: 22px;
+        }
+        .masonry-gallery {
+            column-count: 2;
+            column-gap: 16px;
+        }
+        @media (max-width: 650px) {
+            .masonry-gallery {
+                column-count: 1;
+            }
+        }
+        .masonry-card {
+            break-inside: avoid;
+            margin-bottom: 16px;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        .masonry-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 24px rgba(0, 119, 255, 0.12);
+            border-color: rgba(0, 119, 255, 0.35);
+        }
+        .masonry-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            transition: filter 0.2s ease;
+        }
+        .masonry-card:hover img {
+            filter: brightness(1.03);
+        }
+        .masonry-info {
+            padding: 11px 14px;
+            font-size: 0.84rem;
+            background: #fafafa;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+        }
+        .masonry-title {
+            font-weight: 700;
+            color: var(--dark);
+        }
+        .masonry-badge {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--primary);
+            background: var(--primary-light);
+            padding: 3px 8px;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+        .masonry-badge.old {
+            color: #dc2626;
+            background: #fee2e2;
+        }
+
+        /* Lightbox Modal */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding: 30px 20px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.94);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .lightbox-img {
+            max-width: 92%;
+            max-height: 82vh;
+            border-radius: 12px;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+            animation: zoomIn 0.2s ease-out;
+            object-fit: contain;
+        }
+        .lightbox-caption {
+            margin-top: 14px;
+            color: #f1f5f9;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-align: center;
+            max-width: 800px;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 18px;
+            right: 28px;
+            color: #cbd5e1;
+            font-size: 34px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s, transform 0.2s;
+            line-height: 1;
+        }
+        .lightbox-close:hover {
+            color: #ffffff;
+            transform: scale(1.15);
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.92); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Post Navigation Between Articles */
+        .post-nav-container {
+            margin-top: 35px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        .post-nav-card {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            padding: 18px 22px;
+            background: var(--gray);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.25s ease;
+        }
+        .post-nav-card:hover {
+            background: #ffffff;
+            border-color: var(--primary);
+            box-shadow: 0 6px 18px rgba(0, 119, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        .post-nav-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .post-nav-title {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 0.98rem;
+            line-height: 1.4;
+        }
+
+        /* Related Project Link Box */
+        .project-link-card {
+            margin-top: 25px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border-radius: 14px;
+            padding: 22px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            flex-wrap: wrap;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.25);
+        }
+        .plc-info h4 {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .plc-info p {
+            color: #94a3b8;
+            font-size: 0.88rem;
+            margin: 0;
+        }
+        .plc-btn {
+            background: var(--primary);
+            color: #ffffff;
+            padding: 9px 18px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+        .plc-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            background-color: var(--bg);
+            padding: 35px 10%;
+            margin-top: 60px;
+        }
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .footer-copy {
+            font-size: 0.95rem;
+            color: var(--dark);
+        }
+        .footer-tagline {
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+        .footer-links {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .footer-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--gray);
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: transform 0.25s, background-color 0.25s, color 0.25s;
+            border: 1px solid var(--border);
+        }
+        .footer-links a:hover {
+            background: var(--primary);
+            color: #ffffff;
+            transform: translateY(-3px);
+            border-color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 10px 5%; }
+            nav { gap: 16px; }
+            nav a { font-size: 0.95rem; }
+            .article-card { padding: 25px 20px; }
+            .post-title { font-size: 1.65rem; }
+            .project-link-card { flex-direction: column; align-items: flex-start; }
+            footer { padding: 30px 5%; }
+            .footer-container { flex-direction: column; text-align: center; }
+            .footer-links { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="../index.html" class="logo">
+            <img src="../img/logo.png" alt="Enes Çetin Logo">
+        </a>
+        <nav>
+            <a href="../index.html">Ana Sayfa</a>
+            <a href="../about.html">Hakkımda</a>
+            <a href="index.html" class="active">Blog</a>
+            <a href="../contact.html">İletişim</a>
+        </nav>
+    </header>
+
+    <main>
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Tüm Blog Yazılarına Dön
+        </a>
+
+        <article class="article-card">
+            <div class="post-header">
+                <div class="post-tags">
+                    <span class="tag-pill"><i class="fas fa-fish"></i> Fishing Store Simulator</span>
+                    <span class="tag-pill"><i class="fas fa-code"></i> Devlog</span>
+                    <span class="tag-pill"><i class="fas fa-lightbulb"></i> Işıklandırma</span>
+                    <span class="tag-pill"><i class="fas fa-cube"></i> Unity</span>
+                </div>
+
+                <h1 class="post-title">AO, God Rays ve Local Volume ile Çok Daha Kaliteli ve Sıcak Bir Işıklandırma Hazırlamak</h1>
+
+                <div class="post-meta">
+                    <span class="meta-item"><i class="fas fa-user-edit"></i> Enes Çetin</span>
+                    <span class="meta-item"><i class="fas fa-calendar-alt"></i> 10 Ekim 2026</span>
+                    <span class="meta-item"><i class="fas fa-clock"></i> 2 dk okuma</span>
+                </div>
+            </div>
+
+            <!-- Featured Header Image -->
+            <div class="featured-image-wrapper">
+                <img src="images/fishingstoresim/Lightning/5.webp" alt="Local Volume ve AO ile Sıcak İç Mekan Işıklandırması" class="featured-image" width="1920" height="1080" fetchpriority="high">
+                <div class="image-caption">Local Volume, AO ve God Rays sonrası ortaya çıkan sıcak ve dengeli iç mekan atmosferi</div>
+            </div>
+
+            <div class="post-content">
+                <p>
+                    Oyunun başından beri düzenli olarak ışıklar konusunda ilerleme kaydetmeye çalışıyorum ancak iç mekan ışıklandırması bir türlü tatmin etmiyordu. Rakip oyunlarda gördüğüm aydınlık iç mekanların yanında bizim oyun inanılmaz soğuk ve cansız duruyordu. <strong>Mixed Lighting, yoğun ışıklar vb. bir sürü çözüm denedim</strong> ama nedense <strong>Local Volume</strong> kullanmayı inatla reddetmiştim. Geliştirici arkadaşlarım ve diğer oyunların bu mekanikten yararlandığını görünce ben de kullanmak istedim. Sonuçtan pek ümitli değildim ancak inanılmaz tatmin etti, hiç bu kadar iyi olacağını düşünmemiştim. Aslında beni mutsuz eden bu eksiklik başucumdaymış fakat ben kaçıyormuşum.
+                </p>
+
+                <div class="quote-box">
+                    "Aslında beni mutsuz eden bu eksiklik başucumdaymış fakat ben kaçıyormuşum."
+                </div>
+
+                <!-- Eski ve Yeni Hızlı Kıyaslama Kutusu -->
+                <div class="spotlight-comparison">
+                    <div class="sc-header">
+                        <i class="fas fa-exchange-alt"></i> Hızlı Kıyaslama: Sıfır Işık vs. Local Volume & AO
+                    </div>
+                    <div class="sc-grid">
+                        <div class="sc-item" data-full="images/fishingstoresim/Lightning/8.webp" data-caption="Eski Hali (Sıfır Işık): Local Volume öncesi donuk ve soğuk iç mekan">
+                            <span class="sc-badge before">Önceki Hali</span>
+                            <img src="images/fishingstoresim/Lightning/8.webp" alt="Eski sıfır ışık iç mekan" loading="lazy" width="1920" height="1080">
+                            <div class="sc-label">Sıfır ışıkla oluşan soğuk ve cansız görünüm</div>
+                        </div>
+                        <div class="sc-item" data-full="images/fishingstoresim/Lightning/5.webp" data-caption="Yeni Hali: Local Volume, tavan armatürü ve AO ile sıcak atmosfer">
+                            <span class="sc-badge after">Yeni Hali</span>
+                            <img src="images/fishingstoresim/Lightning/5.webp" alt="Yeni sıcak iç mekan aydınlatması" loading="lazy" width="1920" height="1080">
+                            <div class="sc-label">Local Volume ve AO ile sıcak ve canlı atmosfer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p>
+                    <strong>AO ve God Rays'e</strong> gelecek olursak... Onları da "eklemek için" eklemiştim; elimde var, güzelleştirir diye düşünmüştüm. O da ne, aman Allah'ım! İnanılmaz estetik bir hava kattı. <strong>God Rays sis yoğunluğunu da Local Volume ile adapte çalıştırdım</strong> ve harika bir sonuç elde ettim. Unutmadan söyleyeyim, <strong>Reflection Probe</strong> da kullandım; onun da tatlı bir etkisi oldu.
+                </p>
+
+                <p>
+                    Bu sistemi kesinlikle ilerideki oyunlarımda uygulamayı düşünüyorum. Gerçekten inanılmaz hızlı ve güzel sonuçlar verdi.
+                </p>
+
+                <!-- Pinterest / Masonry Gallery (Tüm 8 Görsel) -->
+                <div class="showcase-section">
+                    <h3><i class="fas fa-images"></i> Geliştirme Sürecinden Kareler ve İnceleme</h3>
+                    <p class="sub">Tüm ışıklandırma testleri, cam yansımaları ve karşılaştırma kareleri (Büyütmek için görsellere tıklayabilirsiniz):</p>
+                    
+                    <div class="masonry-gallery">
+                        <!-- 1. Dış Mekan Genel -->
+                        <div class="masonry-card" data-caption="Dış Mekan Aydınlatması: Dış mekandan rastgele bir kare, çevre ışığı ve gölgeler.">
+                            <img src="images/fishingstoresim/Lightning/1.webp" alt="Dış Mekan Aydınlatması" loading="lazy" width="1920" height="1080">
+                            <div class="masonry-info">
+                                <span class="masonry-title">Dış Mekan Görünümü</span>
+                                <span class="masonry-badge">Dış Mekan</span>
+                            </div>
+                        </div>
+
+                        <!-- 2. Camdaki Yansımalar -->
+                        <div class="masonry-card" data-caption="Camdaki Yansımalar: Reflection Probe ile vitrin camlarında ağaç ve gökyüzü yansımaları.">
+                            <img src="images/fishingstoresim/Lightning/2.webp" alt="Camdaki Yansımalar - Reflection Probe" loading="lazy" width="1920" height="1080">
+                            <div class="masonry-info">
+                                <span class="masonry-title">Camdaki Yansımalar</span>
+                                <span class="masonry-badge">Reflection Probe</span>
+                            </div>
+                        </div>
+
+                        <!-- 3. Local Volume Dışarıdan Çekim -->
+                        <div class="masonry-card" data-caption="Local Volume Etkisi (Dışarıdan): Kapıdan içeri bakıldığında mağaza içi aydınlık hacmin etkisi.">
+                            <img src="images/fishingstoresim/Lightning/3.webp" alt="Local Volume Dışarıdan Çekim" loading="lazy" width="1920" height="1080">
+                            <div class="masonry-info">
+                                <span class="masonry-title">Local Volume (Dışarıdan)</span>
+                                <span class="masonry-badge">Local Volume</span>
+                            </div>
+                        </div>
+
+                        <!-- 4. Local Volume İçeriden Çekim -->
+                        <div class="masonry-card" data-caption="Local Volume Etkisi (İçeriden): İçeriden çekimde ışıklandırma hacminin duvar ve zemin tonlarına katkısı.">
+                            <img src="images/fishingstoresim/Lightning/4.webp" alt="Local Volume İçeriden Çekim" loading="lazy" width="1920" height="1080">
+                            <div class="masonry-info">
+                                <span class="masonry-title">Local Volume (İçeriden)</span>
+                                <span class="masonry-badge">Local Volume</span>
+                            </div>
+                        </div>
+
+                        <!-- 5. Genel İç Mekan -->
+                        <div class="masonry-card" data-caption="İç Mekan Genel Görünüm: Tavan aydınlatması, Ambient Occlusion ve God Rays dengesi.">
+                            <img src="images/fishingstoresim/Lightning/5.webp" alt="İç Mekan Sıcak Işıklandırma" loading="lazy" width="1920" height="1080">
+                            <div class="masonry-info">
+                                <span class="masonry-title">İç Mekan Genel Görünüm</span>
+                                <span class="masonry-badge">Atmosfer</span>
+                            </div>
+                        </div>
+
+                        <!-- 6. Çalışma & Bilgisayar Alanı -->
+                        <div class="masonry-card" data-caption="Kasa & Çalışma Alanı: Bilgisayar köşesindeki köşe gölgeleri ve Ambient Occlusion derinliği.">
+                            <img src="images/fishingstoresim/Lightning/6.webp" alt="İç Mekan Bilgisayar ve Raf Alanı" loading="lazy" width="1920" height="1080">
+                            <div class="masonry-info">
+                                <span class="masonry-title">Kasa & Bilgisayar Köşesi</span>
+                                <span class="masonry-badge">İç Mekan</span>
+                            </div>
+                        </div>
+
+                        <!-- 7. Eski Dış Mekan -->
+                        <div class="masonry-card" data-caption="Eski Dış Mekan (Kıyaslama): Eski sistemde sert ışık ve gölgelerle kaydedilmiş dış çekim.">
+                            <img src="images/fishingstoresim/Lightning/7.webp" alt="Eski Dış Mekan Çekimi" loading="lazy" width="1920" height="1080">
+                            <div class="masonry-info">
+                                <span class="masonry-title">Eski Dış Mekan</span>
+                                <span class="masonry-badge old">Eski Sürüm</span>
+                            </div>
+                        </div>
+
+                        <!-- 8. Eski İç Mekan Sıfır Işık -->
+                        <div class="masonry-card" data-caption="Eski İç Mekan (Sıfır Işık): Kıyaslanması için eskiden çekilmiş, içeride sıfır ışıkla oluşan karanlık ve soğuk görüntü.">
+                            <img src="images/fishingstoresim/Lightning/8.webp" alt="Eski İç Mekan Sıfır Işık" loading="lazy" width="1920" height="1080">
+                            <div class="masonry-info">
+                                <span class="masonry-title">Eski İç Mekan (Sıfır Işık)</span>
+                                <span class="masonry-badge old">Eski Sürüm</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Blog Post Navigation (Önceki Yazı) -->
+            <div class="post-nav-container">
+                <a href="steam-kapsul-tasarim-sureci.html" class="post-nav-card">
+                    <span class="post-nav-label"><i class="fas fa-arrow-left"></i> Önceki Devlog Yazısı</span>
+                    <span class="post-nav-title">Steam Kapsül Tasarım Süreci ve 'AI Slop' Mücadelesi</span>
+                </a>
+            </div>
+
+            <!-- Project Navigation CTA -->
+            <div class="project-link-card">
+                <div class="plc-info">
+                    <h4>Fishing Store Simulator'ı Keşfedin</h4>
+                    <p>Oyunun teknik özellikleri, çok oyunculu yapısı ve mekanikleri hakkında detaylı bilgi alın.</p>
+                </div>
+                <a href="../projects/fishingstoresim.html" class="plc-btn">
+                    <i class="fas fa-external-link-alt"></i> Proje Sayfasına Git
+                </a>
+            </div>
+
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <p class="footer-copy">© 2026 <strong>Enes Çetin</strong>. Tüm hakları saklıdır.</p>
+                <p class="footer-tagline">Yazılım & Oyun Geliştirici • Bursa</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/en3xys" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/enes-%C3%A7etin-363b74324/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://play.google.com/store/apps/dev?id=6855907188560115347" target="_blank" rel="noopener noreferrer" aria-label="Google Play"><i class="fab fa-google-play"></i></a>
+                <a href="https://www.instagram.com/en3xys/?hl=tr" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:mail.enescetin@gmail.com" aria-label="E-posta"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <span class="lightbox-close" title="Kapat">&times;</span>
+        <img class="lightbox-img" id="lightboxImg" alt="Büyütülmüş Görsel">
+        <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('lightboxModal');
+            const modalImg = document.getElementById('lightboxImg');
+            const captionText = document.getElementById('lightboxCaption');
+            const closeBtn = document.querySelector('.lightbox-close');
+
+            function openLightbox(src, caption) {
+                modal.style.display = 'flex';
+                modalImg.src = src;
+                captionText.textContent = caption || '';
+            }
+
+            // Masonry cards click
+            document.querySelectorAll('.masonry-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const img = card.querySelector('img');
+                    const caption = card.getAttribute('data-caption') || card.querySelector('.masonry-title')?.textContent || '';
+                    openLightbox(img.src, caption);
+                });
+            });
+
+            // Spotlight comparison items click
+            document.querySelectorAll('.sc-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const fullSrc = item.getAttribute('data-full') || item.querySelector('img').src;
+                    const caption = item.getAttribute('data-caption') || '';
+                    openLightbox(fullSrc, caption);
+                });
+            });
+
+            // Close lightbox actions
+            closeBtn.addEventListener('click', () => { modal.style.display = 'none'; });
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) modal.style.display = 'none';
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') modal.style.display = 'none';
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -382,6 +382,48 @@
             to { transform: scale(1); opacity: 1; }
         }
 
+        /* Post Navigation Between Articles */
+        .post-nav-container {
+            margin-top: 35px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        .post-nav-card {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            padding: 18px 22px;
+            background: var(--gray);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.25s ease;
+        }
+        .post-nav-card:hover {
+            background: #ffffff;
+            border-color: var(--primary);
+            box-shadow: 0 6px 18px rgba(0, 119, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        .post-nav-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .post-nav-title {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 0.98rem;
+            line-height: 1.4;
+        }
+
         /* Related Project Link Box */
         .project-link-card {
             margin-top: 35px;
@@ -629,6 +671,14 @@
                 <p>
                     İnanılmaz bir rahatlama oldu açıkçası. Ne kadar rahatlamış olsak da eleştirileceğine ve eksik görüleceğine eminim. Ama beni tatmin edecek ve yoluma devam etmemi sağlayacak kadar başarılı olduğu için mutluyum...
                 </p>
+            </div>
+
+            <!-- Blog Post Navigation (Sonraki Yazı) -->
+            <div class="post-nav-container">
+                <a href="isiklandirma-ao-god-rays-local-volume.html" class="post-nav-card">
+                    <span class="post-nav-label">Sonraki Devlog Yazısı <i class="fas fa-arrow-right"></i></span>
+                    <span class="post-nav-title">AO, God Rays ve Local Volume ile Çok Daha Kaliteli ve Sıcak Bir Işıklandırma Hazırlamak</span>
+                </a>
             </div>
 
             <!-- Project Navigation CTA -->
