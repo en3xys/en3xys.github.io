@@ -30,6 +30,10 @@
       "@context": "https://schema.org",
       "@type": "VideoGame",
       "name": "Fishing Store Simulator",
+      "url": "https://store.steampowered.com/app/3229720/Fishing_Store_Simulator/",
+      "sameAs": [
+        "https://store.steampowered.com/app/3229720/Fishing_Store_Simulator/"
+      ],
       "genre": ["Simulation", "Co-op", "Management", "Tycoon", "First-Person"],
       "gamePlatform": "PC",
       "operatingSystem": "Windows",
@@ -209,6 +213,18 @@
             font-weight: 600;
             border: 1px solid rgba(255, 255, 255, 0.12);
         }
+        .badge-steam-live {
+            background: rgba(102, 192, 244, 0.12) !important;
+            color: #66c0f4 !important;
+            border-color: rgba(102, 192, 244, 0.4) !important;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .badge-steam-live:hover {
+            background: rgba(102, 192, 244, 0.25) !important;
+            color: #ffffff !important;
+            border-color: #66c0f4 !important;
+        }
 
         .game-title {
             font-size: 2.1rem;
@@ -243,21 +259,29 @@
             gap: 12px;
             flex-wrap: wrap;
         }
-        .steam-badge-btn {
+        .steam-store-btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 9px;
             background: linear-gradient(135deg, #171a21 0%, #1b2838 100%);
             color: #66c0f4;
-            border: 1px solid rgba(102, 192, 244, 0.5);
-            padding: 9px 18px;
+            border: 1px solid rgba(102, 192, 244, 0.55);
+            padding: 10px 20px;
             border-radius: 9px;
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             font-weight: 700;
-            user-select: none;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+            text-decoration: none;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+            transition: all 0.25s ease;
         }
-        .steam-badge-btn i { font-size: 1.1rem; }
+        .steam-store-btn:hover {
+            background: linear-gradient(135deg, #222937 0%, #2b4260 100%);
+            border-color: #66c0f4;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 192, 244, 0.35);
+        }
+        .steam-store-btn i { font-size: 1.15rem; }
 
         .devlog-jump-btn {
             display: inline-flex;
@@ -581,6 +605,123 @@
             display: block;
         }
 
+        /* Steam Wishlist CTA Section */
+        .steam-cta-section {
+            margin: 50px 0 40px 0;
+        }
+        .steam-cta-card {
+            position: relative;
+            background: linear-gradient(135deg, #09101a 0%, #101c2c 50%, #15273d 100%);
+            border: 1px solid rgba(102, 192, 244, 0.35);
+            border-radius: 20px;
+            padding: 42px 45px;
+            overflow: hidden;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+        .steam-cta-glow {
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 480px;
+            height: 260px;
+            background: radial-gradient(circle, rgba(102, 192, 244, 0.18) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .steam-cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .steam-cta-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(102, 192, 244, 0.15);
+            color: #66c0f4;
+            border: 1px solid rgba(102, 192, 244, 0.35);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 14px;
+        }
+        .steam-cta-content h2 {
+            font-size: 1.85rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 12px;
+            letter-spacing: -0.4px;
+        }
+        .steam-cta-content p {
+            color: #cbd5e1;
+            font-size: 0.98rem;
+            line-height: 1.65;
+            margin-bottom: 26px;
+        }
+        .steam-cta-actions {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .steam-cta-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: linear-gradient(135deg, #171a21 0%, #1b2838 100%);
+            color: #66c0f4;
+            border: 1px solid rgba(102, 192, 244, 0.65);
+            padding: 12px 26px;
+            border-radius: 10px;
+            font-size: 0.98rem;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+            transition: all 0.25s ease;
+        }
+        .steam-cta-btn-primary:hover {
+            background: linear-gradient(135deg, #222937 0%, #2b4260 100%);
+            border-color: #66c0f4;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(102, 192, 244, 0.4);
+        }
+        .steam-cta-btn-primary i {
+            font-size: 1.2rem;
+        }
+        .steam-cta-btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #f1f5f9;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 12px 22px;
+            border-radius: 10px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+        .steam-cta-btn-secondary:hover {
+            background: rgba(0, 119, 255, 0.2);
+            border-color: #38bdf8;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        @media (max-width: 768px) {
+            .steam-cta-card { padding: 30px 20px; }
+            .steam-cta-content h2 { font-size: 1.45rem; }
+            .steam-cta-actions { flex-direction: column; width: 100%; }
+            .steam-cta-btn-primary, .steam-cta-btn-secondary { width: 100%; justify-content: center; }
+        }
+
         /* Lightbox */
         .lightbox-modal {
             display: none;
@@ -719,7 +860,7 @@
                             <span class="pulse-dot"></span> %90 Tamamlandı
                         </div>
                         <span class="badge-tech"><i class="fas fa-paper-plane"></i> Fragman & Yayıncı Aşaması</span>
-                        <span class="badge-tech"><i class="fab fa-steam"></i> Steam PC</span>
+                        <a href="https://store.steampowered.com/app/3229720/Fishing_Store_Simulator/" target="_blank" rel="noopener noreferrer" class="badge-tech badge-steam-live"><i class="fab fa-steam"></i> Steam Yayında</a>
                         <span class="badge-tech"><i class="fas fa-users"></i> 1 - 4 Kişi Co-op</span>
                     </div>
 
@@ -734,9 +875,9 @@
                     </p>
 
                     <div class="hero-actions">
-                        <div class="steam-badge-btn">
-                            <i class="fab fa-steam"></i> Steam İstek Listesi Pek Yakında
-                        </div>
+                        <a href="https://store.steampowered.com/app/3229720/Fishing_Store_Simulator/" target="_blank" rel="noopener noreferrer" class="steam-store-btn">
+                            <i class="fab fa-steam"></i> Steam'de İstek Listesine Ekle
+                        </a>
                         <a href="../blog/steam-kapsul-tasarim-sureci.html" class="devlog-jump-btn">
                             <i class="fas fa-pen-nib"></i> Kapsül Hikayesi
                         </a>
@@ -746,10 +887,12 @@
                 <!-- Right: Steam Header Artwork Showcase -->
                 <div class="hero-right">
                     <div class="hero-media-card">
-                        <img src="../blog/images/fishingstoresim/store_header.png" alt="Fishing Store Simulator Steam Header" class="hero-header-img">
+                        <a href="https://store.steampowered.com/app/3229720/Fishing_Store_Simulator/" target="_blank" rel="noopener noreferrer" title="Steam Mağaza Sayfasında İncele">
+                            <img src="../blog/images/fishingstoresim/store_header.png" alt="Fishing Store Simulator Steam Header" class="hero-header-img">
+                        </a>
                         <div class="hero-media-footer">
-                            <span><i class="fab fa-steam"></i> Resmi Steam Kapsül Tasarımı</span>
-                            <a href="../blog/steam-kapsul-tasarim-sureci.html">Süreci İncele <i class="fas fa-arrow-right"></i></a>
+                            <span><i class="fab fa-steam"></i> Steam Mağaza Sayfası</span>
+                            <a href="https://store.steampowered.com/app/3229720/Fishing_Store_Simulator/" target="_blank" rel="noopener noreferrer">Mağazada Gör <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                 </div>
@@ -852,7 +995,7 @@
                     <div class="spec-icon"><i class="fab fa-windows"></i></div>
                     <div class="spec-info">
                         <div class="spec-title">Platform</div>
-                        <div class="spec-val">PC / Steam (Windows)</div>
+                        <div class="spec-val"><a href="https://store.steampowered.com/app/3229720/Fishing_Store_Simulator/" target="_blank" rel="noopener noreferrer" style="color: #0077FF; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">PC / Steam <i class="fas fa-external-link-alt" style="font-size: 0.75rem;"></i></a></div>
                     </div>
                 </div>
                 <div class="spec-item">
@@ -874,6 +1017,26 @@
                     <div class="spec-info">
                         <div class="spec-title">Oyun Türü</div>
                         <div class="spec-val">FPS Dükkan Yönetimi / Tycoon</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Steam Wishlist CTA Section -->
+        <section class="steam-cta-section">
+            <div class="steam-cta-card">
+                <div class="steam-cta-glow"></div>
+                <div class="steam-cta-content">
+                    <div class="steam-cta-badge"><i class="fab fa-steam"></i> Steam'de Yayında</div>
+                    <h2>Fishing Store Simulator'ı İstek Listene Ekle!</h2>
+                    <p>Oyunumuz resmi olarak Steam mağazasında yerini aldı. İstek listene ekleyerek çıkış gününde hemen haberdar olabilir ve bağımsız oyun geliştirme sürecimize en büyük desteği sağlayabilirsin.</p>
+                    <div class="steam-cta-actions">
+                        <a href="https://store.steampowered.com/app/3229720/Fishing_Store_Simulator/" target="_blank" rel="noopener noreferrer" class="steam-cta-btn-primary">
+                            <i class="fab fa-steam"></i> Steam'de İstek Listesine Ekle
+                        </a>
+                        <a href="../blog/steam-kapsul-tasarim-sureci.html" class="steam-cta-btn-secondary">
+                            <i class="fas fa-book-open"></i> Kapsül Devlog'unu Oku
+                        </a>
                     </div>
                 </div>
             </div>

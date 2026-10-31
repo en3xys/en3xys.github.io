@@ -553,6 +553,34 @@
             background-color: var(--primary-dark);
             transform: translateY(-2px);
         }
+        .plc-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .plc-btn-steam {
+            background: linear-gradient(135deg, #171a21 0%, #1b2838 100%);
+            color: #66c0f4;
+            border: 1px solid rgba(102, 192, 244, 0.5);
+            padding: 9px 18px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
+        }
+        .plc-btn-steam:hover {
+            background: linear-gradient(135deg, #222937 0%, #2b4260 100%);
+            border-color: #66c0f4;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(102, 192, 244, 0.35);
+        }
 
         /* Footer */
         footer {
@@ -782,8 +810,12 @@
 
             </div>
 
-            <!-- Blog Post Navigation (Önceki Yazı) -->
+            <!-- Blog Post Navigation (Önceki & Sonraki Yazı) -->
             <div class="post-nav-container">
+                <a href="fishing-store-simulator-steam-magazasi-yayinda.html" class="post-nav-card">
+                    <span class="post-nav-label">Sonraki Devlog Yazısı <i class="fas fa-arrow-right"></i></span>
+                    <span class="post-nav-title">Fishing Store Simulator Steam Mağazası Yayında!</span>
+                </a>
                 <a href="steam-kapsul-tasarim-sureci.html" class="post-nav-card">
                     <span class="post-nav-label"><i class="fas fa-arrow-left"></i> Önceki Devlog Yazısı</span>
                     <span class="post-nav-title">Steam Kapsül Tasarım Süreci ve 'AI Slop' Mücadelesi</span>
@@ -794,11 +826,16 @@
             <div class="project-link-card">
                 <div class="plc-info">
                     <h4>Fishing Store Simulator'ı Keşfedin</h4>
-                    <p>Oyunun teknik özellikleri, çok oyunculu yapısı ve mekanikleri hakkında detaylı bilgi alın.</p>
+                    <p>Steam sayfası yayında! Oyunu istek listenize ekleyebilir veya proje detaylarını inceleyebilirsiniz.</p>
                 </div>
-                <a href="../projects/fishingstoresim.html" class="plc-btn">
-                    <i class="fas fa-external-link-alt"></i> Proje Sayfasına Git
-                </a>
+                <div class="plc-actions">
+                    <a href="https://store.steampowered.com/app/3229720/Fishing_Store_Simulator/" target="_blank" rel="noopener noreferrer" class="plc-btn-steam">
+                        <i class="fab fa-steam"></i> Steam'de İncele
+                    </a>
+                    <a href="../projects/fishingstoresim.html" class="plc-btn">
+                        <i class="fas fa-external-link-alt"></i> Proje Detayları
+                    </a>
+                </div>
             </div>
 
         </article>

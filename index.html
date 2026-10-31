@@ -344,6 +344,18 @@
             font-weight: 600;
             border: 1px solid rgba(255, 255, 255, 0.12);
         }
+        .flagship-steam-tag {
+            background: rgba(102, 192, 244, 0.12);
+            color: #66c0f4;
+            border-color: rgba(102, 192, 244, 0.35);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .flagship-steam-tag:hover {
+            background: rgba(102, 192, 244, 0.25);
+            color: #ffffff;
+            border-color: #66c0f4;
+        }
         .flagship-title {
             font-size: 1.55rem;
             font-weight: 900;
@@ -394,18 +406,30 @@
             box-shadow: 0 6px 16px rgba(0, 119, 255, 0.5);
             color: #ffffff;
         }
-        .flagship-steam-badge {
+        .flagship-btn-steam {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 7px;
             background: linear-gradient(135deg, #171a21 0%, #1b2838 100%);
             color: #66c0f4;
-            border: 1px solid rgba(102, 192, 244, 0.4);
-            padding: 8px 14px;
+            border: 1px solid rgba(102, 192, 244, 0.5);
+            padding: 8px 16px;
             border-radius: 8px;
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             font-weight: 700;
-            user-select: none;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+            transition: all 0.25s ease;
+        }
+        .flagship-btn-steam:hover {
+            background: linear-gradient(135deg, #222937 0%, #2b4260 100%);
+            border-color: #66c0f4;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(102, 192, 244, 0.35);
+        }
+        .flagship-btn-steam i {
+            font-size: 1rem;
         }
         .flagship-btn-devlog {
             display: inline-flex;
@@ -857,7 +881,7 @@
                         <div class="flagship-badges">
                             <span class="flagship-status"><span class="pulse-dot"></span> %90 Tamamlandı</span>
                             <span class="flagship-tag"><i class="fas fa-paper-plane"></i> Fragman & Yayıncı Aşaması</span>
-                            <span class="flagship-tag"><i class="fab fa-steam"></i> Steam PC</span>
+                            <a href="https://store.steampowered.com/app/3229720/Fishing_Store_Simulator/" target="_blank" rel="noopener noreferrer" class="flagship-tag flagship-steam-tag"><i class="fab fa-steam"></i> Steam Yayında</a>
                             <span class="flagship-tag"><i class="fas fa-users"></i> 1 - 4 Co-op</span>
                         </div>
 
@@ -872,12 +896,12 @@
                         </p>
 
                         <div class="flagship-actions">
+                            <a href="https://store.steampowered.com/app/3229720/Fishing_Store_Simulator/" target="_blank" rel="noopener noreferrer" class="flagship-btn-steam">
+                                <i class="fab fa-steam"></i> Steam'de İstek Listesine Ekle
+                            </a>
                             <a href="projects/fishingstoresim.html" class="flagship-btn-primary">
                                 <i class="fas fa-play-circle"></i> Oynanış & Detaylar
                             </a>
-                            <div class="flagship-steam-badge">
-                                <i class="fab fa-steam"></i> Steam Yakında
-                            </div>
                             <a href="blog/steam-kapsul-tasarim-sureci.html" class="flagship-btn-devlog">
                                 <i class="fas fa-pen-nib"></i> Devlog
                             </a>
@@ -981,6 +1005,28 @@
             </div>
 
             <div class="latest-blog-container">
+                <!-- Post 3: Steam Mağazası Yayında -->
+                <a href="blog/fishing-store-simulator-steam-magazasi-yayinda.html" class="blog-showcase-card">
+                    <div class="bsc-thumb-box">
+                        <img src="blog/images/fishingstoresim/Store/SteamStoreSS.webp" alt="Fishing Store Simulator Steam Mağazası" class="bsc-thumb-img" loading="lazy" width="1867" height="640">
+                    </div>
+                    <div class="bsc-content">
+                        <div class="bsc-tags">
+                            <span class="bsc-tag">Fishing Store Simulator</span>
+                            <span class="bsc-tag">Steam</span>
+                            <span class="bsc-tag">Devlog</span>
+                        </div>
+                        <h3 class="bsc-title">Fishing Store Simulator Steam Mağazası Yayında!</h3>
+                        <p class="bsc-desc">
+                            Sınav haftama girerken oyunumun Steam mağaza sayfasını açmanın heyecanını yaşıyorum. Bunca emeğin istatistiğe döndüğünü görmek ve sınav haftasından sonra bol bol içerik üretmek istiyorum...
+                        </p>
+                        <div class="bsc-footer">
+                            <span><i class="far fa-calendar-alt"></i> 31 Ekim 2026 • 1 dk okuma</span>
+                            <span class="bsc-read">Yazıyı Oku <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+
                 <!-- Post 2: Işıklandırma Devlog -->
                 <a href="blog/isiklandirma-ao-god-rays-local-volume.html" class="blog-showcase-card">
                     <div class="bsc-thumb-box">

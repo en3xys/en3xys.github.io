@@ -465,6 +465,106 @@
             background-color: var(--primary-dark);
             transform: translateY(-2px);
         }
+        .plc-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .plc-btn-steam {
+            background: linear-gradient(135deg, #171a21 0%, #1b2838 100%);
+            color: #66c0f4;
+            border: 1px solid rgba(102, 192, 244, 0.5);
+            padding: 9px 18px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
+        }
+        .plc-btn-steam:hover {
+            background: linear-gradient(135deg, #222937 0%, #2b4260 100%);
+            border-color: #66c0f4;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(102, 192, 244, 0.35);
+        }
+
+        /* Steam Live Announcement Callout */
+        .steam-live-banner {
+            margin: 30px 0;
+            background: linear-gradient(135deg, #09101a 0%, #15273d 100%);
+            border: 1px solid rgba(102, 192, 244, 0.4);
+            border-radius: 16px;
+            padding: 24px 26px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        }
+        .slb-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .slb-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(102, 192, 244, 0.15);
+            border: 1px solid rgba(102, 192, 244, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #66c0f4;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+        .slb-text strong {
+            display: block;
+            color: #ffffff;
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+        }
+        .slb-text p {
+            color: #cbd5e1;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+        .slb-btn {
+            background: linear-gradient(135deg, #171a21 0%, #1b2838 100%);
+            color: #66c0f4;
+            border: 1px solid rgba(102, 192, 244, 0.6);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+            transition: all 0.2s ease;
+        }
+        .slb-btn:hover {
+            background: linear-gradient(135deg, #222937 0%, #2b4260 100%);
+            border-color: #66c0f4;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(102, 192, 244, 0.4);
+        }
+        @media (max-width: 700px) {
+            .steam-live-banner { flex-direction: column; align-items: stretch; text-align: left; }
+            .slb-left { flex-direction: column; align-items: flex-start; }
+            .slb-btn { justify-content: center; width: 100%; }
+        }
 
         /* Footer */
         footer {
@@ -671,6 +771,20 @@
                 <p>
                     İnanılmaz bir rahatlama oldu açıkçası. Ne kadar rahatlamış olsak da eleştirileceğine ve eksik görüleceğine eminim. Ama beni tatmin edecek ve yoluma devam etmemi sağlayacak kadar başarılı olduğu için mutluyum...
                 </p>
+
+                <!-- Steam Store Page Live Announcement -->
+                <div class="steam-live-banner">
+                    <div class="slb-left">
+                        <div class="slb-icon"><i class="fab fa-steam"></i></div>
+                        <div class="slb-text">
+                            <strong>Steam Sayfamız Yayında!</strong>
+                            <p>Fishing Store Simulator artık Steam mağazasında listelendi. İstek listene ekleyerek bağımsız oyun geliştirme yolculuğumuza destek olabilirsin.</p>
+                        </div>
+                    </div>
+                    <a href="https://store.steampowered.com/app/3229720/Fishing_Store_Simulator/" target="_blank" rel="noopener noreferrer" class="slb-btn">
+                        <i class="fab fa-steam"></i> Steam'de İncele
+                    </a>
+                </div>
             </div>
 
             <!-- Blog Post Navigation (Sonraki Yazı) -->
@@ -685,11 +799,16 @@
             <div class="project-link-card">
                 <div class="plc-info">
                     <h4>Fishing Store Simulator'ı Keşfedin</h4>
-                    <p>Oyunun teknik özellikleri, çok oyunculu yapısı ve mekanikleri hakkında detaylı bilgi alın.</p>
+                    <p>Oyunun teknik özellikleri, Steam mağaza sayfası ve çok oyunculu oynanış mekanikleri hakkında detaylı bilgi alın.</p>
                 </div>
-                <a href="../projects/fishingstoresim.html" class="plc-btn">
-                    <i class="fas fa-external-link-alt"></i> Proje Sayfasına Git
-                </a>
+                <div class="plc-actions">
+                    <a href="https://store.steampowered.com/app/3229720/Fishing_Store_Simulator/" target="_blank" rel="noopener noreferrer" class="plc-btn-steam">
+                        <i class="fab fa-steam"></i> Steam Sayfası
+                    </a>
+                    <a href="../projects/fishingstoresim.html" class="plc-btn">
+                        <i class="fas fa-external-link-alt"></i> Proje Detayları
+                    </a>
+                </div>
             </div>
 
         </article>
