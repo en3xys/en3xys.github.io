@@ -6,239 +6,60 @@
     <title>404 - Sayfa Bulunamadı | Enes Çetin</title>
     <meta name="description" content="Aradığınız sayfa bulunamadı.">
     <meta name="robots" content="noindex, follow">
-    <link rel="icon" type="image/png" href="/img/logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #0077FF;
-            --dark: #2D2D2D;
-            --bg: #FFFFFF;
-            --gray: #F5F5F7;
-            --text: #555555;
-            --border: #EAEAEA;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        html { scroll-behavior: smooth; }
-        body { background-color: var(--bg); color: var(--dark); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
-        
-        /* Header & Navigation */
-        header { 
-            display: flex; justify-content: space-between; align-items: center; 
-            padding: 10px 10%; background: var(--bg); border-bottom: 1px solid var(--border);
-            position: sticky; top: 0; z-index: 100; min-height: 85px;
-        }
-        .logo { display: flex; align-items: center; text-decoration: none; }
-        .logo img { height: 50px; width: auto; transition: transform 0.25s ease; }
-        .logo:hover img { transform: scale(1.03); }
-
-        nav { display: flex; gap: 20px; white-space: nowrap; }
-        nav a { 
-            text-decoration: none; 
-            color: var(--dark); 
-            font-weight: 600; 
-            font-size: 0.95rem; 
-            position: relative;
-            padding-bottom: 4px;
-            transition: color 0.25s ease; 
-        }
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary);
-            transition: width 0.25s ease;
-            border-radius: 2px;
-        }
-        nav a:hover { color: var(--primary); }
-        nav a:hover::after, nav a.active::after { width: 100%; }
-        nav a.active { color: var(--primary); }
-
-        /* 404 Main Content */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(12px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        main { 
-            flex-grow: 1; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            text-align: center; 
-            padding: 0 20px; 
-            animation: fadeInUp 0.4s ease-out forwards;
-        }
-        
-        .error-code {
-            font-size: 8rem;
-            font-weight: 800;
-            color: var(--primary);
-            line-height: 1;
-            margin-bottom: 10px;
-            text-shadow: 4px 4px 0px rgba(0, 119, 255, 0.1);
-        }
-        
-        h1 { font-size: 2.2rem; color: var(--dark); margin-bottom: 15px; }
-        
-        p.subtitle { 
-            font-size: 1.15rem; 
-            color: var(--text); 
-            max-width: 500px; 
-            margin-bottom: 35px; 
-        }
-
-        /* Home Button */
-        .home-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background-color: var(--dark);
-            color: #ffffff;
-            padding: 14px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            transition: background-color 0.3s ease, transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease;
-        }
-        .home-btn i {
-            transition: transform 0.25s ease;
-        }
-        .home-btn:hover { 
-            background-color: var(--primary); 
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 119, 255, 0.25);
-        }
-        .home-btn:hover i {
-            transform: scale(1.15);
-        }
-        .home-btn:active {
-            transform: translateY(0);
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border);
-            background-color: var(--bg);
-            padding: 35px 10%;
-            margin-top: 40px;
-        }
-        .footer-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
-        .footer-left {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            text-align: left;
-        }
-        .footer-copy {
-            font-size: 0.95rem;
-            color: var(--dark);
-        }
-        .footer-tagline {
-            font-size: 0.85rem;
-            color: var(--text);
-        }
-        .footer-links {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-        .footer-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: var(--gray);
-            color: var(--dark);
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-            border: 1px solid var(--border);
-        }
-        .footer-links a:hover {
-            background: var(--primary);
-            color: #ffffff;
-            transform: translateY(-3px);
-            border-color: var(--primary);
-            box-shadow: 0 6px 14px rgba(0, 119, 255, 0.25);
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            header { padding: 10px 5%; }
-            nav { gap: 16px; }
-            nav a { font-size: 0.95rem; }
-            .logo img { height: 50px; }
-            .error-code { font-size: 6rem; }
-            h1 { font-size: 1.8rem; }
-
-            footer {
-                padding: 30px 5%;
-            }
-            .footer-container {
-                flex-direction: column;
-                text-align: center;
-                gap: 18px;
-            }
-            .footer-left {
-                align-items: center;
-                text-align: center;
-            }
-            .footer-links {
-                justify-content: center;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <script src="js/theme.js"></script>
 </head>
-<body>
+<body style="min-height: 100vh; display: flex; flex-direction: column;">
 
-    <header>
-        <a href="/index.html" class="logo">
-            <img src="/img/logo.png" alt="Enes Çetin Logo">
-        </a>
-        <nav>
-            <a href="/index.html">Ana Sayfa</a>
-            <a href="/about.html">Hakkımda</a>
-            <a href="/blog/index.html">Blog</a>
-            <a href="/contact.html">İletişim</a>
-        </nav>
+    <a class="skip-link" href="#main">İçeriğe geç</a>
+    <header class="site-header">
+        <div class="wrap topbar">
+            <a class="wordmark" href="index.html" aria-label="Enes Çetin, ana sayfa">
+                <svg class="wordmark-mark" viewBox="92 89 328 328" aria-hidden="true">
+                    <defs>
+                        <filter id="wordmark-ink">
+                            <feFlood />
+                            <feComposite in2="SourceAlpha" operator="in" />
+                        </filter>
+                    </defs>
+                    <image href="img/logo.png" width="512" height="512" filter="url(#wordmark-ink)" />
+                </svg>
+                Enes Çetin
+            </a>
+            <nav class="site-nav" aria-label="Ana menü">
+                <a href="index.html#projects">Projeler</a>
+                <a href="blog/index.html">Blog</a>
+                <a href="about.html">Hakkımda</a>
+                <a href="contact.html">İletişim</a>
+            </nav>
+            <button class="theme-switch" id="themeToggle" type="button" aria-label="Temayı değiştir"></button>
+        </div>
     </header>
 
-    <main>
+    <main id="main" tabindex="-1" class="error-page-wrapper">
         <div class="error-code">404</div>
-        <h1>Sayfa Bulunamadı</h1>
-        <p class="subtitle">Aradığın sayfa uzayın derinliklerinde kaybolmuş, silinmiş veya hiç var olmamış olabilir. Ya da kodlarken bir yerlerde hata yaptık...</p>
-        
-        <a href="/index.html" class="home-btn">
-            <i class="fas fa-home"></i> Güvenli Bölgeye Dön
+        <h1 class="error-title">Sayfa Bulunamadı</h1>
+        <p class="error-subtitle">Aradığın sayfa silinmiş, adı değiştirilmiş veya geçici olarak erişilemiyor olabilir.</p>
+        <a href="index.html" class="btn-primary">
+            <i class="fas fa-arrow-left"></i> Ana Sayfaya Dön
         </a>
     </main>
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-left">
-                <p class="footer-copy">© 2026 <strong>Enes Çetin</strong>. Tüm hakları saklıdır.</p>
-                <p class="footer-tagline">Yazılım & Oyun Geliştirici • Bursa</p>
-            </div>
+    <footer class="site-footer">
+        <div class="wrap footer-content">
+            <p class="meta">© 2026 Enes Çetin</p>
             <div class="footer-links">
-                <a href="https://github.com/en3xys" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/enes-%C3%A7etin-363b74324/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://play.google.com/store/apps/dev?id=6855907188560115347" target="_blank" rel="noopener noreferrer" aria-label="Google Play"><i class="fab fa-google-play"></i></a>
-                <a href="https://www.instagram.com/en3xys/?hl=tr" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="mailto:mail.enescetin@gmail.com" aria-label="E-posta"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/en3xys" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/enes-%C3%A7etin-363b74324/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://play.google.com/store/apps/dev?id=6855907188560115347" target="_blank" rel="noopener noreferrer">Google Play</a>
+                <a href="https://www.instagram.com/en3xys/?hl=tr" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="mailto:mail.enescetin@gmail.com">E-posta</a>
             </div>
         </div>
     </footer>

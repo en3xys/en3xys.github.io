@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://enescetin.net/projects/fishingstoresim.html">
     <meta property="og:title" content="Fishing Store Simulator | Enes Çetin">
     <meta property="og:description" content="Kendi balıkçılık mağazanı sıfırdan kur ve işlet! 1-4 kişi Co-op balık av malzemeleri dükkan simülasyonu.">
-    <meta property="og:image" content="https://enescetin.net/blog/images/fishingstoresim/store_header.png">
+    <meta property="og:image" content="https://enescetin.net/blog/images/fishingstoresim/NewCapsules/Header%20NotAI.png">
     <meta property="og:locale" content="tr_TR">
 
     <!-- Twitter -->
@@ -22,7 +22,7 @@
     <meta name="twitter:url" content="https://enescetin.net/projects/fishingstoresim.html">
     <meta name="twitter:title" content="Fishing Store Simulator | Enes Çetin">
     <meta name="twitter:description" content="Kendi balıkçılık mağazanı sıfırdan kur ve işlet! 1-4 kişi Co-op balık av malzemeleri dükkan simülasyonu.">
-    <meta name="twitter:image" content="https://enescetin.net/blog/images/fishingstoresim/store_header.png">
+    <meta name="twitter:image" content="https://enescetin.net/blog/images/fishingstoresim/NewCapsules/Header%20NotAI.png">
 
     <!-- Schema.org Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -43,824 +43,72 @@
         "name": "Enes Çetin",
         "url": "https://enescetin.net"
       },
-      "image": "https://enescetin.net/blog/images/fishingstoresim/store_header.png",
+      "image": "https://enescetin.net/blog/images/fishingstoresim/NewCapsules/Header%20NotAI.png",
       "description": "Kendi balık av malzemeleri dükkanınızı sıfırdan kurup işlettiğiniz, 1-4 kişi eşli (co-op) birinci şahıs dükkan yönetimi simülasyonu."
     }
     </script>
 
     <link rel="icon" type="image/png" href="../img/logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/site.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <script src="../js/theme.js"></script>
     
     <style>
-        :root {
-            --primary: #0077FF;
-            --primary-dark: #005ecb;
-            --primary-light: #eaf2ff;
-            --cyan-accent: #00c3ff;
-            --steam-navy: #0e1926;
-            --dark: #2D2D2D;
-            --bg: #FFFFFF;
-            --gray: #F5F5F7;
-            --text: #555555;
-            --text-dark: #1e293b;
-            --border: #EAEAEA;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        html { scroll-behavior: smooth; }
-        body { 
-            background-color: #FAFAFC;
-            background-image: 
-                radial-gradient(at 50% 0%, rgba(0, 119, 255, 0.08) 0px, transparent 65%),
-                radial-gradient(#e2e8f0 1.1px, transparent 1.1px);
-            background-size: 100% 100%, 24px 24px;
-            background-attachment: fixed;
-            color: var(--dark); 
-            line-height: 1.7; 
-        }
-
-        /* Header Navigation */
-        header { 
-            display: flex; justify-content: space-between; align-items: center; 
-            padding: 10px 10%; background: rgba(255, 255, 255, 0.88); border-bottom: 1px solid var(--border);
-            position: sticky; top: 0; z-index: 100; min-height: 85px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-        .logo { display: flex; align-items: center; text-decoration: none; }
-        .logo img { height: 50px; width: auto; transition: transform 0.25s ease; }
-        .logo:hover img { transform: scale(1.03); }
-
-        nav { display: flex; gap: 20px; white-space: nowrap; }
-        nav a { 
-            text-decoration: none; 
-            color: var(--dark); 
-            font-weight: 600; 
-            font-size: 0.95rem; 
-            position: relative;
-            padding-bottom: 4px;
-            transition: color 0.25s ease; 
-        }
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary);
-            transition: width 0.25s ease;
-        }
-        nav a:hover { color: var(--primary); }
-        nav a:hover::after { width: 100%; }
-
-        /* Main Container */
         main {
-            max-width: 1080px;
+            max-width: 1040px;
             margin: 35px auto 70px auto;
             padding: 0 20px;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-            color: var(--text);
-            font-size: 0.92rem;
-            font-weight: 600;
-            margin-bottom: 25px;
-            transition: color 0.2s, transform 0.2s;
-        }
-        .back-link:hover {
-            color: var(--primary);
-            transform: translateX(-3px);
-        }
-
-        /* Game Hero Banner */
-        .game-hero {
-            position: relative;
-            background: linear-gradient(145deg, #0a1118 0%, #102131 60%, #152b40 100%);
-            border-radius: 24px;
-            overflow: hidden;
-            padding: 38px 40px;
-            color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 16px 40px rgba(10, 17, 24, 0.25);
-            margin-bottom: 40px;
-        }
-        .hero-bg-glow {
-            position: absolute;
-            top: -20%;
-            right: -10%;
-            width: 550px;
-            height: 550px;
-            background: radial-gradient(circle, rgba(0, 195, 255, 0.16) 0%, rgba(0, 119, 255, 0.06) 45%, transparent 70%);
-            pointer-events: none;
-            z-index: 1;
-        }
-        .hero-layout {
-            position: relative;
-            z-index: 2;
-            display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            gap: 32px;
-            align-items: center;
-        }
-        .hero-left {
-            display: flex;
-            flex-direction: column;
-        }
-        .hero-badges-row {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 16px;
-        }
-        .badge-status {
-            background: rgba(16, 185, 129, 0.18);
-            color: #34d399;
-            border: 1px solid rgba(52, 211, 153, 0.4);
-            padding: 4px 12px;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .pulse-dot {
-            width: 7px;
-            height: 7px;
-            background-color: #34d399;
-            border-radius: 50%;
-            box-shadow: 0 0 8px #34d399;
-            animation: pulse 1.8s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); }
-            70% { transform: scale(1.15); box-shadow: 0 0 0 7px rgba(52, 211, 153, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
-        }
-        .badge-tech {
-            background: rgba(255, 255, 255, 0.08);
-            color: #cbd5e1;
-            padding: 4px 10px;
-            border-radius: 7px;
-            font-size: 0.78rem;
-            font-weight: 600;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-        }
-        .badge-steam-live {
-            background: rgba(102, 192, 244, 0.12) !important;
-            color: #66c0f4 !important;
-            border-color: rgba(102, 192, 244, 0.4) !important;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-        .badge-steam-live:hover {
-            background: rgba(102, 192, 244, 0.25) !important;
-            color: #ffffff !important;
-            border-color: #66c0f4 !important;
-        }
-
-        .game-title {
-            font-size: 2.1rem;
-            font-weight: 900;
-            line-height: 1.15;
-            color: #ffffff;
-            letter-spacing: -0.6px;
-            margin-bottom: 8px;
-        }
-
-        .game-slogan {
-            font-size: 1.35rem;
-            font-weight: 800;
-            line-height: 1.35;
-            color: #ffffff;
-            margin-bottom: 10px;
-            letter-spacing: -0.3px;
-        }
-        .game-slogan span {
-            color: #38bdf8;
-        }
-        .game-summary-text {
-            font-size: 0.96rem;
-            line-height: 1.65;
-            color: #cbd5e1;
-            margin-bottom: 22px;
-        }
-
-        .hero-actions {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-        .steam-store-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-            background: linear-gradient(135deg, #171a21 0%, #1b2838 100%);
-            color: #66c0f4;
-            border: 1px solid rgba(102, 192, 244, 0.55);
-            padding: 10px 20px;
-            border-radius: 9px;
-            font-size: 0.92rem;
-            font-weight: 700;
-            text-decoration: none;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-            transition: all 0.25s ease;
-        }
-        .steam-store-btn:hover {
-            background: linear-gradient(135deg, #222937 0%, #2b4260 100%);
-            border-color: #66c0f4;
-            color: #ffffff;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 192, 244, 0.35);
-        }
-        .steam-store-btn i { font-size: 1.15rem; }
-
-        .devlog-jump-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.08);
-            color: #f1f5f9;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 9px 18px;
-            border-radius: 9px;
-            font-size: 0.88rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.25s ease;
-        }
-        .devlog-jump-btn:hover {
-            background: rgba(0, 119, 255, 0.2);
-            border-color: #38bdf8;
-            color: #ffffff;
-            transform: translateY(-2px);
-        }
-
-        /* Hero Right Media Card (Steam Capsule / Store Header) */
-        .hero-right {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .hero-media-card {
-            width: 100%;
-            background: rgba(15, 23, 42, 0.65);
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
-            transition: transform 0.25s ease, border-color 0.25s ease;
-        }
-        .hero-media-card:hover {
-            transform: translateY(-3px);
-            border-color: rgba(56, 189, 248, 0.4);
-        }
-        .hero-header-img {
-            width: 100%;
-            height: auto;
-            display: block;
-            aspect-ratio: 460 / 215;
-            object-fit: cover;
-        }
-        .hero-media-footer {
-            padding: 9px 14px;
-            background: rgba(10, 17, 24, 0.75);
-            font-size: 0.82rem;
-            color: #94a3b8;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .hero-media-footer span {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .hero-media-footer i {
-            color: #38bdf8;
-        }
-        .hero-media-footer a {
-            color: #38bdf8;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.8rem;
-        }
-        .hero-media-footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Developer Story Section */
-        .story-section {
-            background: #ffffff;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 35px 40px;
-            margin-bottom: 45px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-        }
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: var(--primary);
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-        }
-        .section-title {
-            font-size: 1.65rem;
-            font-weight: 800;
-            color: var(--dark);
-            margin-bottom: 18px;
-            letter-spacing: -0.5px;
-        }
-        .story-quote-card {
-            background: var(--gray);
-            border-left: 4px solid var(--primary);
-            border-radius: 0 14px 14px 0;
-            padding: 22px 26px;
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: #334155;
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-        .story-meta-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 12px;
-            font-size: 0.88rem;
-            color: var(--text);
-            border-top: 1px solid var(--border);
-            padding-top: 16px;
-        }
-        .story-devlog-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: var(--primary);
-            font-weight: 700;
-            text-decoration: none;
-            transition: transform 0.2s;
-        }
-        .story-devlog-link:hover {
-            transform: translateX(3px);
-            color: var(--primary-dark);
-        }
-
-        /* Gameplay GIF Showcase Cards */
-        .gameplay-section {
-            margin-bottom: 50px;
-        }
-        .gameplay-intro {
-            margin-bottom: 30px;
-        }
-        .gameplay-intro p {
-            color: var(--text);
-            font-size: 1.02rem;
-            max-width: 750px;
-        }
-
-        .features-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 35px;
-        }
-
-        .feature-card {
-            background: #ffffff;
-            border: 1px solid var(--border);
-            border-radius: 22px;
-            overflow: hidden;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.04);
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(0, 119, 255, 0.1);
-            border-color: rgba(0, 119, 255, 0.3);
-        }
-        .feature-card.reverse {
-            grid-template-columns: 1fr 1fr;
-        }
-        .feature-card.reverse .feature-media {
-            order: 2;
-        }
-        .feature-card.reverse .feature-content {
-            order: 1;
-        }
-
-        .feature-media {
-            position: relative;
-            background: #0f172a;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 280px;
-        }
-        .feature-gif {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        .feature-content {
-            padding: 38px 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .feature-step-num {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: var(--primary-light);
-            color: var(--primary);
-            font-size: 0.78rem;
-            font-weight: 800;
-            padding: 4px 12px;
-            border-radius: 20px;
-            margin-bottom: 12px;
-            width: fit-content;
-        }
-        .feature-title {
-            font-size: 1.35rem;
-            font-weight: 800;
-            color: var(--dark);
-            margin-bottom: 12px;
-            letter-spacing: -0.3px;
-        }
-        .feature-desc {
-            color: var(--text);
-            font-size: 0.96rem;
-            line-height: 1.75;
-        }
-
-        /* Tech Summary Grid */
-        .specs-section {
-            background: #ffffff;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 35px 40px;
-            margin-bottom: 50px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-        }
-        .specs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 16px;
-            margin-top: 20px;
-        }
-        .spec-item {
-            background: var(--gray);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 16px 20px;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-        .spec-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: 10px;
-            background: var(--primary-light);
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-        .spec-info .spec-title {
-            font-size: 0.78rem;
-            color: var(--text);
-            text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 0.4px;
-        }
-        .spec-info .spec-val {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--dark);
-        }
-
-        /* Archive Screenshots Gallery (Bottom) */
-        .archive-gallery-section {
-            background: #ffffff;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 35px 40px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-        }
-        .gallery-header {
-            margin-bottom: 24px;
-        }
-        .gallery-header p {
-            color: var(--text);
-            font-size: 0.92rem;
-            margin-top: 4px;
-        }
-        .screenshots-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 12px;
-        }
-        .screen-thumb-card {
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            background: #0f172a;
-            aspect-ratio: 16 / 9;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .screen-thumb-card:hover {
-            transform: scale(1.04);
-            box-shadow: 0 6px 16px rgba(0, 119, 255, 0.2);
-            border-color: var(--primary);
-        }
-        .screen-thumb-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Steam Wishlist CTA Section */
-        .steam-cta-section {
-            margin: 50px 0 40px 0;
-        }
-        .steam-cta-card {
-            position: relative;
-            background: linear-gradient(135deg, #09101a 0%, #101c2c 50%, #15273d 100%);
-            border: 1px solid rgba(102, 192, 244, 0.35);
-            border-radius: 20px;
-            padding: 42px 45px;
-            overflow: hidden;
-            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
-            text-align: center;
-        }
-        .steam-cta-glow {
-            position: absolute;
-            top: -50%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 480px;
-            height: 260px;
-            background: radial-gradient(circle, rgba(102, 192, 244, 0.18) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .steam-cta-content {
-            position: relative;
-            z-index: 1;
-            max-width: 680px;
-            margin: 0 auto;
-        }
-        .steam-cta-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(102, 192, 244, 0.15);
-            color: #66c0f4;
-            border: 1px solid rgba(102, 192, 244, 0.35);
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 14px;
-        }
-        .steam-cta-content h2 {
-            font-size: 1.85rem;
-            font-weight: 900;
-            color: #ffffff;
-            margin-bottom: 12px;
-            letter-spacing: -0.4px;
-        }
-        .steam-cta-content p {
-            color: #cbd5e1;
-            font-size: 0.98rem;
-            line-height: 1.65;
-            margin-bottom: 26px;
-        }
-        .steam-cta-actions {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-        .steam-cta-btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-            background: linear-gradient(135deg, #171a21 0%, #1b2838 100%);
-            color: #66c0f4;
-            border: 1px solid rgba(102, 192, 244, 0.65);
-            padding: 12px 26px;
-            border-radius: 10px;
-            font-size: 0.98rem;
-            font-weight: 800;
-            text-decoration: none;
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
-            transition: all 0.25s ease;
-        }
-        .steam-cta-btn-primary:hover {
-            background: linear-gradient(135deg, #222937 0%, #2b4260 100%);
-            border-color: #66c0f4;
-            color: #ffffff;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(102, 192, 244, 0.4);
-        }
-        .steam-cta-btn-primary i {
-            font-size: 1.2rem;
-        }
-        .steam-cta-btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.08);
-            color: #f1f5f9;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 12px 22px;
-            border-radius: 10px;
-            font-size: 0.92rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.25s ease;
-        }
-        .steam-cta-btn-secondary:hover {
-            background: rgba(0, 119, 255, 0.2);
-            border-color: #38bdf8;
-            color: #ffffff;
-            transform: translateY(-2px);
-        }
-        @media (max-width: 768px) {
-            .steam-cta-card { padding: 30px 20px; }
-            .steam-cta-content h2 { font-size: 1.45rem; }
-            .steam-cta-actions { flex-direction: column; width: 100%; }
-            .steam-cta-btn-primary, .steam-cta-btn-secondary { width: 100%; justify-content: center; }
-        }
-
-        /* Lightbox */
-        .lightbox-modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            padding: 30px 20px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(15, 23, 42, 0.94);
-            backdrop-filter: blur(8px);
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        .lightbox-img {
-            max-width: 92%;
-            max-height: 82vh;
-            border-radius: 12px;
-            box-shadow: 0 16px 40px rgba(0,0,0,0.6);
-            object-fit: contain;
-            animation: zoomIn 0.2s ease-out;
-        }
-        .lightbox-caption {
-            margin-top: 14px;
-            color: #f1f5f9;
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-        .lightbox-close {
-            position: absolute;
-            top: 18px;
-            right: 28px;
-            color: #cbd5e1;
-            font-size: 34px;
-            font-weight: bold;
-            cursor: pointer;
-            line-height: 1;
-            transition: color 0.2s;
-        }
-        .lightbox-close:hover { color: #ffffff; }
-        @keyframes zoomIn {
-            from { transform: scale(0.92); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border);
-            background-color: var(--bg);
-            padding: 35px 10%;
-            margin-top: 60px;
-        }
-        .footer-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
-        .footer-left { display: flex; flex-direction: column; gap: 4px; }
-        .footer-copy { font-size: 0.95rem; color: var(--dark); }
-        .footer-tagline { font-size: 0.85rem; color: var(--text); }
-        .footer-links { display: flex; gap: 15px; align-items: center; }
-        .footer-links a {
-            display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px;
-            border-radius: 50%; background: var(--gray); color: var(--dark); text-decoration: none;
-            font-size: 1.1rem; transition: transform 0.25s, background-color 0.25s, color 0.25s;
-            border: 1px solid var(--border);
-        }
-        .footer-links a:hover {
-            background: var(--primary);
-            color: #ffffff;
-            transform: translateY(-3px);
-            border-color: var(--primary);
-        }
-
-        @media (max-width: 900px) {
-            .hero-layout {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-            .feature-card, .feature-card.reverse {
-                grid-template-columns: 1fr;
-            }
-            .feature-card.reverse .feature-media { order: 1; }
-            .feature-card.reverse .feature-content { order: 2; }
-            .feature-media { height: 240px; min-height: auto; }
-            .feature-content { padding: 26px 24px; }
-            .game-hero { padding: 30px 22px; }
-            .story-section, .specs-section, .archive-gallery-section { padding: 26px 20px; }
-        }
-        @media (max-width: 768px) {
-            header { padding: 10px 5%; }
-            nav { gap: 16px; }
-            nav a { font-size: 0.95rem; }
-            .game-title { font-size: 1.7rem; }
-            .game-slogan { font-size: 1.25rem; }
-            footer { padding: 30px 5%; }
-            .footer-container { flex-direction: column; text-align: center; }
-            .footer-links { justify-content: center; }
         }
     </style>
 </head>
 <body>
 
     <!-- Header Navigation -->
-    <header>
-        <a href="../index.html" class="logo">
-            <img src="../img/logo.png" alt="Enes Çetin Logo">
-        </a>
-        <nav>
-            <a href="../index.html">Ana Sayfa</a>
-            <a href="../about.html">Hakkımda</a>
-            <a href="../blog/index.html">Blog</a>
-            <a href="../contact.html">İletişim</a>
-        </nav>
+    <a class="skip-link" href="#main">İçeriğe geç</a>
+    <header class="site-header">
+        <div class="wrap topbar">
+            <a class="wordmark" href="../index.html" aria-label="Enes Çetin, ana sayfa">
+                <svg class="wordmark-mark" viewBox="92 89 328 328" aria-hidden="true">
+                    <defs>
+                        <filter id="wordmark-ink">
+                            <feFlood />
+                            <feComposite in2="SourceAlpha" operator="in" />
+                        </filter>
+                    </defs>
+                    <image href="../img/logo.png" width="512" height="512" filter="url(#wordmark-ink)" />
+                </svg>
+                Enes Çetin
+            </a>
+            <nav class="site-nav" aria-label="Ana menü">
+                <a href="../index.html#projects">Projeler</a>
+                <a href="../blog/index.html">Blog</a>
+                <a href="../about.html">Hakkımda</a>
+                <a href="../contact.html">İletişim</a>
+            </nav>
+            <button class="theme-switch" id="themeToggle" type="button" aria-label="Temayı değiştir"></button>
+        </div>
     </header>
 
-    <main>
+    <main id="main" tabindex="-1">
         <a href="../index.html" class="back-link">
             <i class="fas fa-arrow-left"></i> Tüm Projelere Dön
         </a>
 
         <!-- Hero Showcase Banner -->
         <section class="game-hero">
-            <div class="hero-bg-glow"></div>
-            
             <div class="hero-layout">
                 <!-- Left: Title, Badges & Actions -->
                 <div class="hero-left">
                     <div class="hero-badges-row">
                         <div class="badge-status">
-                            <span class="pulse-dot"></span> %90 Tamamlandı
+                            %90 Tamamlandı
                         </div>
                         <span class="badge-tech"><i class="fas fa-paper-plane"></i> Fragman & Yayıncı Aşaması</span>
-                        <a href="https://store.steampowered.com/app/3229720/Fishing_Store_Simulator/" target="_blank" rel="noopener noreferrer" class="badge-tech badge-steam-live"><i class="fab fa-steam"></i> Steam Yayında</a>
+                        <a href="https://store.steampowered.com/app/3229720/Fishing_Store_Simulator/" target="_blank" rel="noopener noreferrer" class="badge-tech badge-steam-live"><i class="fab fa-steam"></i> Steam mağazası</a>
                         <span class="badge-tech"><i class="fas fa-users"></i> 1 - 4 Kişi Co-op</span>
                     </div>
 
@@ -888,7 +136,7 @@
                 <div class="hero-right">
                     <div class="hero-media-card">
                         <a href="https://store.steampowered.com/app/3229720/Fishing_Store_Simulator/" target="_blank" rel="noopener noreferrer" title="Steam Mağaza Sayfasında İncele">
-                            <img src="../blog/images/fishingstoresim/store_header.png" alt="Fishing Store Simulator Steam Header" class="hero-header-img">
+                            <img src="../blog/images/fishingstoresim/NewCapsules/Header%20NotAI.png" alt="Fishing Store Simulator Steam Header" class="hero-header-img" width="920" height="430">
                         </a>
                         <div class="hero-media-footer">
                             <span><i class="fab fa-steam"></i> Steam Mağaza Sayfası</span>
@@ -995,7 +243,7 @@
                     <div class="spec-icon"><i class="fab fa-windows"></i></div>
                     <div class="spec-info">
                         <div class="spec-title">Platform</div>
-                        <div class="spec-val"><a href="https://store.steampowered.com/app/3229720/Fishing_Store_Simulator/" target="_blank" rel="noopener noreferrer" style="color: #0077FF; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">PC / Steam <i class="fas fa-external-link-alt" style="font-size: 0.75rem;"></i></a></div>
+                        <div class="spec-val"><a href="https://store.steampowered.com/app/3229720/Fishing_Store_Simulator/" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">PC / Steam <i class="fas fa-external-link-alt" style="font-size: 0.75rem;"></i></a></div>
                     </div>
                 </div>
                 <div class="spec-item">
@@ -1025,9 +273,8 @@
         <!-- Steam Wishlist CTA Section -->
         <section class="steam-cta-section">
             <div class="steam-cta-card">
-                <div class="steam-cta-glow"></div>
                 <div class="steam-cta-content">
-                    <div class="steam-cta-badge"><i class="fab fa-steam"></i> Steam'de Yayında</div>
+                    <div class="steam-cta-badge"><i class="fab fa-steam"></i> Steam mağazası</div>
                     <h2>Fishing Store Simulator'ı İstek Listene Ekle!</h2>
                     <p>Oyunumuz resmi olarak Steam mağazasında yerini aldı. İstek listene ekleyerek çıkış gününde hemen haberdar olabilir ve bağımsız oyun geliştirme sürecimize en büyük desteği sağlayabilirsin.</p>
                     <div class="steam-cta-actions">
@@ -1042,7 +289,7 @@
             </div>
         </section>
 
-        <!-- Archive Screenshots Gallery (At bottom as requested) -->
+        <!-- Archive Screenshots Gallery -->
         <section class="archive-gallery-section" id="screenshots">
             <div class="gallery-header">
                 <div class="section-label"><i class="fas fa-images"></i> Geliştirme Arşivi</div>
@@ -1051,7 +298,6 @@
             </div>
 
             <div class="screenshots-grid">
-                <!-- 1 to 20 screenshots -->
                 <div class="screen-thumb-card"><img src="fishingstoresim/1.png" alt="Ekran Görüntüsü 1" loading="lazy"></div>
                 <div class="screen-thumb-card"><img src="fishingstoresim/2.png" alt="Ekran Görüntüsü 2" loading="lazy"></div>
                 <div class="screen-thumb-card"><img src="fishingstoresim/3.png" alt="Ekran Görüntüsü 3" loading="lazy"></div>
@@ -1084,18 +330,15 @@
         <div id="lightboxCaption" class="lightbox-caption"></div>
     </div>
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-left">
-                <p class="footer-copy">© 2026 <strong>Enes Çetin</strong>. Tüm hakları saklıdır.</p>
-                <p class="footer-tagline">Yazılım & Oyun Geliştirici • Bursa</p>
-            </div>
+    <footer class="site-footer">
+        <div class="wrap footer-content">
+            <p class="meta">© 2026 Enes Çetin</p>
             <div class="footer-links">
-                <a href="https://github.com/en3xys" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/enes-%C3%A7etin-363b74324/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://play.google.com/store/apps/dev?id=6855907188560115347" target="_blank" rel="noopener noreferrer" aria-label="Google Play"><i class="fab fa-google-play"></i></a>
-                <a href="https://www.instagram.com/en3xys/?hl=tr" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="mailto:mail.enescetin@gmail.com" aria-label="E-posta"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/en3xys" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/enes-%C3%A7etin-363b74324/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://play.google.com/store/apps/dev?id=6855907188560115347" target="_blank" rel="noopener noreferrer">Google Play</a>
+                <a href="https://www.instagram.com/en3xys/?hl=tr" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="mailto:mail.enescetin@gmail.com">E-posta</a>
             </div>
         </div>
     </footer>
